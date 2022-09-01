@@ -3,12 +3,12 @@
 <head> 
 <style> 
 body { 
-  background-image: url('https://i.pinimg.com/originals/33/ad/ec/33adec0c1c63af6dc7602f5ce7ab61d6.png'); 
+  background-image: url('https://i.pinimg.com/originals/73/d3/eb/73d3eb6181f834ba7b0879067b32ec19.jpg'); 
   background-repeat: no-repeat; 
   background-attachment: fixed;   
   background-size: cover; 
-  padding-bottom: 20px; 
-    padding-left: 100px; 
+  padding-bottom: 100px; 
+    padding-left:50px; 
     padding-top: 100px; 
     padding-right: 100px; 
 }     
@@ -26,6 +26,7 @@ body {
 </head> 
  
 <body> 
+
     <div class="container"> 
         <div class="row"> 
             <div class="col-md-6 offset-md-3"> 
@@ -44,6 +45,7 @@ body {
                             <div class="text-danger"> 
                                 {{ $errors->first('email') }} 
                             </div> 
+                           
                         @endif 
                     </div> 
                     <div class="form-group"> 
@@ -55,6 +57,10 @@ body {
                                 {{ $errors->first('password') }} 
                             </div> 
                         @endif 
+                        <div class="center">            
+                    <a href= "{{route('login')}}"  class="btn">forgot password?</a> 
+         
+                    </style> 
                     </div> 
                     <button type="submit" class="btn btn-primary">Login</button> 
                     <style> 
@@ -64,7 +70,11 @@ body {
                             margin-right: 0px;
                             margin-left: 0px;
                         } 
-                    </style> 
+                        
+                        div {
+                        } 
+                    </style>  
+                    
                     <div class="center"> 
                     <a href="{{ route('register') }}" class="btn btn-md btn-success mb-3">register</a> 
                 </form> 
