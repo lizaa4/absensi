@@ -6,10 +6,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController; 
 
 Route::get('/', function () { 
-    return view('register'); 
+    return view('update'); 
 });
 
-Route::get('/login', [LoginController::class, 'index'])->name('login'); 
-Route::post('/login', [LoginController::class, 'login'])->name('login.proses'); 
-Route::get('/register', [RegisterController::class, 'index'])->name('register'); 
-Route::post('/register', [RegisterController::class, 'register'])->name('register.proses'); 
