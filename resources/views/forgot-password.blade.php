@@ -26,8 +26,17 @@
                     </div>
                     @enderror
                 </div>
-                <form method="POST" action="{{ route('password.email') }}">
-                <button type="submit" class="btn btn-primary btn-block">SEND PASSWORD RESET LINK</button>
+                
+                <button type="submit" class="btn btn-primary btn-block">FORGOT PASSWORD</button>
+                <style> 
+                        div { 
+                            margin-top: 20px;
+                            margin-bottom: 20px;
+                            margin-right: 0px;
+                            margin-left: 0px;
+                        } 
+                    </style> 
+                    <div class="center"> 
             </form>
         </div>
     </div>
