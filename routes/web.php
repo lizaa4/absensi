@@ -10,8 +10,8 @@ Route::get('/', function () {
 });
 Route::get('/login', [LoginController::class, 'index'])->name('login'); 
 Route::post('/login', [LoginController::class, 'login'])->name('login.proses'); 
-Route::get('/login', [LoginController::class, 'index'])->name('login.forgot');
-Route::get('/login.forgot', [LoginController::class, 'index'])->name('forgot.proses');
+Route::get('/forgot', [LoginController::class, 'index'])->name('forgot');
+Route::get('/.forgot', [LoginController::class, 'forgot'])->name('forgot.proses');
 Route::get('/register', [RegisterController::class, 'index'])->name('register'); 
 Route::post('/register', [RegisterController::class, 'register'])->name('register.proses'); 
 
