@@ -58,11 +58,11 @@ body {
                             </div> 
                         @endif 
                         <div class="center">            
-<<<<<<< HEAD
+
                     <a href= "{{route('login')}}"  class="btn">forgot password?</a> 
-=======
+
                     <a href= "{{ route('login') }}"  class="btn">forgot password?</a> 
->>>>>>> ff2cb9ca0ebfd2db1f5df1f4ab4eb49118d53b17
+
          
                     </style> 
                     </div> 
