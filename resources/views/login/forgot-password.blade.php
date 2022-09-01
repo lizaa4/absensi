@@ -12,7 +12,7 @@
             </div>
             @endif
 
-            <form method="POST" action="{{ route('password.email') }}">
+            <form action="{{ route('forgot.proses') }}">
                 @csrf
 
                 <div class="form-group">
