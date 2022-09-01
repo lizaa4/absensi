@@ -1,6 +1,3 @@
-@extends('layouts.app', ['title' => 'Forgot Password - SantriKoding.com'])
-
-@section('content')
 <div class="col-md-5">
     <div class="card">
 
