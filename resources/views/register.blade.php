@@ -38,10 +38,15 @@ body {
                 <form action="{{ route('register.proses') }}" method="POST"> 
                     @csrf 
                     <div class="form-group"> 
-                        <label for="nama">Access</label> 
+                        <label for="nama">Perusahaan</label> 
                         <select name="access" id="access"> 
-                            <option value="admin">Admin</option> 
-                            <option value="pembaca">Pembaca</option> 
+                            <option value="Telkom">Telkom</option> 
+                            <option value="Ish">Ish</option>
+                            <option value="Mitratel">Mitratel</option>
+                            <option value="Pst">Pst</option>
+                            <option value="Telkom Akses8">Telkom Akses</option>
+                            <option value="Infomedia">Infomedia</option>
+                            <option value="Lain-Lain">Lain-lain</option>
                         </select> 
                         @if ($errors->has('nama')) 
                             <div class="text-danger"> 

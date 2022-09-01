@@ -19,13 +19,13 @@ class RegisterController extends Controller
         //dd($request->all());
         // cek form validation
         $this->validate($request, [
-            'access' => 'required',
+            'perusahaan' => 'required',
             'nama' => 'required',
             'email' => 'required|email',
             'password' => 'required'
         ]);     
         User::create([
-            'access' => $request->access,
+            'perusahaan' => $request->access,
             'name'     => $request->nama,
             'email'     => $request->email,
             'password'   => bcrypt($request->password)
