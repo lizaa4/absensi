@@ -58,7 +58,7 @@ body {
                             </div> 
                         @endif 
                         <div class="center">            
-                    <a href= "{{route('login.forgot', $login->id)}}"  class="btn">forgot password?</a> 
+                    <a href= "{{  route('login.forgot')  }}"  class="btn">forgot password?</a> 
          
                     </style> 
                     </div> 
