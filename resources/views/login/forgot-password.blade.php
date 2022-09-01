@@ -1,3 +1,7 @@
+<!doctype html> 
+<html lang="en"> 
+<head> 
+<body>
 <div class="col-md-5">
     <div class="card">
 
@@ -8,7 +12,7 @@
             </div>
             @endif
 
-            <form action="{{  route('forgot.proses')  }}" method= "post"
+            <form method="POST" action="{{ route('password.email') }}">
                 @csrf
 
                 <div class="form-group">
@@ -23,19 +27,13 @@
                     </div>
                     @enderror
                 </div>
-                
-                <button type="submit" class="btn btn-primary btn-block">FORGOT PASSWORD</button>
-                <style> 
-                        div { 
-                            margin-top: 20px;
-                            margin-bottom: 20px;
-                            margin-right: 0px;
-                            margin-left: 0px;
-                        } 
-                    </style> 
-                    <div class="center"> 
+
+                <button type="submit" class="btn btn-primary btn-block">SEND PASSWORD RESET LINK</button>
             </form>
         </div>
     </div>
 </div>
+</body>
+</head>
+</html>
 @endsection
