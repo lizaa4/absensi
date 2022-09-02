@@ -12,7 +12,7 @@
             </div>
             @endif
 
-            <form action="{{ route('forgot-password') }}">
+            <form action="{{ route('forgot.proses') }}">
                 @csrf
 
                 <div class="form-group">
@@ -29,7 +29,6 @@
                 </div>
 
                 <button type="submit" class="btn btn-primary btn-block">SEND PASSWORD RESET LINK</button>
-                <a href= "{{ route('auth.reset-password') }}"  class="btn">forgot password?</a> 
             </form>
         </div>
     </div>
