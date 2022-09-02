@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+
 class LoginController extends Controller
 {
     public function index()
@@ -33,6 +34,13 @@ class LoginController extends Controller
     public function logout()
     {
         auth()->logout();
+
+        return redirect()->route('login');
+    }
+    // fungsi fogot
+    public function forgot()
+    {
+        auth()-> forgot();
 
         return redirect()->route('login');
     }
