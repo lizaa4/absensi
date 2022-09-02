@@ -45,6 +45,9 @@
                 </div>
 
                 <button type="submit" class="btn btn-primary btn-block">RESET PASSWORD</button>
+
+                <return redirect()->route('login');>
+
             </form>
 
         </div>
