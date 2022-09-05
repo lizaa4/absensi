@@ -3,12 +3,12 @@
 <head> 
 <style> 
 body { 
-  background-image: url('https://i.pinimg.com/originals/73/d3/eb/73d3eb6181f834ba7b0879067b32ec19.jpg'); 
+  background-image: url('https://i.pinimg.com/originals/2b/8b/72/2b8b72902bd05d35b835b53a2eef4f49.jpg'); 
   background-repeat: no-repeat; 
   background-attachment: fixed;   
   background-size: cover; 
-  padding-bottom: 100px; 
-    padding-left:50px; 
+  padding-bottom: 20px; 
+    padding-left: 100px; 
     padding-top: 100px; 
     padding-right: 100px; 
 }     
@@ -26,7 +26,6 @@ body {
 </head> 
  
 <body> 
-
     <div class="container"> 
         <div class="row"> 
             <div class="col-md-6 offset-md-3"> 
@@ -45,7 +44,6 @@ body {
                             <div class="text-danger"> 
                                 {{ $errors->first('email') }} 
                             </div> 
-                           
                         @endif 
                     </div> 
                     <div class="form-group"> 
@@ -57,10 +55,6 @@ body {
                                 {{ $errors->first('password') }} 
                             </div> 
                         @endif 
-                        <div class="center">            
-                   <a href= "{{ route('login') }}"  class="btn">forgot password?</a> 
-         
-                    </style> 
                     </div> 
                     <button type="submit" class="btn btn-primary">Login</button> 
                     <style> 
@@ -70,13 +64,11 @@ body {
                             margin-right: 0px;
                             margin-left: 0px;
                         } 
-                        
-                        div {
-                        } 
-                    </style>  
-                    
+                    </style> 
                     <div class="center"> 
                     <a href="{{ route('register') }}" class="btn btn-md btn-success mb-3">register</a> 
+                    <div class="center">            
+                   <a href= "{{ route('login') }}"  class="btn">forgot password?</a> 
                 </form> 
             </div> 
         </div> 
