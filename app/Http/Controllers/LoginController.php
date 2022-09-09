@@ -44,7 +44,7 @@ class LoginController extends Controller
 
         //return redirect()->route('forgot');
 
-        return view('auth.forgot-password');
+        return view('password.forgot-password');
     }
   
 }
