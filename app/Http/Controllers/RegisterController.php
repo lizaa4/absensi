@@ -16,7 +16,7 @@ class RegisterController extends Controller
     // proses login
     public function register(Request $request)
     {
-        //dd($request->all());
+        // dd($request->all());
         // cek form validation
         $this->validate($request, [
             'perusahaan' => 'required',
@@ -24,12 +24,13 @@ class RegisterController extends Controller
             'email' => 'required|email',
             'password' => 'required'
         ]);     
-        User::create([
-            'perusahaan' => $request->access,
-            'name'     => $request->nama,
-            'email'     => $request->email,
-            'password'   => bcrypt($request->password)
-        ]);
+
+        $user = new User();
+        $user->perusahaan = $request->access;
+        $user->name     = $request->nama;
+        $user->email     = $request->email;
+        $user->password   = bcrypt($request->password);
+        $user->save();
         // jika salah, kembali ke halaman login
         return redirect()->back()->with('success', 'Registrasi berhasil');
     }

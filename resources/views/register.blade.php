@@ -35,6 +35,11 @@ body {
                         {{ session('error') }} 
                     </div> 
                 @endif 
+                @if (session('success')) 
+                    <div class="alert alert-danger"> 
+                        {{ session('success') }} 
+                    </div> 
+                @endif 
                 <form action="{{ route('register.proses') }}" method="POST"> 
                     @csrf 
                     <div class="form-group"> 
