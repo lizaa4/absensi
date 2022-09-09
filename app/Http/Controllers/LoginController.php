@@ -40,9 +40,11 @@ class LoginController extends Controller
     // fungsi fogot
     public function forgot()
     {
-        auth()-> forgot();
+        //auth()-> forgot();
 
-        return redirect()->route('login');
+        //return redirect()->route('forgot');
+
+        return view('auth.forgot-password');
     }
    
 }

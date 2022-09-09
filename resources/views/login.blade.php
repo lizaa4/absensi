@@ -68,7 +68,7 @@ body {
                     <div class="center"> 
                     <a href="{{ route('register') }}" class="btn btn-md btn-success mb-3">register</a> 
                     <div class="center">            
-                   <a href= "{{ route('login') }}"  class="btn">forgot password?</a> 
+                   <a href= "{{ route('forgot') }}"  class="btn">forgot password?</a> 
                 </form> 
             </div> 
         </div> 
