@@ -9,6 +9,12 @@ Route::get('/', function () {
     return view('welcome'); 
 });
 
+Route::get('/coba', function() {
+    return view('coba');
+});
+
+
+
 Route::get('/login', [LoginController::class, 'index'])->name('login'); 
 Route::post('/login', [LoginController::class, 'login'])->name('login.proses');
 Route::get('/register', [RegisterController::class, 'index'])->name('register'); 
