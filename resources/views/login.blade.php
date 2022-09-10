@@ -1,86 +1,152 @@
-<!doctype html> 
-<html lang="en"> 
-<head> 
-<style> 
-body { 
-  background-image: url('https://i.pinimg.com/originals/2b/8b/72/2b8b72902bd05d35b835b53a2eef4f49.jpg'); 
-  background-repeat: no-repeat; 
-  background-attachment: fixed;   
-  background-size: cover; 
-  padding-bottom: 20px; 
-    padding-left: 100px; 
-    padding-top: 100px; 
-    padding-right: 100px; 
-}     
-</style> 
- 
-    <title>Login</title> 
-    <!-- Required meta tags --> 
-    <meta charset="utf-8"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
- 
-    <!-- Bootstrap CSS v5.0.2 --> 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> 
- 
-</head> 
- 
-<body> 
-    <div class="container"> 
-        <div class="row"> 
-            <div class="col-md-6 offset-md-3"> 
-                <h1 class="text-center">Login</h1> 
-                @if (session('error')) 
-                    <div class="alert alert-danger"> 
-                        {{ session('error') }} 
-                    </div> 
-                @endif 
-                <form action="{{ route('login.proses') }}" method="POST"> 
-                    @csrf 
-                    <div class="form-group"> 
-                        <label for="email">Email</label> 
-                        <input type="email" class="form-control" id="email" name="email" placeholder="Enter email"> 
-                        @if ($errors->has('email')) 
-                            <div class="text-danger"> 
-                                {{ $errors->first('email') }} 
-                            </div> 
-                        @endif 
-                    </div> 
-                    <div class="form-group"> 
-                        <label for="password">Password</label> 
-                        <input type="password" class="form-control" id="password" name="password" 
-                            placeholder="Enter password"> 
-                        @if ($errors->has('password')) 
-                            <div class="text-danger"> 
-                                {{ $errors->first('password') }} 
-                            </div> 
-                        @endif 
-                    </div> 
-                    <button type="submit" class="btn btn-primary">Login</button> 
-                    <style> 
-                        div { 
-                            margin-top: 20px;
-                            margin-bottom: 20px;
-                            margin-right: 0px;
-                            margin-left: 0px;
-                        } 
-                    </style> 
-                    <div class="center"> 
-                    <a href="{{ route('register') }}" class="btn btn-md btn-success mb-3">register</a> 
-                    <div class="center">            
-                   <a href= "{{ route('forgot') }}"  class="btn">forgot password?</a> 
-                </form> 
-            </div> 
-        </div> 
-    </div> 
- 
-    <!-- Bootstrap JavaScript Libraries --> 
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" 
-        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"> 
-    </script> 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" 
-        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"> 
-    </script> 
-</body> 
- 
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Login 2 | Skote - Admin & Dashboard Template</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+  <meta content="Themesbrand" name="author" />
+  <!-- App favicon -->
+  <link rel="shortcut icon" href="{{ asset('images/favicon.ico') }}">
+  <!-- owl.carousel css -->
+  <link rel="stylesheet" href="{{ asset('libs/owl.carousel/assets/owl.carousel.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('libs/owl.carousel/assets/owl.theme.default.min.css') }}">
+  <!-- Bootstrap Css -->
+  <link href="{{ asset('css/bootstrap.min.css') }}" id="bootstrap-style" rel="stylesheet" type="text/css" />
+  <!-- Icons Css -->
+  <link href="{{ asset('css/icons.min.css') }}" rel="stylesheet" type="text/css" />
+  <!-- App Css-->
+  <link href="{{ asset('css/app.min.css') }}" id="app-style" rel="stylesheet" type="text/css" />
+</head>
+
+
+<!-- 
+cara manggil assets
+
+1. {{ asset('nama folder/nama file') }}
+
+
+ -->
+<body>
+        <div class="account-pages my-5 pt-sm-5">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-8 col-lg-6 col-xl-5">
+                        <div class="card overflow-hidden">
+                            <div class="bg-primary bg-soft">
+                                <div class="row">
+                                    <div class="col-7">
+                                        <div class="text-primary p-4">
+                                            <h5 class="text-primary">Welcome Back !</h5>
+                                            <p>Sign in to continue to Skote.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-5 align-self-end">
+                                        <img src="{{asset('/images/profile-')}}img.png" alt="" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body pt-0"> 
+                                <div class="auth-logo">
+                                    <a href="index.html" class="auth-logo-light">
+                                        <div class="avatar-md profile-user-wid mb-4">
+                                            <span class="avatar-title rounded-circle bg-light">
+                                                <img src="{{asset('/images/logo-lig')}}ht.svg" alt="" class="rounded-circle" height="34">
+                                            </span>
+                                        </div>
+                                    </a>
+
+                                    <a href="index.html" class="auth-logo-dark">
+                                        <div class="avatar-md profile-user-wid mb-4">
+                                            <span class="avatar-title rounded-circle bg-light">
+                                                <img src="{{asset('/images/logo.svg')}}" alt="" class="rounded-circle" height="34">
+                                            </span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="p-2">
+                                    <form class="form-horizontal" action="https://themesbrand.com/skote/layouts/index.html">
+
+
+                                        <form action="{{ route('register.proses') }}" method="POST"> 
+                                        <div class="mb-3">
+                                            <label for="username" class="form-label">Username</label>
+                                            <input type="text" class="form-control" id="username" placeholder="Enter username">
+                                        </div>
+                
+                                        <div class="mb-3">
+                                            <label class="form-label">Password</label>
+                                            <div class="input-group auth-pass-inputgroup">
+                                                <input type="password" class="form-control" placeholder="Enter password" aria-label="Password" aria-describedby="password-addon">
+                                                <button class="btn btn-light " type="button" id="password-addon"><i class="mdi mdi-eye-outline"></i></button>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="remember-check">
+                                            <label class="form-check-label" for="remember-check">
+                                                Remember me
+                                            </label>
+                                        </div>
+                                        
+                                        <div class="mt-3 d-grid">
+                                            <button class="btn btn-primary waves-effect waves-light" type="submit">Log In</button>
+                                        </div>
+            
+                                        <div class="mt-4 text-center">
+                                            <h5 class="font-size-14 mb-3">Sign in with</h5>
+            
+                                            <ul class="list-inline">
+                                                <li class="list-inline-item">
+                                                    <a href="javascript::void()" class="social-list-item bg-primary text-white border-primary">
+                                                        <i class="mdi mdi-facebook"></i>
+                                                    </a>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <a href="javascript::void()" class="social-list-item bg-info text-white border-info">
+                                                        <i class="mdi mdi-twitter"></i>
+                                                    </a>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <a href="javascript::void()" class="social-list-item bg-danger text-white border-danger">
+                                                        <i class="mdi mdi-google"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="mt-4 text-center">
+                                            <a href="auth-recoverpw.html" class="text-muted"><i class="mdi mdi-lock me-1"></i> Forgot your password?</a>
+                                        </div>
+                                    </form>
+                                </div>
+            
+                            </div>
+                        </div>
+                        <div class="mt-5 text-center">
+                            
+                            <div>
+                                <p>Don't have an account ? <a href="auth-register.html" class="fw-medium text-primary"> Signup now </a> </p>
+                                <p>© <script>document.write(new Date().getFullYear())</script> Skote. Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesbrand</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end account-pages -->
+
+        <!-- JAVASCRIPT -->
+        <script src="{{ asset('libs/jquery/jquery.min.js') }}"></script>
+        <script src="{{ asset('libs/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+        <script src="{{ asset('libs/metismenu/metisMenu.min.js') }}"></script>
+        <script src="{{ asset('libs/simplebar/simplebar.min.js') }}"></script>
+        <script src="{{ asset('libs/node-waves/waves.min.js') }}"></script>
+        
+        <!-- App js -->
+        <script src="{{ asset('js/app.js') }}"></script>
+    </body>
+
 </html>
