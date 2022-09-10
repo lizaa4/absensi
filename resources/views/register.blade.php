@@ -40,7 +40,7 @@ body {
                         {{ session('success') }} 
                     </div> 
                 @endif 
-                <form action="{{ route('register.proses') }}" method="POST"> 
+                <form action="/register" method="post"> 
                     @csrf 
                     <div class="form-group"> 
                         <label for="nama">Perusahaan</label> 
@@ -59,7 +59,6 @@ body {
                             </div> 
                         @endif 
                     </div> 
-                     
                     <div class="form-group"> 
                         <label for="nama">Nama</label> 
                         <input type="text" class="form-control" id="nama" name="nama" placeholder="Enter nama"> 
@@ -97,8 +96,6 @@ body {
                         } 
                     </style> 
                     <button type="submit" class="btn btn-primary">Simpan</button> 
-                     
-                     
                 </form> 
             </div> 
         </div> 
