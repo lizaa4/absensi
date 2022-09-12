@@ -57,6 +57,7 @@
                   </div>
                 </a>
               </div>
+              <form action="{{ route('register.proses') }}" method="POST">
               <div class="form-group"> 
                         <label for="nama">Perusahaan</label> 
                         <select name="access" id="access"> 
@@ -69,7 +70,6 @@
                             <option value="Lain-Lain">Lain-lain</option>
                         </select> 
               <div class="p-2">
-                <form action="{{ route('register.proses') }}" method="POST">
                   <div class="mb-3">
                     <label for="username" class="form-label">Username</label>
                     <input type="text" class="form-control" id="username" placeholder="Masukkan Nama" required>
