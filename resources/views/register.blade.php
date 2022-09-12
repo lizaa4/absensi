@@ -76,7 +76,7 @@
                   </div>
 
                   <div class="mb-3">
-                    <label for="username" class="form-label">email</label>
+                    <label for="email" class="form-label">email</label>
                     <input type="text" class="form-control" id="email" placeholder="Masukkan email" required>
                   </div>
 

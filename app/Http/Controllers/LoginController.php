@@ -49,11 +49,16 @@ class LoginController extends Controller
     // fungsi reset
     public function reset()
     {
-        // auth()->reset();
+        // auth()-> reset();
 
         // return redirect()->route('reset');
 
         return view('password.reset-password');
     }
-  
+    //fungsi index 
+    public function profil()
+    {
+        return view('index');
+    }
+
 }

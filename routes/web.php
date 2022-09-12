@@ -19,3 +19,5 @@ Route::post('/forgot', [LoginController::class, 'forgot'])->name('forgot.proses'
 Route::get('/forgot', [LoginController::class, 'forgot'])->name('forgot');
 Route::get('/reset', [LoginController::class, 'reset'])->name('reset');
 Route::post('/reset', [LoginController::class, 'reset'])->name('reset.proses');
+Route::get('/profil', [LoginController::class, 'index'])->name('profil');
+Route::post('/profil', [LoginController::class, 'profil'])->name('profil.proses');

@@ -29,10 +29,17 @@
             <div class="bg-primary bg-soft">
               <div class="row">
                 <div class="col-7">
-    <div class="col-5 align-self-end">
+                <div class="text-primary p-4">
+                    <h5 class="text-primary">Welcome !</h5>
+                    <p>Reset Password.</p>
+                </div>
+              </div>
+                 <div class="col-5 align-self-end">
                   <img src="{{asset('/images/profile-')}}img.png" alt="" class="img-fluid">
                 </div>
-        <div class="card-body pt-0">
+              </div>
+            </div>
+            <div class="card-body pt-0">
               <div class="auth-logo">
                 <a href="index.html" class="auth-logo-light">
                   <div class="avatar-md profile-user-wid mb-4">
@@ -49,18 +56,21 @@
                     </span>
                   </div>
                 </a>
-                <div class="p-2">
+                </div>
                 <form action="{{ route('reset.proses') }}" method="POST">
-                  <div class="mb-3">
+                  <div class="form-group">
+                  <div class="p-2">
                     <label for="password" class="form-label">Password</label>
                     <input type="text" class="form-control" id="password" placeholder="Buat Password" required>
                   </div>
+
                   <div class="p-2">
-                <form action="{{ route('forgot.proses') }}" method="POST">
+                <form action="{{ route('reset.proses') }}" method="POST">
                   <div class="mb-3">
-                    <label for="konfirmasi password" class="form-label">Password Confirmation</label>
+                    <label for="konfirmasi password" class="form-label">Confirmation Password</label>
                     <input type="text" class="form-control" id="konfirmas password" placeholder="Masukkan konfirmasi Password Baru" required>
                   </div>
+
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" id="remember-check">
                     <label class="form-check-label" for="remember-check">
