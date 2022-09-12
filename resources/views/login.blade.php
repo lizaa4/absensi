@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8" />
-  <title>Login 2 | Skote - Admin & Dashboard Template</title>
+  <title>Login | absensi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
   <meta content="Themesbrand" name="author" />
@@ -30,8 +30,8 @@
               <div class="row">
                 <div class="col-7">
                   <div class="text-primary p-4">
-                    <h5 class="text-primary">Welcome Back !</h5>
-                    <p>Sign in to continue to Skote.</p>
+                    <h5 class="text-primary">Welcome !</h5>
+                    <p>Sign in to continue to Absensi.</p>
                   </div>
                 </div>
                 <div class="col-5 align-self-end">
