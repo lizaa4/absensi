@@ -46,5 +46,14 @@ class LoginController extends Controller
 
         return view('password.forgot-password');
     }
+    // fungsi reset
+    public function reset()
+    {
+        // auth()->reset();
+
+        // return redirect()->route('reset');
+
+        return view('password.reset-password');
+    }
   
 }

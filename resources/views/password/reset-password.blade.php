@@ -1,44 +1,93 @@
-@extends('layouts.app', ['title' => 'Reset Password - SantriKoding.com'])
+<!doctype html>
+<html lang="en">
 
-@section('content')
-<div class="col-md-5">
-    <div class="card">
+<head>
+   <meta charset="utf-8" />
+   <title>Reset Password</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+   <meta content="Themesbrand" name="author" />
+   <!-- App favicon -->
+   <link rel="shortcut icon" href="{{ asset('images/favicon.ico') }}">
+   <!-- owl.carousel css -->
+   <link rel="stylesheet" href="{{ asset('libs/owl.carousel/assets/owl.carousel.min.css') }}">
+   <link rel="stylesheet" href="{{ asset('libs/owl.carousel/assets/owl.theme.default.min.css') }}">
+   <!-- Bootstrap Css -->
+   <link href="{{ asset('css/bootstrap.min.css') }}" id="bootstrap-style" rel="stylesheet" type="text/css" />
+   <!-- Icons Css -->
+   <link href="{{ asset('css/icons.min.css') }}" rel="stylesheet" type="text/css" />
+   <!-- App Css-->
+   <link href="{{ asset('css/app.min.css') }}" id="app-style" rel="stylesheet" type="text/css" />
+</head>
 
-        <div class="card-body">
-
-            <form method="POST" action="{{ route('reset.proses') }}">
-                @csrf
-
-                <input type="hidden" name="token" value="{{ $request->route('token') }}">
-                <div class="form-group"> 
-                        <label for="email">Email</label> 
-                        <input type="email" class="form-control" id="email" name="email" placeholder="Enter email"> 
-                        @if ($errors->has('email')) 
-                            <div class="text-danger"> 
-                                {{ $errors->first('email') }} 
-                            </div> 
-                        @endif 
-
-                <div class="form-group"> 
-                        <label for="password">Password</label> 
-                        <input type="password" class="form-control" id="password" name="password" placeholder="Enter password">
-                         
-                        @if ($errors->has('password')) 
-                            <div class="text-danger"> 
-                                {{ $errors->first('password') }} 
-                            </div> 
-                        @endif 
-
-                <div class="form-group">
-                    <label class="font-weight-bold text-uppercase">Konfirmasi Password</label>
-                    <input id="password-confirm" type="password" class="form-control" name="password_confirmation"
-                        required autocomplete="new-password" placeholder="Masukkan Konfirmasi Password Baru">
+<body>
+<div class="account-pages my-5 pt-sm-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6 col-xl-5">
+          <div class="card overflow-hidden">
+            <div class="bg-primary bg-soft">
+              <div class="row">
+                <div class="col-7">
+    <div class="col-5 align-self-end">
+                  <img src="{{asset('/images/profile-')}}img.png" alt="" class="img-fluid">
                 </div>
+        <div class="card-body pt-0">
+              <div class="auth-logo">
+                <a href="index.html" class="auth-logo-light">
+                  <div class="avatar-md profile-user-wid mb-4">
+                    <span class="avatar-title rounded-circle bg-light">
+                      <img src="{{asset('/images/logo-lig')}}ht.svg" alt="" class="rounded-circle" height="34">
+                    </span>
+                  </div>
+                </a>
 
-                <button type="submit" class="btn btn-primary btn-block">RESET PASSWORD</button>
+                <a href="index.html" class="auth-logo-dark">
+                  <div class="avatar-md profile-user-wid mb-4">
+                    <span class="avatar-title rounded-circle bg-light">
+                      <img src="{{asset('/images/logo.svg')}}" alt="" class="rounded-circle" height="34">
+                    </span>
+                  </div>
+                </a>
+                <div class="p-2">
+                <form action="{{ route('reset.proses') }}" method="POST">
+                  <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="text" class="form-control" id="password" placeholder="Buat Password" required>
+                  </div>
+                  <div class="p-2">
+                <form action="{{ route('forgot.proses') }}" method="POST">
+                  <div class="mb-3">
+                    <label for="konfirmasi password" class="form-label">Password Confirmation</label>
+                    <input type="text" class="form-control" id="konfirmas password" placeholder="Masukkan konfirmasi Password Baru" required>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="remember-check">
+                    <label class="form-check-label" for="remember-check">
+                      anda sudah yakin?
+                    </label>
+                  </div>
+
+                  <div class="mt-3 d-grid">
+                    <button class="btn btn-primary waves-effect waves-light" type="submit">Reset Password</button>
+                  </div>
+                  <div class="mt-5 text-center">
+
             </form>
-
         </div>
+                                
     </div>
 </div>
-@endsection
+ <!-- end account-pages -->
+
+  <!-- JAVASCRIPT -->
+  <script src="{{ asset('libs/jquery/jquery.min.js') }}"></script>
+  <script src="{{ asset('libs/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ asset('libs/metismenu/metisMenu.min.js') }}"></script>
+  <script src="{{ asset('libs/simplebar/simplebar.min.js') }}"></script>
+  <script src="{{ asset('libs/node-waves/waves.min.js') }}"></script>
+
+  <!-- App js -->
+  <script src="{{ asset('js/app.js') }}"></script>
+</body>
+</html>

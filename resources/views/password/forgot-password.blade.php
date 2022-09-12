@@ -1,73 +1,81 @@
-<!doctype html> 
-<html lang="en"> 
+<!doctype html>
+<html lang="en">
+
 <head>
-    <!-- Required meta tags --> 
-    <meta charset="utf-8"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
- 
-    <!-- Bootstrap CSS v5.0.2 --> 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> 
- 
-<style>
-    body{
-    background-color: lightblue;
-    padding-top: 80px;
-    padding-bottom: 50px; 
-    padding-left: 80px;  
-    padding-right: 50px; 
-    }
-</style>
+   <meta charset="utf-8" />
+   <title>Forgot Password</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+   <meta content="Themesbrand" name="author" />
+   <!-- App favicon -->
+   <link rel="shortcut icon" href="{{ asset('images/favicon.ico') }}">
+   <!-- owl.carousel css -->
+   <link rel="stylesheet" href="{{ asset('libs/owl.carousel/assets/owl.carousel.min.css') }}">
+   <link rel="stylesheet" href="{{ asset('libs/owl.carousel/assets/owl.theme.default.min.css') }}">
+   <!-- Bootstrap Css -->
+   <link href="{{ asset('css/bootstrap.min.css') }}" id="bootstrap-style" rel="stylesheet" type="text/css" />
+   <!-- Icons Css -->
+   <link href="{{ asset('css/icons.min.css') }}" rel="stylesheet" type="text/css" />
+   <!-- App Css-->
+   <link href="{{ asset('css/app.min.css') }}" id="app-style" rel="stylesheet" type="text/css" />
 </head>
+
 <body>
-<div class="col-md-5">
-    <div class="card">
-
-        <div class="card-body">
-
-                <form action="{{ route('forgot.proses') }}" method="POST"> 
-                    @csrf 
-                    <div class="form-group"> 
-                        <label for="email">Email</label> 
-                        <input type="email" class="form-control" id="email" name="email" placeholder="Enter email"> 
-                        @if ($errors->has('email')) 
-                            <div class="text-danger"> 
-                                {{ $errors->first('email') }} 
-                            </div> 
-                        @endif 
+<div class="account-pages my-5 pt-sm-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6 col-xl-5">
+          <div class="card overflow-hidden">
+            <div class="bg-primary bg-soft">
+              <div class="row">
+                <div class="col-7">
+    <div class="col-5 align-self-end">
+                  <img src="{{asset('/images/profile-')}}img.png" alt="" class="img-fluid">
                 </div>
-                <div class="form-group"> 
-                        <label for="password">Password</label> 
-                        <input type="password" class="form-control" id="password" name="password" placeholder="Enter password"> 
-                        @if ($errors->has('password')) 
-                            <div class="text-danger"> 
-                                {{ $errors->first('password') }} 
-                            </div> 
-                        @endif 
-                    </div> 
-                    <button type="submit" class="btn btn-md btn-success mb-3">SEND RESET PASSWORD</button> 
-                    <style> 
-                        div { 
-                            margin-top: 20px;
-                            margin-bottom: 20px;
-                            margin-right: 0px;
-                            margin-left: 0px;
-                        } 
-                    </style> 
+        <div class="card-body pt-0">
+              <div class="auth-logo">
+                <a href="index.html" class="auth-logo-light">
+                  <div class="avatar-md profile-user-wid mb-4">
+                    <span class="avatar-title rounded-circle bg-light">
+                      <img src="{{asset('/images/logo-lig')}}ht.svg" alt="" class="rounded-circle" height="34">
+                    </span>
+                  </div>
+                </a>
+
+                <a href="index.html" class="auth-logo-dark">
+                  <div class="avatar-md profile-user-wid mb-4">
+                    <span class="avatar-title rounded-circle bg-light">
+                      <img src="{{asset('/images/logo.svg')}}" alt="" class="rounded-circle" height="34">
+                    </span>
+                  </div>
+                </a>
+                <div class="p-2">
+                <form action="{{ route('forgot.proses') }}" method="POST">
+                  <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="text" class="form-control" id="email" placeholder="Masukkan Email" required>
+                  </div>
+
+                  <div class="mt-3 d-grid">
+                    <button class="btn btn-primary waves-effect waves-light" type="submit">Send Reset Password</button>
+                  </div>
+                  <div class="mt-5 text-center">
+
             </form>
         </div>
                                 
     </div>
 </div>
-<!-- Bootstrap JavaScript Libraries --> 
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
-integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"> 
-    </script> 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" 
-        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"> 
-    </script> 
-</body> 
+ <!-- end account-pages -->
+
+  <!-- JAVASCRIPT -->
+  <script src="{{ asset('libs/jquery/jquery.min.js') }}"></script>
+  <script src="{{ asset('libs/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ asset('libs/metismenu/metisMenu.min.js') }}"></script>
+  <script src="{{ asset('libs/simplebar/simplebar.min.js') }}"></script>
+  <script src="{{ asset('libs/node-waves/waves.min.js') }}"></script>
+
+  <!-- App js -->
+  <script src="{{ asset('js/app.js') }}"></script>
 </body>
-</head>
 </html>
