@@ -58,27 +58,25 @@
                 </a>
               </div>
               <div class="p-2">
-                <form action="{{ route('register.proses') }}" method="POST">
+                <form action="/register" method="POST">
+                  @csrf
                   <div class="mb-3">
                     <label for="email" class="form-label">Email</label>
-                    <input type="text" class="form-control" id="email" placeholder="Masukkan Email" required>
+                    <input type="text" class="form-control" id="email" name="email" placeholder="Masukkan Email" required>
                   </div>
-
                   <div class="mb-3">
                     <label class="form-label">Password</label>
                     <div class="input-group auth-pass-inputgroup">
-                      <input type="password" class="form-control" placeholder="Masukkan Password" aria-label="Password" aria-describedby="password-addon" required>
+                      <input type="password" name="password" class="form-control" placeholder="Masukkan Password" aria-label="Password" aria-describedby="password-addon" required>
                       <button class="btn btn-light " type="button" id="password-addon"><i class="mdi mdi-eye-outline"></i></button>
                     </div>
                   </div>
-
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" id="remember-check">
                     <label class="form-check-label" for="remember-check">
                       Ingat saya
                     </label>
                   </div>
-
                   <div class="mt-3 d-grid">
                     <button class="btn btn-primary waves-effect waves-light" type="submit">Log In</button>
                   </div>
@@ -114,4 +112,4 @@
   <script src="{{ asset('js/app.js') }}"></script>
 </body>
 
-</html> 
+</html>
