@@ -52,6 +52,9 @@
                     </span>
                   </div>
                 </a>
+                <div class="p-2">
+                <form action="{{ route('index.proses') }}" method="POST">
+                  <div class="mb-3">
 <div class="container-fluid">
   <div class="row">
     <div class="col col-lg-4 col-md-4">

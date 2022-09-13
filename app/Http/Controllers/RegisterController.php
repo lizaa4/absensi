@@ -46,4 +46,8 @@ class RegisterController extends Controller
         // // jika salah, kembali ke halaman login
         // return redirect()->back()->with('success', 'Registrasi berhasil');
     }
+    public function update ()
+    {
+        return view('update');
+    }
 }

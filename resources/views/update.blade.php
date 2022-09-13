@@ -57,29 +57,30 @@
                   </div>
                 </a>
               </div>
-              <form action="{{ route('register.proses') }}" method="POST">
-              <div class="form-group"> 
               <div class="p-2">
                   <div class="mb-3">
-                    <label for="email" class="form-label">email</label>
+                    <label for="email" class="form-label">Email</label>
                     <input type="text" class="form-control" id="email" placeholder="Masukkan email" required>
                   </div>
 
                   <div class="mb-3">
-                    <label for="email" class="form-label">nama</label>
+                    <label for="email" class="form-label">Nama</label>
                     <input type="text" class="form-control" id="nama" placeholder="Masukkan nama" required>
                   </div>
 
                   <div class="mb-3">
-                    <label for="email" class="form-label">nomor hp</label>
+                    <label for="email" class="form-label">Nomor HP</label>
                     <input type="text" class="form-control" id="nomor hp" placeholder="Masukkan nomor hp" required>
                   </div>
 
                   <div class="mb-3">
-                    <label for="email" class="form-label">email</label>
-                    <input type="text" class="form-control" id="email" placeholder="Masukkan email" required>
+                    <label class="form-label">Enskripsi Password</label>
+                    <div class="input-group auth-pass-inputgroup">
+                      <input type="password" class="form-control" placeholder="Masukkan Password" aria-label="Password" aria-describedby="password-addon" required>
+                      <button class="btn btn-light " type="button" id="password-addon"><i class="mdi mdi-eye-outline"></i></button>
+                    </div>
                   </div>
-                  <form action="{{ route('register.proses') }}" method="POST">
+                  <form action="{{ route('update.proses') }}" method="POST">
               <div class="form-group"> 
                         <label for="nama">Perusahaan</label> 
                         <select name="access" id="access"> 
@@ -91,20 +92,10 @@
                             <option value="Infomedia">Infomedia</option>
                             <option value="Lain-Lain">Lain-lain</option>
                         </select> 
-                 
-
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="remember-check">
-                    <label class="form-check-label" for="remember-check">
-                      Ingat saya
-                    </label>
-                  </div>
-
                   <div class="mt-3 d-grid">
                     <button class="btn btn-primary waves-effect waves-light" type="submit">simpan</button>
                   </div>
 
-                 
   <!-- JAVASCRIPT -->
   <script src="{{ asset('libs/jquery/jquery.min.js') }}"></script>
   <script src="{{ asset('libs/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
