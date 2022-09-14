@@ -23,3 +23,5 @@ Route::get('/profil', [LoginController::class, 'index'])->name('profil');
 Route::post('/profil', [LoginController::class, 'profil'])->name('profil.proses');
 Route::get('/update', [RegisterController::class, 'update'])->name('update');
 Route::post('/update', [RegisterController::class, 'update'])->name('update.proses');
+Route::get('/ubah', [LoginController::class, 'ubah'])->name('ubah');
+Route::post('/ubah', [LoginController::class, 'ubah'])->name('ubah.proses');

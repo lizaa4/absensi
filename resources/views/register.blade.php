@@ -58,6 +58,7 @@
                 </a>
               </div>
               <form action="{{ route('register.proses') }}" method="POST">
+                @csrf
               <div class="form-group"> 
                         <label for="nama">Perusahaan</label> 
                         <select name="access" id="access"> 
