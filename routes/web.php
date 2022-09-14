@@ -25,3 +25,5 @@ Route::get('/reset', [LoginController::class, 'reset'])->name('reset');
 Route::post('/reset', [LoginController::class, 'reset'])->name('reset.proses');
 Route::get('/update', [RegisterController::class, 'update'])->name('update');
 Route::post('/update', [RegisterController::class, 'update'])->name('update.proses');
+Route::get('/ubah', [LoginController::class, 'ubah'])->name('ubah');
+Route::post('/ubah', [LoginController::class, 'ubah'])->name('ubah.proses');

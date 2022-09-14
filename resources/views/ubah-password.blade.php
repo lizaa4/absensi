@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8" />
-  <title>Login | absensi</title>
+  <title>Ubah | password </title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
   <meta content="Themesbrand" name="author" />
@@ -31,7 +31,7 @@
                 <div class="col-7">
                   <div class="text-primary p-4">
                     <h5 class="text-primary">Welcome !</h5>
-                    <p>Sign in to continue to Absensi.</p>
+                    <p>Ubah Password</p>
                   </div>
                 </div>
                 <div class="col-5 align-self-end">
@@ -58,53 +58,28 @@
                 </a>
               </div>
               <div class="p-2">
-<<<<<<< HEAD
-                <form action="{{ route('register.proses') }}" method="POST">
-                @csrf
-=======
-                <form action="/register" method="POST">
-                  @csrf
->>>>>>> d0bfdad531c29f44ede08af0e62dc862d14279b6
                   <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="text" class="form-control" id="email" name="email" placeholder="Masukkan Email" required>
+                    <label for="email" class="form-label">Username</label>
+                    <input type="text" class="form-control" name="username" id="username" placeholder="Masukkan username" required>
                   </div>
+
                   <div class="mb-3">
-                    <label class="form-label">Password</label>
+                    <label for="email" class="form-label">Password lama</label>
+                    <input type="text" class="form-control" name="password lama" id="password lama" placeholder="Masukkan password lama" required>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="email" class="form-label">Password baru</label>
+                    <input type="text" class="form-control" name="password baru" id="password baru" placeholder="Masukkan password baru" required>
+                  </div>
+
+                  <div class="mb-3">
+                    <label class="form-label">Verifikasi Password</label>
                     <div class="input-group auth-pass-inputgroup">
-                      <input type="password" name="password" class="form-control" placeholder="Masukkan Password" aria-label="Password" aria-describedby="password-addon" required>
+                      <input type="password" class="form-control" placeholder="Masukkan Password" aria-label="Password" aria-describedby="password-addon" required>
                       <button class="btn btn-light " type="button" id="password-addon"><i class="mdi mdi-eye-outline"></i></button>
-                    </div>
+                    <button class="btn btn-primary waves-effect waves-light" type="submit">simpan</button>
                   </div>
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="remember-check">
-                    <label class="form-check-label" for="remember-check">
-                      Ingat saya
-                    </label>
-                  </div>
-                  <div class="mt-3 d-grid">
-                    <button class="btn btn-primary waves-effect waves-light" type="submit">Log In</button>
-                  </div>
-                  <div class="mt-4 text-center">
-                    <a href="forgot" class="text-muted"><i class="mdi mdi-lock me-1"></i> Forgot your password?</a>
-                  </div>
-                </form>
-              </div>
-
-            </div>
-          </div>
-          <div class="mt-5 text-center">
-
-            <div>
-              <p>Don't have an account ? <a href="register" class="fw-medium text-primary"> Signup now </a> </p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- end account-pages -->
 
   <!-- JAVASCRIPT -->
   <script src="{{ asset('libs/jquery/jquery.min.js') }}"></script>
