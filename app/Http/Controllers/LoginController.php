@@ -9,6 +9,8 @@ class LoginController extends Controller
 {
     public function index()
     {
+        return redirect()->route('login');
+
         return view('login');
     }
 

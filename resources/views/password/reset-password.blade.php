@@ -62,7 +62,7 @@
                 <form action="{{ route('reset.proses') }}" method="POST">
                   <div class="form-group">
                   <div class="p-2">
-                    <label for="password" class="form-label">Buat Password</label>
+                    <label for="password" class="form-label">Password</label>
                     <input type="text" class="form-control" id="password" placeholder="Masukkan Password" required>
                   </div>
 
@@ -71,7 +71,7 @@
                   <div class="mb-3">
                     <label class="form-label">Confirmation Password</label>
                     <div class="input-group auth-pass-inputgroup">
-                      <input type="password" class="form-control" placeholder="Masukkan Konfirmasi Password Baru" aria-label="Password" aria-describedby="password-addon" required>
+                      <input type="password" class="form-control" placeholder="Masukkan Konfirmasi Password" aria-label="Password" aria-describedby="password-addon" required>
                       <button class="btn btn-light " type="button" id="password-addon"><i class="mdi mdi-eye-outline"></i></button>
                     </div>
 
