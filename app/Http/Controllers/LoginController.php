@@ -69,5 +69,10 @@ class LoginController extends Controller
     {
         return view('update');
     }
+    //fungsi ubah
+    public function ubah()
+    {
+        return view('ubah-password');
+    }
 
 }

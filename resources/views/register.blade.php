@@ -57,10 +57,10 @@
                   </div>
                 </a>
               </div>
+
               <form action="/register" method="POST">
                 @csrf
                 <div class="form-group">
-
                   <div class="p-2">
                     <div class="mb-3">
                       <label for="username" class="form-label">Username</label>
