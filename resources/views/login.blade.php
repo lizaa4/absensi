@@ -58,7 +58,7 @@
                 </a>
               </div>
               <div class="p-2">
-                <form action="{{ route('register.proses') }}" method="POST">
+                <form action="{{ route('login.proses') }}" method="POST">
                 @csrf
                   <div class="mb-3">
                     <label for="email" class="form-label">Email</label>
