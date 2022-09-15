@@ -58,7 +58,19 @@ class LoginController extends Controller
     //fungsi index 
     public function profil()
     {
+        return redirect()->route('profil');
+
         return view('index');
+    }
+    //fungsi update
+    public function update ()
+    {
+        return view('update');
+    }
+    //fungsi ubah
+    public function ubah()
+    {
+        return view('ubah-password');
     }
 
 }

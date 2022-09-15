@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8" />
-  <title>Update | data | diri</title>
+  <title>Ubah | password </title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
   <meta content="Themesbrand" name="author" />
@@ -31,7 +31,7 @@
                 <div class="col-7">
                   <div class="text-primary p-4">
                     <h5 class="text-primary">Welcome !</h5>
-                    <p>Update Data Diri</p>
+                    <p>Ubah Password</p>
                   </div>
                 </div>
                 <div class="col-5 align-self-end">
@@ -59,40 +59,25 @@
               </div>
               <div class="p-2">
                   <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="text" class="form-control" id="email" placeholder="Masukkan email" required>
+                    <label for="email" class="form-label">Username</label>
+                    <input type="text" class="form-control" name="username" id="username" placeholder="Masukkan username" required>
                   </div>
 
                   <div class="mb-3">
-                    <label for="email" class="form-label">Nama</label>
-                    <input type="text" class="form-control" id="nama" placeholder="Masukkan nama" required>
+                    <label for="email" class="form-label">Password lama</label>
+                    <input type="text" class="form-control" name="password lama" id="password lama" placeholder="Masukkan password lama" required>
                   </div>
 
                   <div class="mb-3">
-                    <label for="email" class="form-label">Nomor HP</label>
-                    <input type="text" class="form-control" id="nomor hp" placeholder="Masukkan nomor hp" required>
+                    <label for="email" class="form-label">Password baru</label>
+                    <input type="text" class="form-control" name="password baru" id="password baru" placeholder="Masukkan password baru" required>
                   </div>
 
                   <div class="mb-3">
-                    <label class="form-label">Enskripsi Password</label>
+                    <label class="form-label">Verifikasi Password</label>
                     <div class="input-group auth-pass-inputgroup">
                       <input type="password" class="form-control" placeholder="Masukkan Password" aria-label="Password" aria-describedby="password-addon" required>
                       <button class="btn btn-light " type="button" id="password-addon"><i class="mdi mdi-eye-outline"></i></button>
-                    </div>
-                  </div>
-                  <form action="{{ route('update.proses') }}" method="POST">
-              <div class="form-group"> 
-                        <label for="nama">Perusahaan</label> 
-                        <select name="access" id="access"> 
-                            <option value="Telkom">Telkom</option> 
-                            <option value="Ish">Ish</option>
-                            <option value="Mitratel">Mitratel</option>
-                            <option value="Pst">Pst</option>
-                            <option value="Telkom Akses8">Telkom Akses</option>
-                            <option value="Infomedia">Infomedia</option>
-                            <option value="Lain-Lain">Lain-lain</option>
-                        </select> 
-                  <div class="mt-3 d-grid">
                     <button class="btn btn-primary waves-effect waves-light" type="submit">simpan</button>
                   </div>
 

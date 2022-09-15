@@ -21,6 +21,8 @@
 </head>
 
 <body>
+<div class="VUoKZ" aria-hidden="true">
+  <div class="TRHLAc"></div></div>
 <div class="account-pages my-5 pt-sm-5">
     <div class="container">
       <div class="row justify-content-center">
@@ -61,16 +63,19 @@
                   <div class="form-group">
                   <div class="p-2">
                     <label for="password" class="form-label">Password</label>
-                    <input type="text" class="form-control" id="password" placeholder="Buat Password" required>
+                    <input type="text" class="form-control" id="password" placeholder="Masukkan Password" required>
                   </div>
 
                   <div class="p-2">
                 <form action="{{ route('reset.proses') }}" method="POST">
                   <div class="mb-3">
-                    <label for="konfirmasi password" class="form-label">Confirmation Password</label>
-                    <input type="text" class="form-control" id="konfirmas password" placeholder="Masukkan konfirmasi Password Baru" required>
-                  </div>
+                    <label class="form-label">Confirmation Password</label>
+                    <div class="input-group auth-pass-inputgroup">
+                      <input type="password" class="form-control" placeholder="Masukkan Konfirmasi Password" aria-label="Password" aria-describedby="password-addon" required>
+                      <button class="btn btn-light " type="button" id="password-addon"><i class="mdi mdi-eye-outline"></i></button>
+                    </div>
 
+                    <div class="p-2">
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" id="remember-check">
                     <label class="form-check-label" for="remember-check">

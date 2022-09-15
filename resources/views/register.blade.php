@@ -58,27 +58,34 @@
                 </a>
               </div>
               <form action="{{ route('register.proses') }}" method="POST">
-              <div class="form-group"> 
-                        <label for="nama">Perusahaan</label> 
-                        <select name="access" id="access"> 
-                            <option value="Telkom">Telkom</option> 
-                            <option value="Ish">Ish</option>
-                            <option value="Mitratel">Mitratel</option>
-                            <option value="Pst">Pst</option>
-                            <option value="Telkom Akses8">Telkom Akses</option>
-                            <option value="Infomedia">Infomedia</option>
-                            <option value="Lain-Lain">Lain-lain</option>
-                        </select> 
+                @csrf
+             
               <div class="p-2">
                   <div class="mb-3">
                     <label for="username" class="form-label">Username</label>
-                    <input type="text" class="form-control" id="username" placeholder="Masukkan Nama" required>
+                    <input type="text" name="username" class="form-control" id="username" placeholder="Masukkan Nama" required>
                   </div>
 
                   <div class="mb-3">
                     <label for="email" class="form-label">email</label>
                     <input type="text" class="form-control" id="email" placeholder="Masukkan email" required>
                   </div>
+                  <div class="mb-3">
+                      <label for="email" class="form-label">email</label>
+                      <input type="text" class="form-control" id="email" name="email" placeholder="Masukkan email" required>
+                    </div>
+                    <div class="mb-3">
+                      <label for="nama" class="form-label">Perusahaan</label>
+                      <select name="access" id="access" class="form-select">
+                        <option value="Telkom">Telkom</option>
+                        <option value="Ish">Ish</option>
+                        <option value="Mitratel">Mitratel</option>
+                        <option value="Pst">Pst</option>
+                        <option value="Telkom Akses8">Telkom Akses</option>
+                        <option value="Infomedia">Infomedia</option>
+                        <option value="Lain-Lain">Lain-lain</option>
+                      </select>
+                    </div>
 
 
                   <div class="mb-3">
