@@ -65,11 +65,6 @@
                     <label for="username" class="form-label">Username</label>
                     <input type="text" name="username" class="form-control" id="username" placeholder="Masukkan Nama" required>
                   </div>
-
-                  <div class="mb-3">
-                    <label for="email" class="form-label">email</label>
-                    <input type="text" class="form-control" id="email" placeholder="Masukkan email" required>
-                  </div>
                   <div class="mb-3">
                       <label for="email" class="form-label">email</label>
                       <input type="text" class="form-control" id="email" name="email" placeholder="Masukkan email" required>

@@ -26,3 +26,6 @@ Route::get('/update', [RegisterController::class, 'update'])->name('update');
 Route::post('/update', [RegisterController::class, 'update'])->name('update.proses');
 Route::get('/ubah', [LoginController::class, 'ubah'])->name('ubah');
 Route::post('/ubah', [LoginController::class, 'ubah'])->name('ubah.proses');
+Route::get('/absen', [AbsenController::class, 'absen'])->name('absen');
+// Route::get('/absensi', [AbsensiController::class, 'index'])->name('absensi'); 
+// Route::post('/absensi', [AbsensiController::class, 'absensi'])->name('absensi.proses');
