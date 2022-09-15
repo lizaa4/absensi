@@ -7,12 +7,8 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
 
 Route::get('/', function () { 
-<<<<<<< HEAD
-    // return view('update'); 
-    return redirect()->to('/login');
-=======
     return view('welcome'); 
->>>>>>> 7b6c823866b9cf3e47df16b225ef7ca46a7762dd
+    // return redirect()->to('/login');
 });
 
 
