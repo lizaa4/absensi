@@ -18,13 +18,13 @@ class RegisterController extends Controller
     {   
         try {
             $request->validate([
-                'access' => 'required',
+                'perusahaan' => 'required',
                 'name' => 'required',
                 'email' => 'required|email',
                 'password' => 'required'
             ]);
             $user = new User();
-            $user->perusahaan = $request->access;
+            $user->perusahaan = $request->perusahaan;
             $user->name     = $request->name;
             $user->email     = $request->email;
             $user->password   = bcrypt($request->password);
