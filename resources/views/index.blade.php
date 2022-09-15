@@ -23,12 +23,12 @@
 <body> 
   <div class="account-pages my-5 pt-sm-5"> 
     <div class="container"> 
-      <div class="row justify-content-center"> 
+      <div class="row"> 
         <div class="col-md-cover col-lg-cover col-xl-cover"> 
           <div class="card overflow-hidden"> 
             <div class="bg-primary bg-soft"> 
               <div class="row"> 
-                <div class="col-7"> 
+                <div class="col-cover"> 
                   <div class="text-primary p-4"> 
                     <h5 class="text-primary">Welcome !</h5> 
                     <p>Profile</p> 
@@ -45,12 +45,9 @@
                     <li><a href="#">About</a></li>  
                   </ul> 
                 </div> 
-                <div class="button"> 
-                  <a href="#" class="btn1">LIHAT PROFILE ANDA</a> 
-                  <a href="#" class="btn1">TELUSURI</a>   
+   
                 </div> 
-                <div class="title"> 
-                  <h1>ANISA SAFITRI</h1> 
+                
                 </div> 
               </div> 
             </div> 
