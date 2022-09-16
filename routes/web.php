@@ -5,6 +5,7 @@ use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route; 
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\AbsenController;
 
 Route::get('/', function () { 
     return view('welcome'); 
@@ -28,5 +29,4 @@ Route::post('/update', [RegisterController::class, 'update'])->name('update.pros
 Route::get('/ubah', [LoginController::class, 'ubah'])->name('ubah');
 Route::post('/ubah', [LoginController::class, 'ubah'])->name('ubah.proses');
 Route::get('/absen', [AbsenController::class, 'absen'])->name('absen');
-// Route::get('/absensi', [AbsensiController::class, 'index'])->name('absensi'); 
-// Route::post('/absensi', [AbsensiController::class, 'absensi'])->name('absensi.proses');
+

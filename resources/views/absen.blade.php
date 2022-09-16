@@ -1,4 +1,6 @@
-
+<!doctype html>
+<html lang="en">
+<head>
 <style>
     form {
       max-width: 600px;
@@ -71,7 +73,7 @@
             <div class="col-md-12">
                 <div class="form-group row">
                     <label>Ruang</label>
-                        <div class="checkbox">
+                        <!-- <div class="checkbox">
                           <label class="col-md-4">
                             <input type="checkbox" name="ruang[]" value="Data Center 1">
                             Data Center 1
@@ -168,17 +170,17 @@
                               Troubleshoot
                             </label>
                         </div>
-                      </div>
+                      </div> -->
     
-                    <div class="form-group row">
+                    <!-- <div class="form-group row">
                         <label>Kegiatan Others</label>
                         <input type="text" name="kegiatan[]" class="form-control" placeholder="Others ..." autocomplete="off">
                     </div>
-    
-                    <div class="form-group row">
+     -->
+                    <!-- <div class="form-group row">
                         <label>Penanggung Jawab</label>
                         <input type="text" name="tanggung_jawab" class="form-control" value="{{ Auth::user()->name }}" readonly="true" placeholder="Departement ..." >
-                    </div>
+                    </div> -->
     
                     <div class="form-group row">
                         <button type="submit" class="btn btn-primary btn-sm">Submit</button>
@@ -188,5 +190,7 @@
     </div>
     </form>
 </div>
+</head>
+</html>
 
 @endsection
