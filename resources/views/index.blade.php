@@ -19,10 +19,97 @@
   <!-- App Css-->  
   <link href="{{ asset('css/app.min.css') }}" id="app-style" rel="stylesheet" type="text/css"/>  
 </head>  
-  
 <body>  
+<style>
+    * {margin:0; padding:0;}
+     
+    body {
+     background-color:#fff;
+     font-family:Arial, Helvetica, sans-serif;
+     color:#000;
+    }
+
+    nav {
+     margin:auto;
+     text-align: center;
+     width: 100%;
+    } 
+
+    nav ul ul {
+     display: none;
+    }
+
+    nav ul li:hover > ul{
+    display: block;
+    width: 150px;
+    }
+
+    nav ul {
+     background: #53bd84;
+     padding: 0 20px;
+     list-style: none;
+     position: relative;
+     display: inline-table;
+     width: 100%;
+    }
+
+    nav ul:after {
+     content: ""; 
+     clear:both; 
+     display: block;
+    }
+
+    nav ul li{
+     float:left;
+    }
+
+    nav ul li:hover{
+     background:#666;
+    }
+
+    nav ul li:hover a{
+     color:#fff;
+    }
+
+    nav ul li a{
+     display: block;
+     padding: 25px;
+     color: #fff;
+     text-decoration: none;
+    }
+
+    nav ul ul{
+     background: #53bd84;
+     border-radius: 0px;
+     padding: 0;
+     position: absolute;
+     top:100%;
+    }
+
+    nav ul ul li{
+     float:none;
+     border-top: 1px soild #53bd84;
+     border-bottom: 1px solid #53bd84;
+     position: relative;
+    }
+
+    nav ul ul li a{
+     padding: 15px 40px;
+     color: #fff;
+    }
+
+    nav ul ul li a:hover{
+     background-color: #666;
+    }
+
+    nav ul ul ul{
+     position: absolute;
+     left: 100%;
+     top: 0;
+    }
+    </style>
   <div class="account-pages my-5 pt-sm-5">  
-    <div class="container-fluid"> 
+    <div class="container"> 
       <div class="row justify-content-center">  
         <div class="col-md-cover col-lg-cover col-xl-cover">  
           <div class="card overflow-hidden">  
@@ -37,10 +124,29 @@
                 <div class="col-5 align-self-end">   
                   <img src="{{asset('/images/profile-')}}img.png" class="img-fluid" alt="">  
                 </div> 
+                <body>
+<nav>
+    <ul>
+     	<li><a href="#">Home</a></li>
+     	<li><a href="#">Input</a>
+         	<ul>
+             	<li><a href="#">Anggota</a></li>
+             	<li><a href="#">Nama</a></li>
+             	<li><a href="#">Kategori Buku</a></li>
+         	</ul>
+         </li>
+         	<ul>
+             	<li><a href="#">Peminjaman</a></li>
+             	<li><a href="#">Pengembalian</a></li>
+         	</ul>
+         <li><a href="#" onClick="return confirm ('Yakin?')">Logout</a></li>
+    </ul>
+</nav>
+</body>
                 <nav class="navbar navbar-default"> 
                 <div class="container-fluid"> 
    <div class="navbar-header"> 
-      <a class="navbar-brand" href=></a> 
+      <a class="navbar-brand" href="{{ asset('libs/owl.carousel/assets/owl.theme.default.min.css') }}"></a> 
  </div> 
  <div class="p-0"> 
                 <form action="{{ route('profile') }}" method="POST"> 
@@ -60,8 +166,9 @@
     <span class="icon-bar"></span> 
     <span class="icon-bar"></span> 
    </button> 
-    <a class="navbar-brand"></a> 
+    <a class="navbar-brand" href="{{ asset('libs/owl.carousel/assets/owl.theme.default.min.css') }}"></a> 
    </div> 
+   <div class="p-2"> 
       <div class="mb-3"> 
                       <label for="nama" class="form-label">Search</label>
                       <select name="access" id="access" class="form-select">
