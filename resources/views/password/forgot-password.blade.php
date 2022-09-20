@@ -93,7 +93,7 @@
         }
           else {
               
-                let email = ($('#Email').val();
+                let email = ($('#Email').val(); 
 
                 $.ajax({
                     url: "{{ route('kirimEmail.proses') }}",
@@ -123,9 +123,9 @@
             }
 
         }
-      
+  
 
-      }
+
 
   </script>
 </body>
