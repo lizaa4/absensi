@@ -20,7 +20,7 @@
    <link href="{{ asset('css/app.min.css') }}" id="app-style" rel="stylesheet" type="text/css" />
 </head>
 
-<body>
+<body> 
 <div class="account-pages my-5 pt-sm-5">
     <div class="container">
       <div class="row justify-content-center">
@@ -57,7 +57,7 @@
                   </div>
                 </a>
                 </div>
-                <form action="{{ route('forgot.proses') }}" method="POST">
+                <form  method="POST" class="form-email">
                   <div class="form-group">
                   <div class="p-2">
                     <label for="Email" class="form-label">Email</label>
@@ -65,7 +65,7 @@
                   </div>
 
                   <div class="mt-3 d-grid">
-                    <button class="btn btn-primary waves-effect waves-light" type="submit">Send</button>
+                    <button class="btn btn-primary waves-effect waves-light" type="button" onclick="kirimEmail()">Send</button>
                   </div>
                   <div class="mt-5 text-center">
 
@@ -85,5 +85,48 @@
 
   <!-- App js -->
   <script src="{{ asset('js/app.js') }}"></script>
+  <script>
+      function kirimEmail(){
+       
+        if($('#Email').val() == ''){
+          alert('Email Harus Diisi');
+        }
+          else {
+              
+                let email = ($('#Email').val();
+
+                $.ajax({
+                    url: "{{ route('kirimEmail.proses') }}",
+                    type: "post",
+                    data: $(".form-email").serialize(),
+                    success: function(response) {
+                        // $('.btn-kirim-loading').addClass('d-none');
+                        // $('.btn-kirim').removeClass('d-none');
+                        if (response.status == "ada") {
+                            alert('Link reset password telah berhasil dikirim, silahkan cek (spam) email anda');
+                        } else if (response.status == "kosong") {
+                         
+                            alert('NIK anda tidak terdaftar');
+
+                        } else if (response.status == "gagal") {
+                            alert('Email reset password gagal dikirim');
+                            console.log(response.message);
+                        }
+                    },
+                    error: function(request, status, error) {
+                        // $('.btn-kirim-loading').addClass('d-none');
+                        // $('.btn-kirim').removeClass('d-none');
+                        alert('Terjadi Kesalahan');
+                        console.log(request.responseText);
+                    }
+                });
+            }
+
+        }
+      
+
+      }
+
+  </script>
 </body>
 </html>

@@ -24,9 +24,10 @@
     * {margin:0; padding:0;}
      
     body {
-     background-color:#fff;
+     background-color: #fff;
      font-family:Arial, Helvetica, sans-serif;
      color:#000;
+     margin: auto;
     }
 
     nav {
@@ -45,12 +46,14 @@
     }
 
     nav ul {
-     background: #53bd84;
-     padding: 0 20px;
+     background: darkgreen;
+     padding-left: 20px;
      list-style: none;
-     position: relative;
+     position: 20px;
      display: inline-table;
      width: 100%;
+     font-family: Arial, Helvetica, sans-serif;
+
     }
 
     nav ul:after {
@@ -118,7 +121,7 @@
                 <div class="col-7">  
                   <div class="text-primary p-4 font-family" >  
                     <h1>Welcome !</h1>  
-                    <h2><p>Profile</p></h2>  
+                    <h2><p>Profile Absensi.</p></h2>  
                   </div>  
                 </div>  
                 <div class="col-5 align-self-end">   
@@ -127,20 +130,32 @@
                 <body>
 <nav>
     <ul>
-     	<li><a href="#">Home</a></li>
-     	<li><a href="#">Input</a>
+     	<li><a href="/">Home</a></li>
+     	<li><a href="/">Input</a>
          	<ul>
-             	<li><a href="#">Anggota</a></li>
-             	<li><a href="#">Nama</a></li>
-             	<li><a href="#">Kategori Buku</a></li>
+             	<li><a href="/app/$_ENV">Data diri</a></li>
+             	<li><a href="/app/$_ENV">History</a></li>
+
          	</ul>
          </li>
-         	<ul>
-             	<li><a href="#">Peminjaman</a></li>
-             	<li><a href="#">Pengembalian</a></li>
-         	</ul>
+         <ul>
+          <li><a href="/">Nama</a></li>
+          <li><a href="/">Contact</a></li>
+          <li><a href="/">Email</a></li>
+          <li><a href="/">Password</a></li>
+         </ul>
+      
          <li><a href="#" onClick="return confirm ('Yakin?')">Logout</a></li>
     </ul>
+    <style> 
+        body{ 
+         padding-left: 50px; 
+         padding-right: 50px; 
+         padding-top: 50px; 
+         padding-bottom: 50px; 
+        } 
+        </style> 
+
 </nav>
 </body>
                 <nav class="navbar navbar-default"> 
@@ -166,48 +181,12 @@
     <span class="icon-bar"></span> 
     <span class="icon-bar"></span> 
    </button> 
-    <a class="navbar-brand" href="{{ asset('libs/owl.carousel/assets/owl.theme.default.min.css') }}"></a> 
-   </div> 
-   <div class="p-2"> 
-      <div class="mb-3"> 
-                      <label for="nama" class="form-label">Search</label>
-                      <select name="access" id="access" class="form-select">
-                      <option value="Home">Home</option>
-                      <option value="Profile">Profile</option>
-                      <option value="Contact">Contact</option>
-                      <option value="Activity">Activity</option>
-
-                      </select>
-                    </div>
-      <style> 
-        body{ 
-         padding-left: 2px; 
-         padding-right: 2px; 
-         padding-top: 2px; 
-         padding-bottom: 2px; 
-        } 
-        </style> 
-
-  
-        <div class="mt-3 d-grid"> 
-                    <button class="btn btn-primary waves-effect waves-light" type="submit">Submit</button> 
-                  </div> 
-</form> 
-</div><!-- /.navbar-collapse --> 
-    </div> 
-                </div> 
-              </div> 
-            </div> 
-
-
+    <a class="navbar-brand" href="{{ asset('libs/owl.carousel/assets/owl.theme.default.min.css') }}"></a>  
  </div> 
-</nav> 
-
-  </div> 
- </nav> 
- 
 </div>    
-                </div> 
+          </div>
+        </div>
+</div> 
 
                     <!-- JAVASCRIPT -->  
                     <script src="{{ asset('libs/jquery/jquery.min.js') }}"></script>  
