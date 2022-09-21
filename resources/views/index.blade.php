@@ -46,11 +46,11 @@
     }
 
     nav ul {
-     background: darkgreen;
+     background: lightgreen;
      padding-left: 20px;
      list-style: none;
      position: 20px;
-     display: inline-table;
+     display: block;
      width: 100%;
      font-family: Arial, Helvetica, sans-serif;
 
