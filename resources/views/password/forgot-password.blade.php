@@ -92,10 +92,8 @@
           alert('Email Harus Diisi');
         }
           else {
-              
-                let email = ($('#Email').val(); 
-
-                $.ajax({
+    
+                let email = ($('#Email').val() $.ajax({
                     url: "{{ route('kirimEmail.proses') }}",
                     type: "post",
                     data: $(".form-email").serialize(),
