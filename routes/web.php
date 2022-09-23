@@ -31,4 +31,5 @@ Route::get('/ubah', [LoginController::class, 'ubah'])->name('ubah');
 Route::post('/ubah', [LoginController::class, 'ubah'])->name('ubah.proses');
 Route::get('/absen', [AbsenController::class, 'absen'])->name('absen');
 Route::post('/kirimEmail', [KirimEmailController::class, 'index'])->name('kirimEmail.proses');
-
+Route::get('/tabel', [ProfileController::class, 'tabel'])->name('tabel');
+Route::post('/tabel', [ProfileController::class, 'tabel'])->name('tabel.proses');
