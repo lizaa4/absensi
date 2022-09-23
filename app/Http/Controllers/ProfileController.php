@@ -10,4 +10,9 @@ class ProfileController extends Controller
         return view('index');
     }
 
+    // fungsi tabel
+    public function tabel() {
+        return view('tabel');
+    }
+
 }

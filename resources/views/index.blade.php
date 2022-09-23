@@ -19,6 +19,7 @@
   <!-- App Css-->
   <link href="{{ asset('css/app.min.css') }}" id="app-style" rel="stylesheet" type="text/css" />
   <link rel="stylesheet" type="text/css" href="style.csss">
+  <script src="{{ asset('js/app.js') }}" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -105,12 +106,55 @@
                 display: none;
               }
 
-              @media (max-width: 952px)
+              @media (max-width: 952px){
                 nav .logo {
-                  font-size 
-                } 
-            </style>
+                  font-size: 30px;
+                  padding-left: 50px;
+                }
 
+                nav ul li a {
+                  font-size: 16px;
+                }
+              }
+
+              @media (max-width: 858px){
+                .btn {
+                  display: block;
+                }
+
+                ul {
+                  height: 100vh;
+                  width: 100%;
+                  position: fixed;
+                  top: 80px;
+                  left: -100%;
+                  text-align: center;
+                  background: rgba(0, 0, 0, 0.2);
+                  transition: all .5s;
+
+                }
+
+                #check:checked ~ ul {
+                  left: 0;
+
+                }
+
+                nav ul li {
+                  margin: 50px 0;
+                  line-height: 30px;
+                  display: block;
+
+                }
+
+                a.active, a:hover {
+                  color: white;
+                  background: rgba(0, 0, 0, 0.6);
+                }
+
+              }
+              
+            </style>
+            
   <!-- JAVASCRIPT -->
   <script src="{{ asset('libs/jquery/jquery.min.js') }}"></script>
   <script src="{{ asset('libs/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
@@ -118,7 +162,5 @@
   <script src="{{ asset('libs/simplebar/simplebar.min.js') }}"></script>
   <script src="{{ asset('libs/node-waves/waves.min.js') }}"></script>
 
-  <!-- App js -->
-  <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>
