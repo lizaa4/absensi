@@ -72,7 +72,18 @@
                     <label for="email" class="form-label">Password baru</label>
                     <input type="text" class="form-control" name="password baru" id="password baru" placeholder="Masukkan password baru" required>
                   </div>
-
+                  <style>
+                    body { 
+                  background-image: url('https://i.pinimg.com/originals/f8/a3/cc/f8a3cc3c41cc1a02cb759d006888a1e2.jpg'); 
+                  background-repeat: no-repeat; 
+                  background-attachment: fixed;   
+                  background-size: cover; 
+                  padding-bottom: 20px; 
+                    padding-left: 100px; 
+                    padding-top: 100px; 
+                    padding-right: 100px; 
+                }     
+          </style> 
                   <div class="mb-3">
                     <label class="form-label">Verifikasi Password</label>
                     <div class="input-group auth-pass-inputgroup">
