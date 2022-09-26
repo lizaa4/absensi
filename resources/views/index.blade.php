@@ -12,7 +12,7 @@
   
 <nav>
   <div class="logo">
-    <h4>ANISA SAFITRI</h4>
+    <h4>Profil Absensi</h4>
   </div>
 
   <ul class="slide">
