@@ -90,16 +90,16 @@
               </div>
               <style> 
         body { 
-                  background-image: url('https://i.pinimg.com/originals/f8/a3/cc/f8a3cc3c41cc1a02cb759d006888a1e2.jpg'); 
-                  background-repeat: no-repeat; 
-                  background-attachment: fixed;   
-                  background-size: cover; 
-                  padding-bottom: 20px; 
-                    padding-left: 100px; 
-                    padding-top: 100px; 
-                    padding-right: 100px; 
-                }     
-          </style> 
+          background-image: url('https://i.pinimg.com/originals/fd/b9/f9/fdb9f947f4653d9608ca47cde736e7a7.jpg'); 
+          background-repeat: no-repeat; 
+          background-attachment: fixed;   
+          background-size: cover; 
+          padding-bottom: 20px; 
+            padding-left: 100px; 
+            padding-top: 100px; 
+            padding-right: 100px; 
+        }     
+</style> 
             </div>
           </div>
           <div class="mt-5 text-center">
