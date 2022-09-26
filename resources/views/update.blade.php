@@ -92,6 +92,18 @@
                             <option value="Infomedia">Infomedia</option>
                             <option value="Lain-Lain">Lain-lain</option>
                         </select> 
+                        <style>
+                    body { 
+                  background-image: url('https://i.pinimg.com/originals/f8/a3/cc/f8a3cc3c41cc1a02cb759d006888a1e2.jpg'); 
+                  background-repeat: no-repeat; 
+                  background-attachment: fixed;   
+                  background-size: cover; 
+                  padding-bottom: 20px; 
+                    padding-left: 100px; 
+                    padding-top: 100px; 
+                    padding-right: 100px; 
+                }     
+          </style> 
                   <div class="mt-3 d-grid">
                     <button class="btn btn-primary waves-effect waves-light" type="submit">simpan</button>
                   </div>
