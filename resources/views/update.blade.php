@@ -57,40 +57,36 @@
                   </div>
                 </a>
               </div>
+              <form action="{{ route('profile.update.proses') }}" method="POST">
+                @csrf
               <div class="p-2">
                   <div class="mb-3">
                     <label for="email" class="form-label">Email</label>
-                    <input type="text" class="form-control" id="email" placeholder="Masukkan email" required>
+                    <input type="text" class="form-control" name="email" id="email" placeholder="Masukkan email" required value="{{$user->email}}">
                   </div>
 
                   <div class="mb-3">
                     <label for="email" class="form-label">Nama</label>
-                    <input type="text" class="form-control" id="nama" placeholder="Masukkan nama" required>
+                    <input type="text" class="form-control" name="nama" id="nama" placeholder="Masukkan nama" required value="{{$user->name}}">
                   </div>
-
-                  <div class="mb-3">
-                    <label for="email" class="form-label">Nomor HP</label>
-                    <input type="text" class="form-control" id="nomor hp" placeholder="Masukkan nomor hp" required>
-                  </div>
-
                   <div class="mb-3">
                     <label class="form-label">Enskripsi Password</label>
                     <div class="input-group auth-pass-inputgroup">
-                      <input type="password" class="form-control" placeholder="Masukkan Password" aria-label="Password" aria-describedby="password-addon" required>
+                      <input type="password" class="form-control" name="enskripsi_password" placeholder="Masukkan Password" aria-label="Password" aria-describedby="password-addon" required>
                       <button class="btn btn-light " type="button" id="password-addon"><i class="mdi mdi-eye-outline"></i></button>
                     </div>
                   </div>
-                  <form action="{{ route('update.proses') }}" method="POST">
+                  
               <div class="form-group"> 
                         <label for="nama">Perusahaan</label> 
                         <select name="access" id="access"> 
-                            <option value="Telkom">Telkom</option> 
-                            <option value="Ish">Ish</option>
-                            <option value="Mitratel">Mitratel</option>
-                            <option value="Pst">Pst</option>
-                            <option value="Telkom Akses8">Telkom Akses</option>
-                            <option value="Infomedia">Infomedia</option>
-                            <option value="Lain-Lain">Lain-lain</option>
+                            <option value="Telkom" @if($user->perusahaan=="Telkom") selected @endif>Telkom</option> 
+                            <option value="Ish" @if($user->perusahaan=="Ish") selected @endif>Ish</option>
+                            <option value="Mitratel" @if($user->perusahaan=="Mitrael") selected @endif>Mitratel</option>
+                            <option value="Pst" @if($user->perusahaan=="Pst") selected @endif>Pst</option>
+                            <option value="Telkom Akses8" @if($user->perusahaan=="Telkom Akses") selected @endif>Telkom Akses</option>
+                            <option value="Infomedia" @if($user->perusahaan=="Infomedia") selected @endif>Infomedia</option>
+                            <option value="Lain-Lain" @if($user->perusahaan=="Lain-lain") selected @endif>Lain-lain</option>
                         </select> 
                         <style>
                     body { 

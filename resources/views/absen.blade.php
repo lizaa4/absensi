@@ -28,7 +28,7 @@
                     <div class="card-header">
                         <h5 class="text-center">Tanggal Absensi</h5>
                     </div>
-                    <form action="{{ route('admin.employees.attendance') }}" method="POST">
+                    <form action="{{ route('absen.proses') }}" method="POST">
                     @csrf
                     <div class="card-body">
                         <div class="input-group mx-auto" style="width:70%">
@@ -138,7 +138,7 @@
                                                     <button type="button" class="btn flat btn-secondary" data-dismiss="modal">Tidak</button>
                                                     
                                                     <form 
-                                                    action="{{ route('admin.employees.attendance.delete', $employees->get($i-1)->attendanceToday->id) }}"
+                                                    action="{{ route('absen', $employees->get($i-1)->attendanceToday->id) }}"
                                                     method="POST"
                                                     >
                                                     @csrf

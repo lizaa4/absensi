@@ -98,8 +98,8 @@
                   <div class="mb-3">
                     <label class="form-label">Password</label>
                     <div class="input-group auth-pass-inputgroup">
-                      <input type="password" class="form-control" placeholder="Masukkan Password" aria-label="Password" aria-describedby="password-addon" required>
-                      <button class="btn btn-light " type="button" id="password-addon"><i class="mdi mdi-eye-outline"></i></button>
+                      <input type="password" class="form-control" name="password" placeholder="Masukkan Password" aria-label="Password" aria-describedby="password-addon" required>
+                      <button class="btn btn-light " type="button" id="password-addon" ><i class="mdi mdi-eye-outline"></i></button>
                     </div>
                   </div>
 

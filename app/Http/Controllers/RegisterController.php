@@ -17,17 +17,19 @@ class RegisterController extends Controller
     public function register(Request $request)
     {   
         try {
+            // dd($request->all());
             $request->validate([
-                'perusahaan' => 'required',
-                'name' => 'required',
+                'access' => 'required',
+                'username' => 'required',
                 'email' => 'required|email',
                 'password' => 'required'
             ]);
             $user = new User();
-            $user->perusahaan = $request->perusahaan;
-            $user->name     = $request->name;
+            $user->perusahaan = $request->access;
+            $user->name     = $request->username;
             $user->email     = $request->email;
             $user->password   = bcrypt($request->password);
+            // dd($user);
             $user->save();
         } catch (\Throwable $th) {
             echo $th->getMessage();
