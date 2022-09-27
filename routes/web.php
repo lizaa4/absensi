@@ -23,6 +23,8 @@ Route::post('/register', [RegisterController::class, 'register'])->name('registe
 Route::post('/forgot', [LoginController::class, 'forgot'])->name('forgot.proses');
 Route::get('/forgot', [LoginController::class, 'forgot'])->name('forgot');
 Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
+Route::get('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
+Route::post('/profile/update', [ProfileController::class, 'updateproses'])->name('profile.update.proses');
 Route::get('/reset', [LoginController::class, 'reset'])->name('reset');
 Route::post('/reset', [LoginController::class, 'reset'])->name('reset.proses');
 Route::get('/update', [RegisterController::class, 'update'])->name('update');
@@ -30,6 +32,8 @@ Route::post('/update', [RegisterController::class, 'update'])->name('update.pros
 Route::get('/ubah', [LoginController::class, 'ubah'])->name('ubah');
 Route::post('/ubah', [LoginController::class, 'ubah'])->name('ubah.proses');
 Route::get('/absen', [AbsenController::class, 'absen'])->name('absen');
+Route::get('/absen', [AbsenController::class, 'absen'])->name('absen');
+Route::post('/absen', [AbsenController::class, 'absen'])->name('absen.proses');
 Route::post('/kirimEmail', [KirimEmailController::class, 'index'])->name('kirimEmail.proses');
 
  

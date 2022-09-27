@@ -23,7 +23,7 @@ class LoginController extends Controller
 
         // cek apakah email dan password benar
         if (auth()->attempt(request(['email', 'password']))) {
-            return redirect()->route('posts.index');
+            return redirect()->route('profile');
         }
 
         // jika salah, kembali ke halaman login

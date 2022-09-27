@@ -82,7 +82,7 @@
         </div>
         <div class="row justify-content-center fs-5 text-center">
             <div class="col-md-4">
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum repudiandae non odio eum obcaecati, suscipit eveniet dignissimos quia iusto facere!</p>
+                <p>{{$user->name}}</p>
             </div>
             <div class="col-md-4">
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam eos voluptatibus molestias nostrum! Ipsum perspiciatis voluptas voluptatum alias, distinctio autem voluptates asperiores quibusdam dolore rerum.</p>
@@ -127,6 +127,9 @@
                         <div class="card-body">
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         </div>
+                        <div class="mt-3 d-grid">
+                    <a href="{{route('profile.update')}}" class="btn btn-primary waves-effect waves-light"> update </a>
+                  </div>
                     </div>
                 </div>
         </div>
