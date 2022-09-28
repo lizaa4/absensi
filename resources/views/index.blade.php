@@ -83,6 +83,7 @@
         <div class="row justify-content-center fs-5 text-center">
             <div class="col-md-4">
                 <p>{{$user->name}}</p>
+                <p>{{$user->email}}</p>
             </div>
             <div class="col-md-4">
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam eos voluptatibus molestias nostrum! Ipsum perspiciatis voluptas voluptatum alias, distinctio autem voluptates asperiores quibusdam dolore rerum.</p>
