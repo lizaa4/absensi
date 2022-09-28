@@ -77,7 +77,7 @@
                   </div>
 
                   <div class="mt-3 d-grid">
-                    <button class="btn btn-primary waves-effect waves-light" type="button" onclick="kirimEmail()">Send</button>
+                  <button type="button" class="btn btn-primary">Send</button>
                   </div>
                   <div class="mt-5 text-center">
 
