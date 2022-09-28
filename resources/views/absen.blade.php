@@ -1,194 +1,69 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Absen</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <!-- My CSS -->
+    <link rel="stylesheet" href="tabel.blade.php">
+  </head>
+  <style>
+    body {
+        background-image: url('https://i.pinimg.com/originals/fd/b9/f9/fdb9f947f4653d9608ca47cde736e7a7.jpg'); 
+        background-repeat: no-repeat; 
+        background-attachment: fixed;   
+        background-size: cover; 
+        padding-bottom: 20px; 
+        padding-left: 100px; 
+        padding-top: 100px; 
+        padding-right: 100px;
+        min-height: 2000px;
+    }
+    .jumbotron {
+        padding-top: 2rem;
+        background-color: #e2edff;
+    }
 
-<head>
-  <meta charset="utf-8" />
-  <title>Melakukan | absensi</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
-  <meta content="Themesbrand" name="author" />
-  <!-- App favicon -->
-  <link rel="shortcut icon" href="{{ asset('images/favicon.ico') }}">
-  <!-- owl.carousel css -->
-  <link rel="stylesheet" href="{{ asset('libs/owl.carousel/assets/owl.carousel.min.css') }}">
-  <link rel="stylesheet" href="{{ asset('libs/owl.carousel/assets/owl.theme.default.min.css') }}">
-  <!-- Bootstrap Css -->
-  <link href="{{ asset('css/bootstrap.min.css') }}" id="bootstrap-style" rel="stylesheet" type="text/css" />
-  <!-- Icons Css -->
-  <link href="{{ asset('css/icons.min.css') }}" rel="stylesheet" type="text/css" />
-  <!-- App Css-->
-  <link href="{{ asset('css/app.min.css') }}" id="app-style" rel="stylesheet" type="text/css" />
-</head>
-
-<section class="content">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-4 mx-auto">
-                <div class="card card-primary">
-                    <div class="card-header">
-                        <h5 class="text-center">Tanggal Absensi</h5>
-                    </div>
-                    <form action="{{ route('absen.proses') }}" method="POST">
-                    @csrf
-                    <div class="card-body">
-                        <div class="input-group mx-auto" style="width:70%">
-                            <span class="input-group-text"><i class="fa fa-calendar" aria-hidden="true"></i></span>
-                            <input type="text" name="date" id="date" class="form-control text-center" >
-                        </div>
-                    </div>
-                    <div class="card-footer text-center">
-                        <button class="btn btn-flat btn-primary" type="submit">Submit</button>
-                    </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-8 mx-auto">
-                @include('messages.alerts')
-                <div class="card card-primary">
-                    <div class="card-header">
-                        <div class="card-title text-center">
-                            @if ($date)
-                            Absensi Karyawan berdasarkan rentang tanggal {{ $date }}                                
-                            @else
-                            Absensi Karyawan Hari ini
-                            @endif
-                        </div>
-                        
-                    </div>
-                    <div class="card-body">
-                        @if ($employees->count())
-                        <table class="table table-bordered table-hover" id="dataTable">
-                            <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Nama</th>
-                                    <th>Riwayat Database</th>
-                                    <th class="none">Riwayat Awal Absensi</th>
-                                    <th>Riwayat Absensi</th>
-                                    <th class="none">Riwayat Akhir Absensi</th>
-                                    <th>Lokasi</th>
-                                    <th>Jabatan</th>
-                                    <th class="none">Aksi</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($employees as $index => $employee)
-                                <tr>
-                                    <td>{{ $index + 1 }}</td>
-                                    <td>{{ $employee->first_name.' '.$employee->last_name }}</td>
-                                    @if($employee->attendanceToday)
-                                        <td><h6 class="text-center"><span class="badge badge-pill badge-success">Terekam</span></h6></td>
-                                        <td>
-                                            Terekam sejak {{ $employee->attendanceToday->created_at->format('H:i:s') }} dari {{ $employee->attendanceToday->entry_location}} dengan alamat IP {{ $employee->attendanceToday->entry_ip}}
-                                        </td>
-                                        <?php if($employee->attendanceToday->time<=9 && $employee->attendanceToday->time>=7) { ?>
-                                            <td><h6 class="text-center"><span class="badge badge-pill badge-success">Hadir Tepat Waktu</span></h6></td>
-                                        <?php } elseif ($employee->attendanceToday->time>9 && $employee->attendanceToday->time<=17) {
-                                            ?><td><h6 class="text-center"><span class="badge badge-pill badge-warning">Hadir Terlambat</span></h6></td><?php
-                                        } else {
-                                           ?><td><h6 class="text-center"><span class="badge badge-pill badge-danger">Absensi Tidak Valid</span></h6></td><?php 
-                                        } ?>
-                                            <td>
-                                                Terekam sejak {{ $employee->attendanceToday->updated_at->format('H:i:s') }} dari {{ $employee->attendanceToday->exit_location}} dengan alamat IP {{ $employee->attendanceToday->exit_ip}}
-                                            </td>
-                                    @else
-                                        <td><h6 class="text-center"><span class="badge badge-pill badge-danger">Belum Ada Riwayat</span></h6></td>
-                                        <td><h6 class="text-center"><span class="badge badge-pill badge-danger">Belum Ada Riwayat</span></h6></td>
-                                        <td><h6 class="text-center"><span class="badge badge-pill badge-danger">Belum Ada Riwayat</span></h6></td>
-                                        <td><h6 class="text-center"><span class="badge badge-pill badge-danger">Belum Ada Riwayat</span></h6></td>
-                                    @endif
-                                    <td>
-                                    <?php 
-                                    $conn = mysqli_connect("localhost","root","","absensi");
-                                    $loc2=mysqli_query($conn,"SELECT * FROM attendances"); 
-                                    while($loc=mysqli_fetch_array($loc2)) {
-                                    if(!empty($loc['entry_location'])) { 
-                                        echo $loc['entry_location']; 
-                                    } else { echo " - ";} }?></td>
-                                    <td>{{ $employee->desg }}</td>
-                                    <td>
-                                        @if($employee->attendanceToday)
-                                        <button 
-                                        class="btn btn-flat btn-danger"
-                                        data-toggle="modal"
-                                        data-target="#deleteModalCenter{{ $employee->attendanceToday->id }}"
-                                        >Hapus Riwayat</button>
-                                        @else 
-                                        Aksi Tidak Tersedia
-                                        @endif
-                                    </td>
-                                </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
-                        @for ($i = 1; $i < $employees->count()+1; $i++)
-                                <!-- Modal -->
-                                @if($employees->get($i-1)->attendanceToday)
-                                <div class="modal fade" id="deleteModalCenter{{ $employees->get($i-1)->attendanceToday->id }}" tabindex="-1" role="dialog" aria-labelledby="deleteModalCenterTitle1{{ $employees->get($i-1)->attendanceToday->id }}" aria-hidden="true">
-                                    <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
-                                        <div class="modal-content">
-                                            <div class="card card-danger">
-                                                <div class="card-header">
-                                                    <h5 style="text-align: center !important">Yakin ingin dihapus?</h5>
-                                                </div>
-                                                <div class="card-body text-center d-flex" style="justify-content: center">
-                                                    
-                                                    <button type="button" class="btn flat btn-secondary" data-dismiss="modal">Tidak</button>
-                                                    
-                                                    <form 
-                                                    action="{{ route('absen', $employees->get($i-1)->attendanceToday->id) }}"
-                                                    method="POST"
-                                                    >
-                                                    @csrf
-                                                    @method('DELETE')
-                                                        <button type="submit" class="btn flat btn-danger ml-1">Ya</button>
-                                                    </form>
-                                                </div>
-                                                <div class="card-footer text-center">
-                                                    <small>Aksi tidak tersedia</small>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- /.modal -->
-                                @endif
-                            @endfor
-                        @else
-                        <div class="alert alert-info text-center" style="width:50%; margin: 0 auto">
-                            <h4>Belum Ada Riwayat</h4>
-                        </div>
-                        @endif
-                        
-                    </div>
-                </div>
-                <!-- general form elements -->
-                
-            </div>
-        </div>
+    #projects {
+        background-color: #e2edff;
+    }
+  </style>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+  </body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <div class="container">
+    <a class="navbar-brand" href="#">Absen</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Log out</a>
+        </li>
+      </ul>
     </div>
-    <!-- /.container-fluid -->
-</section>
-    <!-- /.content -->
+  </div>
+</nav>
+  <!-- Akhir Navbar -->
 
-@endsection
-@section('extra-js')
+  <!-- Jumbotron -->
+  <section class="jumbotron text-center">
+  <img src="{{asset('/images/profile-')}}img.png" alt="rofile" width="200" />
+  <h1 class="display-4">Welcome to Absensi</h1>
+  <p class="lead">Silahkan melakukan absensi</p>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="0.8" d="M0,96L34.3,112C68.6,128,137,160,206,149.3C274.3,139,343,85,411,90.7C480,96,549,160,617,160C685.7,160,754,96,823,101.3C891.4,107,960,181,1029,192C1097.1,203,1166,149,1234,117.3C1302.9,85,1371,75,1406,69.3L1440,64L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z"></path></svg>
+  <div class="mt-3 d-grid">
+                    <button class="btn btn-primary waves-effect waves-light" type="submit">Absen</button>
+                  </div>
 
-<script>
-    $(document).ready(function() {
-        $('#dataTable').DataTable({
-            responsive:true,
-            autoWidth: false,
-        });
-        $('#date').daterangepicker({
-            "singleDatePicker": true,
-            "showDropdowns": true,
-            "locale": {
-                "format": "DD-MM-YYYY"
-            }
-        });
-    });
-</script>
-@endsection
+  </section>
+  <!-- Akhir Jumbotron -->
+  
