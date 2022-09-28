@@ -114,6 +114,14 @@
                     <button class="btn btn-primary waves-effect waves-light" type="submit">simpan</button>
                   </div>
 
+                  <div class="mt-3 text-center">
+
+                  <div>
+                    <a href="login" class="fw-medium text-primary">selesai</a>
+                  </div>
+
+                  </div
+
                  
   <!-- JAVASCRIPT -->
   <script src="{{ asset('libs/jquery/jquery.min.js') }}"></script>
