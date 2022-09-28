@@ -7,6 +7,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AbsenController;
 use App\Http\Controllers\KirimEmailController;
+use App\Http\Controller\LogoutController;
 
 Route::get('/', function () { 
     return view('welcome'); 
@@ -35,10 +36,11 @@ Route::get('/absen', [AbsenController::class, 'absen'])->name('absen');
 Route::get('/absen', [AbsenController::class, 'absen'])->name('absen');
 Route::post('/absen', [AbsenController::class, 'absen'])->name('absen.proses');
 Route::post('/kirimEmail', [KirimEmailController::class, 'index'])->name('kirimEmail.proses');
-Route::post('/logout', [AbsenController::class, 'logout'])->name('logout.proses');
-Route::get('/logout', [AbsenController::class, 'logout'])->name('logout');
 Route::post('/history', [AbsenController::class, 'history'])->name('history.proses');
 Route::get('/history', [AbsenController::class, 'history'])->name('history');
+Route::group(['middleware' => ['auth']], function() {
+    Route::get('/logout', 'LogoutController@perform')->name('logout.perform');
+ });
 
 
  
