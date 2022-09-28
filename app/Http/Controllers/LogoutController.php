@@ -5,21 +5,23 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
-
+/**
+ * Log the user out of the application.
+ *
+ * @param  \Illuminate\Http\Request  $request
+ * @return \Illuminate\Http\Response
+ */
 class LogoutController extends Controller
 {
-    /**
-     * Log out account user.
-     *
-     * @return \Illuminate\Routing\Redirector
-     */
-    public function perform()
+    
+    public function getLogout()
     {
-        Session::flush();
-        
-        Auth::logout();
+        $this->auth->logout();
 
-        return redirect('login');
-    }
+        Session::flush();
+
+        return redirect('/');
+
+
 }
- 
+}
