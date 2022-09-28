@@ -61,12 +61,60 @@
   <section class="jumbotron text-center">
   <img src="{{asset('/images/profile-')}}img.png" alt="rofile" width="200" />
   <h1 class="display-4">Welcome to Absensi</h1>
+  <div class="mt-3 d-grid">
   <p class="lead">Silahkan melakukan absensi</p>
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="0.8" d="M0,96L34.3,112C68.6,128,137,160,206,149.3C274.3,139,343,85,411,90.7C480,96,549,160,617,160C685.7,160,754,96,823,101.3C891.4,107,960,181,1029,192C1097.1,203,1166,149,1234,117.3C1302.9,85,1371,75,1406,69.3L1440,64L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z"></path></svg>
-  <div class="mt-3 d-grid">
-                    <button class="btn btn-primary waves-effect waves-light" type="submit">Absen</button>
-                  </div>
+  <div class="register-box-body">
+        <h2 style="text-align: center"><b>Absen Masuk Data Center</b></h2>
+        <div class="content">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div align="center">
+                        @php
+                        $tanggal = mktime(date('m'), date("d"), date('Y'));
+    
+                        echo "Tanggal : <b> " . date("d-m-Y", $tanggal ) . " |</b>";
+    
+                        date_default_timezone_set("Asia/Jakarta");
+    
+                        $jam = date ("H:i:s");
+                        //echo " | Pukul : <b align='center'> " . $jam . " " ." </b> ";
+    
+                        $a = date ("H");
+                        @endphp
+                        <body onload="tampilkanwaktu();setInterval('tampilkanwaktu()', 1000);">
+                            Pukul :
+                        <span id="clock"></span>
+                   </div>
+                   <script type="text/javascript">
+    function tampilkanwaktu(){         //fungsi ini akan dipanggil di bodyOnLoad dieksekusi tiap 1000ms = 1detik
+    var waktu = new Date();            //membuat object date berdasarkan waktu saat
+    var sh = waktu.getHours() + "";    //memunculkan nilai jam, //tambahan script + "" supaya variable sh bertipe string sehingga bisa dihitung panjangnya : sh.length    //ambil nilai menit
+    var sm = waktu.getMinutes() + "";  //memunculkan nilai detik
+    var ss = waktu.getSeconds() + "";  //memunculkan jam:menit:detik dengan menambahkan angka 0 jika angkanya cuma satu digit (0-9)
+    document.getElementById("clock").innerHTML = (sh.length==1?"0"+sh:sh) + ":" + (sm.length==1?"0"+sm:sm) + ":" + (ss.length==1?"0"+ss:ss);
+    }
+</script>
+            </div>
+        </div>
+    </div>
+    
+  <button type="button" class="btn btn-primary btn-lg">Submit</button>
   </section>
-  <!-- Akhir Jumbotron -->
+  <!-- Akhir Jumbotron -->@section('content')
+
+<div class="container">
+  <form action="/absentap/simpan/" method="POST" enctype="multipart/form-data" >
+    @csrf
+    @if (session('pesan'))
+        <div class="alert alert-success alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <h4><i class="icon fa fa-check"></i>Success</h4>
+            {{ session('pesan') }}.
+        </div>
+    @endif
+    
+    
+
   
   
