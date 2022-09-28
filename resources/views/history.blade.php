@@ -56,7 +56,7 @@
       table{
           font-family: arial, sans-serif;
           border-collapse: collapse;
-          width: 100%;
+          width: 65%;
         }
         
         td, th {
@@ -86,7 +86,7 @@ tr:nth-child(even) {
 
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="0.8" d="M0,96L34.3,112C68.6,128,137,160,206,149.3C274.3,139,343,85,411,90.7C480,96,549,160,617,160C685.7,160,754,96,823,101.3C891.4,107,960,181,1029,192C1097.1,203,1166,149,1234,117.3C1302.9,85,1371,75,1406,69.3L1440,64L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z"></path></svg>
 
-<div class="m5-3 text-center" >
+<div class="mt-3 text-center" >
 
 <div>
   <p>back to absen?<a href="absen" class="fw-medium text-primary"> Back now </a> </p>
