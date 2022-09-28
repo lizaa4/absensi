@@ -43,7 +43,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-        <a href= "{{route('login')}}"  class="btn btn-primary">profile</a>  
+        <a href= "{{route('profile')}}"  class="btn btn-primary">profile</a>  
         </li>
         <li class="nav-item">            
                         <a href= "{{route('login')}}"  class="btn btn-primary">Logout</a>          
