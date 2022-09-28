@@ -28,8 +28,8 @@ Route::get('/profile/update', [ProfileController::class, 'update'])->name('profi
 Route::post('/profile/update', [ProfileController::class, 'updateproses'])->name('profile.update.proses');
 Route::get('/reset', [LoginController::class, 'reset'])->name('reset');
 Route::post('/reset', [LoginController::class, 'reset'])->name('reset.proses');
-Route::get('/update', [RegisterController::class, 'update'])->name('update');
-Route::post('/update', [RegisterController::class, 'update'])->name('update.proses');
+Route::get('/update', [ProfileController::class, 'update'])->name('update');
+Route::post('/update', [ProfileController::class, 'update'])->name('update.proses');
 Route::get('/ubah', [LoginController::class, 'ubah'])->name('ubah');
 Route::post('/ubah', [LoginController::class, 'ubah'])->name('ubah.proses');
 Route::get('/absen', [AbsenController::class, 'absen'])->name('absen');
