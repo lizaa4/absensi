@@ -7,6 +7,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AbsenController;
 use App\Http\Controllers\KirimEmailController;
+use App\Http\Controller\LogoutController;
 
 Route::get('/', function () { 
     return view('welcome'); 
