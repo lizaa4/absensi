@@ -62,7 +62,7 @@
         td, th {
             border: 3px solid #809bce;
             text-align: center;
-  padding: px;
+            padding: 10px;
 }
 
 tr:nth-child(even) {
@@ -75,9 +75,9 @@ tr:nth-child(even) {
     
     <table class="center">
         <tr>
-            <th>Company</th>
-            <th>Contact</th>
-            <th>Country</th>
+            <th>Date</th>
+            <th>Geografi</th>
+            <th>id</th>
         </tr>
         
     </table>
