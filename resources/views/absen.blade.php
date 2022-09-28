@@ -43,10 +43,10 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Profile</a>
+        <a href= "{{route('login')}}"  class="btn btn-primary">profile</a>  
         </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Log out</a>
+        <li class="nav-item">            
+                        <a href= "{{route('login')}}"  class="btn btn-primary">Logout</a>          
         </li>
       </ul>
     </div>
@@ -63,7 +63,6 @@
   <div class="mt-3 d-grid">
                     <button class="btn btn-primary waves-effect waves-light" type="submit">Absen</button>
                   </div>
-
   </section>
   <!-- Akhir Jumbotron -->
   

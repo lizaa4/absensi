@@ -72,5 +72,6 @@ class LoginController extends Controller
     {
         return view('ubah-password');
     }
+    //fungsi logout   
 
 }
