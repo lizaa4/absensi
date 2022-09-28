@@ -70,6 +70,12 @@
         <div class="col-sm-12">
           <div align="center">
                         @php
+                        $date=date_create(null,timezone_open("Asia/Jakarta"));
+
+                        $tz=date_timezone_get($date);
+
+                        echo timezone_name_get($tz);
+
                         $tanggal = mktime(date('m'), date("d"), date('Y'));
                         
                         echo "Tanggal : <b> " . date("d-m-Y", $tanggal ) . " |</b>";
