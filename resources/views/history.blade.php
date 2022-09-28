@@ -36,19 +36,11 @@
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
   <div class="container">
-    <a class="navbar-brand" href="#">Absen</a>
+    <a class="navbar-brand" href="#">History</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-        <a href= "{{route('login')}}"  class="btn btn-primary">profile</a>  
-        </li>
-        <li class="nav-item">            
-                        <a href= "{{route('login')}}"  class="btn btn-primary">Logout</a>          
-        </li>
-      </ul>
     </div>
   </div>
 </nav>
@@ -57,8 +49,8 @@
   <!-- Jumbotron -->
   <section class="jumbotron text-center">
   <img src="{{asset('/images/profile-')}}img.png" alt="rofile" width="200" />
-  <h1 class="display-4">Welcome to History Absensi!/h1>
-  <p class="lead">Silahkan melakukan absensi</p>
+  <h1 class="display-4">Welcome to History Absensi! </h1>
+  <p class="lead"> sudah melaukan absensi!</p>
   <style>
 table {
   font-family: arial, sans-serif;
