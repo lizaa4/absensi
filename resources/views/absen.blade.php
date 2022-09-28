@@ -46,7 +46,10 @@
         <a href= "{{route('profile')}}"  class="btn btn-primary">profile</a>  
         </li>
         <li class="nav-item">            
-                        <a href= "{{route('login')}}"  class="btn btn-primary">Logout</a>          
+        <a href= "{{route('history')}}"  class="btn btn-primary">history</a>          
+        </li>   
+        <li class="nav-item">            
+        <a href= "{{route('login')}}"  class="btn btn-primary">Logout</a>          
         </li>
       </ul>
     </div>

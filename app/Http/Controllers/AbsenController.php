@@ -16,9 +16,10 @@ class AbsenController extends Controller
 
         return redirect()->route('login');
     }
-    public function profile(Request $request) 
+    
+    public function history(Request $request) 
     {
-        return view('index');
+        return view('history');
     } 
     
 }

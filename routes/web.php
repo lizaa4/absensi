@@ -37,6 +37,9 @@ Route::post('/absen', [AbsenController::class, 'absen'])->name('absen.proses');
 Route::post('/kirimEmail', [KirimEmailController::class, 'index'])->name('kirimEmail.proses');
 Route::post('/logout', [AbsenController::class, 'logout'])->name('logout.proses');
 Route::get('/logout', [AbsenController::class, 'logout'])->name('logout');
+Route::post('/history', [AbsenController::class, 'history'])->name('history.proses');
+Route::get('/history', [AbsenController::class, 'history'])->name('history');
+
 
  
 
