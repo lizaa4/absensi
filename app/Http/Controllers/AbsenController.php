@@ -14,5 +14,14 @@ class AbsenController extends Controller
     {
         return view('history');
     } 
+    public function destroy( $date)
+    {
+        $timezone = "Asia/Jakarta";
+        $tanggal = $date->format('Y-m-d');
+        $localtime = $date->format('H:i:s');
+        $timestamp = $date->format('Y-m-d H:i:s');
+
+        return redirect()->route('absen')->with(['Telah melakukan Absen']);
+    }
     
 }
