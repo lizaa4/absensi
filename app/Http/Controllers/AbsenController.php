@@ -25,7 +25,7 @@ class AbsenController extends Controller
     }
     public function simpanAbsen(Request $request)
     {
-        var_dump($request->all());
+        var_dump($request->all()); exit();
     }
     
 }

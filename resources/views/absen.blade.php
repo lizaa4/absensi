@@ -144,34 +144,36 @@
 
           @endif
           
-          
-
+<script src= "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js "></script>     
+<!-- <script src="{{ asset('absen/template/jquery/jquery.min.js') }}"></script> -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 <script type="text/javascript">
 
-    // function tampilLokasi() {
-    //         if (navigator.geolocation) {
-    //             navigator.geolocation.getCurrentPosition(showPositionTs);
-    //         } else {
-    //             alert("Geolocation is not supported by this browser.");
-    //         }
-    // }
+   
+$(document).ready(function() {
+  tampilLokasi();
+});
 
-    // function showPositionTs(position) {
-    //         var lat = position.coords.latitude ;
-    //         var lon = position.coords.longitude ;
-    //             alert(lat +'/'+ lon);
+  function tampilLokasi() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPositionTs);
+            } else {
+                alert("Geolocation is not supported by this browser.");
+            }
+    }
 
-    //         // $('.lattitude').val(lat);
-    //         // $('.longitude').val(lon);
-    //         // $('.lokasi').val(lat +'/'+ lon);
+   
+    function showPositionTs(position) {
 
-            
+            var lat = position.coords.latitude ;
+            var lon = position.coords.longitude ;
+                // alert(lat +'/'+ lon);
 
-
-            
+            $('#lattitude').val(lat);
+            $('#longitude').val(lon);
+            $('#lokasi').text('latitude : '  +lat +' longitude : '+ lon);
            
-    //     }
+        }
 
         function simpan() {
           //  alert('13')
@@ -179,7 +181,10 @@
                         url: '{{ route('simpanAbsen.proses') }}',
                         type: 'post',
                         data: {
-                            'lat': 'ini latitude'
+                          "_token": "{{ csrf_token() }}",
+                            'lat':   $('#lattitude').val(),
+                            'lon':   $('#longitude').val(),
+                            
                         },
                         success: function(response) {
                             if (response.status == 'berhasil') {
