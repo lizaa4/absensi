@@ -31,8 +31,7 @@
     }
   </style>
   <body>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
-  </body>
+     </body>
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
   <div class="container">
@@ -71,36 +70,9 @@
           <div align="center">
             <body>
 
-<p>lokasi anda saat ini: <span id="lokasi"></span></p>
+<p>lokasi anda saat ini: <span type="text" id="lokasi"></span></p>
 
-<script type="text/javascript">
-	$(document).ready(function() {
-		navigator.geolocation.getCurrentPosition(function (position) {
-   			 tampilLokasi(position);
-		}, function (e) {
-		    alert('Geolocation Tidak Mendukung Pada Browser Anda');
-		}, {
-		    enableHighAccuracy: true
-		});
-	});
-	function tampilLokasi(posisi) {
-		//console.log(posisi);
-		var latitude 	= posisi.coords.latitude;
-		var longitude 	= posisi.coords.longitude;
-		$.ajax({
-			type 	: 'POST',
-			url		: 'lokasi.php',
-			data 	: 'latitude='+latitude+'&longitude='+longitude,
-			success	: function (e) {
-				if (e) {
-					$('#lokasi').html(e);
-				}else{
-					$('#lokasi').html('Tidak Tersedia');
-				}
-			}
-		})
-	}
-</script>
+
 </body>
 </html>
                         @php
@@ -127,15 +99,7 @@
                             Pukul :
                             <span id="clock"></span>
                    </div>
-                   <script type="text/javascript">
-    function tampilkanwaktu(){         //fungsi ini akan dipanggil di bodyOnLoad dieksekusi tiap 1000ms = 1detik
-      var waktu = new Date();            //membuat object date berdasarkan waktu saat
-      var sh = waktu.getHours() + "";    //memunculkan nilai jam, //tambahan script + "" supaya variable sh bertipe string sehingga bisa dihitung panjangnya : sh.length    //ambil nilai menit
-      var sm = waktu.getMinutes() + "";  //memunculkan nilai detik
-      var ss = waktu.getSeconds() + "";  //memunculkan jam:menit:detik dengan menambahkan angka 0 jika angkanya cuma satu digit (0-9)
-      document.getElementById("clock").innerHTML = (sh.length==1?"0"+sh:sh) + ":" + (sm.length==1?"0"+sm:sm) + ":" + (ss.length==1?"0"+ss:ss);
-    }
-  </script>
+        
             </div>
           </div>
         </div>
@@ -144,8 +108,11 @@
         <div class="mt-5 text-center">
 
         <div>
-        <button type="button" class="btn btn-primary btn-lg">Submit</button>
+        <button type="button" class="btn btn-primary btn-lg" onclick="simpan()">Submit</button>
         </div>
+
+        <input type="text" class="form-control" id="lattitude">
+        <input type="text" class="form-control" id="longitude">
 
         </div>
         
@@ -179,5 +146,63 @@
           
           
 
-  
-  
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+<script type="text/javascript">
+
+    // function tampilLokasi() {
+    //         if (navigator.geolocation) {
+    //             navigator.geolocation.getCurrentPosition(showPositionTs);
+    //         } else {
+    //             alert("Geolocation is not supported by this browser.");
+    //         }
+    // }
+
+    // function showPositionTs(position) {
+    //         var lat = position.coords.latitude ;
+    //         var lon = position.coords.longitude ;
+    //             alert(lat +'/'+ lon);
+
+    //         // $('.lattitude').val(lat);
+    //         // $('.longitude').val(lon);
+    //         // $('.lokasi').val(lat +'/'+ lon);
+
+            
+
+
+            
+           
+    //     }
+
+        function simpan() {
+          //  alert('13')
+                    $.ajax({
+                        url: '{{ route('simpanAbsen.proses') }}',
+                        type: 'post',
+                        data: {
+                            'lat': 'ini latitude'
+                        },
+                        success: function(response) {
+                            if (response.status == 'berhasil') {
+                               alert("berhasil");
+                            
+
+                            } else if (response.status == 'gagal') {
+                              alert("gagal");
+                            }
+                        },
+                        error: function(request, status, error) {
+                        
+                            console.log(request.responseText);
+                        }
+                    });
+        }
+
+  function tampilkanwaktu(){         //fungsi ini akan dipanggil di bodyOnLoad dieksekusi tiap 1000ms = 1detik
+      var waktu = new Date();            //membuat object date berdasarkan waktu saat
+      var sh = waktu.getHours() + "";    //memunculkan nilai jam, //tambahan script + "" supaya variable sh bertipe string sehingga bisa dihitung panjangnya : sh.length    //ambil nilai menit
+      var sm = waktu.getMinutes() + "";  //memunculkan nilai detik
+      var ss = waktu.getSeconds() + "";  //memunculkan jam:menit:detik dengan menambahkan angka 0 jika angkanya cuma satu digit (0-9)
+      document.getElementById("clock").innerHTML = (sh.length==1?"0"+sh:sh) + ":" + (sm.length==1?"0"+sm:sm) + ":" + (ss.length==1?"0"+ss:ss);
+    }
+
+</script>

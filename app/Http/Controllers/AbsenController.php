@@ -23,5 +23,9 @@ class AbsenController extends Controller
 
         return redirect()->route('absen')->with(['Telah melakukan Absen']);
     }
+    public function simpanAbsen(Request $request)
+    {
+        var_dump($request->all());
+    }
     
 }
