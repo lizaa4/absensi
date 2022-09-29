@@ -110,7 +110,7 @@
                   <p>back to absen?<a href="absen" class="fw-medium text-primary"> Back now </a> </p>
                   </div>
 
-                  </div>
+                   </div>
 
 
 
