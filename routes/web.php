@@ -40,6 +40,7 @@ Route::post('/history', [AbsenController::class, 'history'])->name('history.pros
 Route::get('/history', [AbsenController::class, 'history'])->name('history');
 Route::group(['middleware' => ['auth']], function() {
     Route::get('/logout', 'LogoutController@perform')->name('logout.perform');
+    Route::post('/absen/simpan', [AbsenController::class, 'simpanAbsen'])->name('simpanAbsen.proses');
  });
 
 
