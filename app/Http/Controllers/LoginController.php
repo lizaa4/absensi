@@ -51,9 +51,9 @@ class LoginController extends Controller
     {
         // auth()-> reset();
 
-        // return redirect()->route('reset');
+        return redirect()->route('reset.proses');
 
-        return view('password.reset-password');
+        return view('reset-password');
     }
     //fungsi index 
     public function profil()

@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class KirimEmailController extends Controller
 {
-    public function index(Request $request)
+    public function reset(Request $request)
     {
         $user=Email::where('id', Auth::user()->id)->first();
         var_dump($request->data);exit();

@@ -75,15 +75,13 @@
                     <label for="Email" class="form-label">Email</label>
                     <input type="text" class="form-control" id="Email" placeholder="Masukkan email" required>
                   </div>
-
+                    
                   <div class="mt-3 d-grid">
-                  <button type="button" class="btn btn-primary">Send</button>
-                  </div>
+                    <a href="reset-password" class="btn btn-primary btn-lg">send</a>
                   <div class="mt-5 text-center">
-
+                  </div>
             </form>
-        </div>
-                                
+        </div>               
     </div>
 </div>
  <!-- end account-pages -->
