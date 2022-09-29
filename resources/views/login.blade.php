@@ -83,6 +83,10 @@
                   <div class="mt-3 d-grid">
                     <button class="btn btn-primary waves-effect waves-light" type="submit">Log In</button>
                   </div>
+                  <div class="alert alert-danger alert-dismissible fade show">
+                  <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                  <strong>Password Anda Salah</strong> Silahkan atur ulang password anda.
+                  </div>
                   <div class="mt-4 text-center">
                     <a href="forgot" class="text-muted"><i class="mdi mdi-lock me-1"></i> Forgot your password?</a>
                   </div>
