@@ -69,6 +69,40 @@
       <div class="row">
         <div class="col-sm-12">
           <div align="center">
+            <body>
+
+<p>lokasi anda saat ini: <span id="lokasi"></span></p>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		navigator.geolocation.getCurrentPosition(function (position) {
+   			 tampilLokasi(position);
+		}, function (e) {
+		    alert('Geolocation Tidak Mendukung Pada Browser Anda');
+		}, {
+		    enableHighAccuracy: true
+		});
+	});
+	function tampilLokasi(posisi) {
+		//console.log(posisi);
+		var latitude 	= posisi.coords.latitude;
+		var longitude 	= posisi.coords.longitude;
+		$.ajax({
+			type 	: 'POST',
+			url		: 'lokasi.php',
+			data 	: 'latitude='+latitude+'&longitude='+longitude,
+			success	: function (e) {
+				if (e) {
+					$('#lokasi').html(e);
+				}else{
+					$('#lokasi').html('Tidak Tersedia');
+				}
+			}
+		})
+	}
+</script>
+</body>
+</html>
                         @php
                         $date=date_create(null,timezone_open("Asia/Jakarta"));
 
@@ -86,6 +120,8 @@
                         //echo " | Pukul : <b align='center'> " . $jam . " " ." </b> ";
                         
                         $a = date ("H");
+                        
+                        
                         @endphp
                         <body onload="tampilkanwaktu();setInterval('tampilkanwaktu()', 1000);">
                             Pukul :
