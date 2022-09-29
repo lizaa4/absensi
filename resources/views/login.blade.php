@@ -10,7 +10,7 @@
   <!-- App favicon -->
   <link rel="shortcut icon" href="{{ asset('images/favicon.ico') }}">
   <!-- owl.carousel css -->
-  <link rel="stylesheet" href="{{ asset('libs/owl.carousel/assets/owl.carousel.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('li bs/owl.carousel/assets/owl.carousel.min.css') }}">
   <link rel="stylesheet" href="{{ asset('libs/owl.carousel/assets/owl.theme.default.min.css') }}">
   <!-- Bootstrap Css -->
   <link href="{{ asset('css/bootstrap.min.css') }}" id="bootstrap-style" rel="stylesheet" type="text/css" />
@@ -33,7 +33,13 @@
                     <h5 class="text-primary">Welcome !</h5>
                     <p>Sign in to continue to Absensi.</p>
                   </div>
-                </div>
+                  <div class=mt-20 text-center>
+                  @if (session('error')) 
+                    <div class="alert alert-danger"> 
+                        {{ session('error') }} 
+                    </div> 
+                @endif 
+                  </div>
                 <div class="col-5 align-self-end">
                   <img src="{{asset('/images/profile-')}}img.png" alt="" class="img-fluid">
                 </div>
@@ -63,13 +69,24 @@
                   <div class="mb-3">
                     <label for="email" class="form-label">Email</label>
                     <input type="text" name="email" class="form-control" id="email" placeholder="Masukkan Email" required>
+                    @if ($errors->has('email')) 
+                            <div class="text-danger"> 
+                                {{ $errors->first('email') }} 
+                            </div> 
+                        @endif 
                   </div>
+                
 
                   <div class="mb-3">
                     <label class="form-label">Password</label>
                     <div class="input-group auth-pass-inputgroup">
                       <input type="password" name="password" class="form-control" placeholder="Masukkan Password" aria-label="Password" aria-describedby="password-addon" required>
                       <button class="btn btn-light " type="button" id="password-addon"><i class="mdi mdi-eye-outline"></i></button>
+                      @if ($errors->has('password')) 
+                            <div class="text-danger"> 
+                                {{ $errors->first('password') }} 
+                            </div> 
+                        @endif 
                     </div>
                   </div>
 
