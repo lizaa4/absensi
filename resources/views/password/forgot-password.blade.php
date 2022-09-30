@@ -74,17 +74,18 @@
                   <div class="p-2">
                     <label for="Email" class="form-label">Email</label>
                     <input type="text" class="form-control" id="Email" placeholder="Masukkan email" required>
+                    <div class="mt-3 d-grid">
+                    <button type="button" class="btn btn-primary btn-lg" onclick="kirimEmail()">Send</button>
                   </div>
-                    
-                  <div class="mt-3 d-grid">
-                    <a href="reset-password" class="btn btn-primary btn-lg" onclick="reset()">send</a>
-                  <div class="mt-5 text-center">
-                  </div>
+         
+
             </form>
         </div>               
     </div>
 </div>
  <!-- end account-pages -->
+
+
 
   <!-- JAVASCRIPT -->
   <script src="{{ asset('libs/jquery/jquery.min.js') }}"></script>
@@ -96,6 +97,7 @@
   <!-- App js -->
   <script src="{{ asset('js/app.js') }}"></script>
   <script>
+    
       function kirimEmail(){
        
         if($('#Email').val() == ''){
@@ -104,7 +106,7 @@
           else {
     
                 let email = ($('#Email').val() $.ajax( {
-                    url: "{{ route('reset.proses') }}",
+                    url: "{{ route('kirimEmail.proses') }}",
                     type: "post",
                     data: $(".reset-password").serialize(),
                     success: function(response) {

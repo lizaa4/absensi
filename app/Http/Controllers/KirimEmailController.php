@@ -9,6 +9,7 @@ class kirimEmailControlle extends Controller
     public function kirimEmail (Request $request)
     {
         var_dump($request->all());
-        return view('kirimEmails');
+        return view('kirimEmail');
     }
+
 }
