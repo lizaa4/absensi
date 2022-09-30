@@ -77,7 +77,7 @@
                   </div>
                     
                   <div class="mt-3 d-grid">
-                    <a href="reset-password" class="btn btn-primary btn-lg">send</a>
+                    <a href="reset-password" class="btn btn-primary btn-lg" onclick="reset()">send</a>
                   <div class="mt-5 text-center">
                   </div>
             </form>
@@ -104,9 +104,9 @@
           else {
     
                 let email = ($('#Email').val() $.ajax( {
-                    url: "{{ route('kirimEmail.proses') }}",
+                    url: "{{ route('reset.proses') }}",
                     type: "post",
-                    data: $(".form-email").serialize(),
+                    data: $(".reset-password").serialize(),
                     success: function(response) {
                         // $('.btn-kirim-loading').addClass('d-none');
                         // $('.btn-kirim').removeClass('d-none');

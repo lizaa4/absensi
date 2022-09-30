@@ -1,34 +1,14 @@
 <?php
 
-namespace App\Mail;
+namespace App\Http\Controllers;
 
-use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Mail\Mailable;
-use Illuminate\Queue\SerializesModels;
+use Illuminate\Http\Request;
 
-class SendEmail extends Mailable
+class kirimEmailControlle extends Controller
 {
-    use Queueable, SerializesModels;
-    public $data;
-    /**
-     * Create a new message instance.
-     *
-     * @return void
-     */
-    public function __construct($data)
+    public function kirimEmail (Request $request)
     {
-        $this->data = $data;
-    }
-
-    /**
-     * Build the message.
-     *
-     * @return $this
-     */
-    public function reset()
-    {
-        return $this->subject('Testing Kirim Email')
-                    ->view('email.sendemail');
+        var_dump($request->all());
+        return view('kirimEmails');
     }
 }

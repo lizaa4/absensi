@@ -53,7 +53,7 @@ class LoginController extends Controller
 
         return redirect()->route('reset.proses');
 
-        return view('reset-password');
+        return view('password.forgot-password');
     }
     //fungsi index 
     public function profil()
