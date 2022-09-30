@@ -93,7 +93,28 @@
                         
                         $a = date ("H");
                         
-                        
+                       
+                        $absen_user = date("H:i:s");
+                        $absen_masuk_awal = "07:00:00";
+                        $absen_masuk_akhir ="12:20:00";
+
+                        if($absen_user < $absen_masuk_awal)
+                        {
+                          die("Anda belum boleh absen");
+                        }
+                        else
+                        {
+                          if($absen_user > $absen_masuk_akhir)
+                          {
+                            die("Anda sudah terlambat absen");
+                          }
+                          else
+                          {
+                            echo "Anda hadir pada waktu yang tepat";
+                          }
+                        }
+
+
                         @endphp
                         <body onload="tampilkanwaktu();setInterval('tampilkanwaktu()', 1000);">
                             Pukul :
