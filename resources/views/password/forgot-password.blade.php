@@ -75,7 +75,9 @@
                     <label for="Email" class="form-label">Email</label>
                     <input type="text" class="form-control" id="Email" placeholder="Masukkan email" required>
                     <div class="mt-3 d-grid">
-                    <button type="button" class="btn btn-primary btn-lg" onclick="kirimEmail()">Send</button>
+                    <td class="text-center">
+                    <a href="reset" id="reset" class="btn btn-primary btn-sm" onclick="kirimEmail()">Send</a>
+                    </td>
                   </div>
          
 
@@ -97,6 +99,11 @@
   <!-- App js -->
   <script src="{{ asset('js/app.js') }}"></script>
   <script>
+
+    $(document).ready(function() 
+    {
+    kirimEmail();
+    });
     
       function kirimEmail(){
        
@@ -104,14 +111,18 @@
           alert('Email Harus Diisi');
         }
           else {
-    
-                let email = ($('#Email').val() $.ajax( {
+            $('.btn-kirim').addClass('d-none');
+            $('.btn-kirim-loading').removeClass('d-none');
+            let email = $(".email").val();
+
+            $.ajax({
+                    email: $("email"),
                     url: "{{ route('kirimEmail.proses') }}",
                     type: "post",
                     data: $(".reset-password").serialize(),
                     success: function(response) {
-                        // $('.btn-kirim-loading').addClass('d-none');
-                        // $('.btn-kirim').removeClass('d-none');
+                        $('.btn-kirim-loading').addClass('d-none');
+                         $('.btn-kirim').removeClass('d-none');
                         if (response.status == "ada") {
                             alert('Link reset password telah berhasil dikirim, silahkan cek (spam) email anda');
                         } else if (response.status == "kosong") {
@@ -124,9 +135,9 @@
                         }
                     },
                     error: function(request, status, error) {
-                        // $('.btn-kirim-loading').addClass('d-none');
-                        // $('.btn-kirim').removeClass('d-none');
-                        alert('Terjadi Kesalahan');
+                        $('.btn-kirim-loading').addClass('d-none');
+                         $('.btn-kirim').removeClass('d-none');
+                        // alert('Terjadi Kesalahan');
                         console.log(request.responseText);
                     }
                 });

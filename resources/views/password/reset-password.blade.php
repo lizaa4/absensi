@@ -84,9 +84,10 @@
                   </div>
 
                   <div class="mt-3 d-grid">
+                  <div class="mt-5 text-center">
                     <button class="btn btn-primary waves-effect waves-light" type="submit">Reset Password</button>
                   </div>
-                  <div class="mt-5 text-center">
+    
 
             </form>
         </div>
@@ -115,5 +116,53 @@
 
   <!-- App js -->
   <script src="{{ asset('js/app.js') }}"></script>
+  <script>
+
+//     $(document).ready(function() {
+//   kirimEmail();
+// });
+    
+//       function kirimEmail(){
+       
+//         if($('#Password').val() == ''){
+//           alert('Silahkan isi password');
+//         }
+//           else {
+//             $.ajax({
+//                     password: $("password"),
+//                     url: "{{ route('kirimEmail.proses') }}",
+//                     type: "post",
+//                     data: $(".reset-password").serialize(),
+//                     success: function(response) {
+//                         $('.btn-kirim-loading').addClass('d-none');
+//                         $('.btn-kirim').removeClass('d-none');
+//                         if (response.status == "ada") {
+//                             alert('Link reset password telah berhasil dikirim, silahkan cek (spam) email anda');
+//                         } else if (response.status == "kosong") {
+                         
+//                             alert('id sudah terdaftar');
+
+//                         }
+//                          else if (response.status == "gagal") {
+//                             alert('Email reset password gagal dikirim');
+//                             console.log(response.message);
+//                         }
+//                     },
+//                     error: function(request, status, error) 
+//                     {
+//                         // $('.btn-kirim-loading').addClass('d-none');
+//                         // $('.btn-kirim').removeClass('d-none');
+//                         alert('Terjadi Kesalahan');
+//                         console.log(request.responseText);
+//                     }
+//                 });
+//             }
+
+//         }
+  
+
+
+
+//   </script>
 </body>
 </html>
