@@ -42,8 +42,10 @@ Route::post('/absen/simpan', [AbsenController::class, 'simpanAbsen'])->name('sim
 Route::group(['middleware' => ['auth']], function() {
      Route::get('/logout', 'LogoutController@perform')->name('logout.perform');
  });
+Route::post('/tampilan', [AbsenController::class, 'tampilan'])->name('tampilan');
+Route::get('/tampilan', [AbsenController::class, 'tampilan'])->name('tampilan.proses');
 
 
 
 
- 
+

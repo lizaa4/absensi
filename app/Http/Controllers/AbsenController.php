@@ -27,5 +27,9 @@ class AbsenController extends Controller
     {
         var_dump($request->all()); exit();
     }
+    public function tampilan(Request $request)
+    {
+        return view('tampilan');
+    }
     
 }
