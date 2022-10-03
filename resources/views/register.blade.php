@@ -103,12 +103,12 @@
                     </div>
                   </div>
 
-                  <div class="form-check">
+                  <!-- <div class="form-check">
                     <input class="form-check-input" type="checkbox" id="remember-check">
                     <label class="form-check-label" for="remember-check">
                       Ingat saya
                     </label>
-                  </div>
+                  </div> -->
 
                   <div class="mt-3 d-grid">
                     <button class="btn btn-primary waves-effect waves-light" type="submit">simpan</button>
