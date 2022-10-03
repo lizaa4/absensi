@@ -125,14 +125,14 @@
           </div>
         </div>
         
-
+<!-- 
         <div class="mt-5 text-center">
         <br><input type="text" class="form-control" id="lattitude"></br>
        <br> <input type="text" class="form-control" id="longitude"></br>
 
-        </div>
+        </div> -->
         <div>
-        <button type="button" class="btn btn-primary btn-lg" onclick="simpan()">Submit</button>
+       <br> <button type="button" class="btn btn-primary btn-lg" onclick="simpan()">Submit</button></br>
         </div> 
         <div class="mt-5 text-center">
 
