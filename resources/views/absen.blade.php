@@ -95,8 +95,8 @@
                         
                        
                         $absen_user = date("H:i:s");
-                        $absen_masuk_awal = "12:00:00";
-                        $absen_masuk_akhir ="16:20:00";
+                        $absen_masuk_awal = "07:30:00";
+                        $absen_masuk_akhir ="16:00:00";
 
                         if($absen_user < $absen_masuk_awal)
                         {
@@ -127,16 +127,13 @@
         
 
         <div class="mt-5 text-center">
+        <br><input type="text" class="form-control" id="lattitude"></br>
+       <br> <input type="text" class="form-control" id="longitude"></br>
 
+        </div>
         <div>
         <button type="button" class="btn btn-primary btn-lg" onclick="simpan()">Submit</button>
-        </div>
-
-        <input type="text" class="form-control" id="lattitude">
-        <input type="text" class="form-control" id="longitude">
-
-        </div>
-        
+        </div> 
         <div class="mt-5 text-center">
 
 
