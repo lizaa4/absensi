@@ -123,14 +123,13 @@
         
             </div>
           </div>
-        </div>
-        
+        </div>       
 <!-- 
         <div class="mt-5 text-center">
         <br><input type="text" class="form-control" id="lattitude"></br>
        <br> <input type="text" class="form-control" id="longitude"></br>
-
         </div> -->
+      
         <div>
        <br> <button type="button" class="btn btn-primary btn-lg" onclick="simpan()">Submit</button></br>
         </div> 
