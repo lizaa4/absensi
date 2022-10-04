@@ -41,6 +41,19 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+        <a href= "{{route('profile')}}"  class="btn btn-primary">profile</a>  
+        </li>
+        <li class="nav-item">            
+        <a href= "{{route('history')}}"  class="btn btn-primary">history</a>          
+        </li>   
+        <li class="nav-item">            
+        <a href= "{{route('login')}}"  class="btn btn-primary">Logout</a>          
+        </li>
+      </ul>
+    </div>
+    <div class="collapse navbar-collapse" id="navbarNav">
     </div>
   </div>
 </nav>
@@ -54,6 +67,8 @@
   
   <style>
       table{
+          margin-left: auto;
+          margin-right:auto;
           font-family: arial, sans-serif;
           border-collapse: collapse;
           width: 65%;
@@ -72,8 +87,8 @@ tr:nth-child(even) {
 <body>
     
     <h2>History Absensi</h2>
-    
-    <table class="center">
+    <div class="center">
+    <table>
         <tr>
             <th>Date</th>
             <th>Geografi</th>
@@ -81,6 +96,7 @@ tr:nth-child(even) {
         </tr>
         
     </table>
+    </div>
 </body>
 </style>
 

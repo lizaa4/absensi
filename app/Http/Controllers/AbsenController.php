@@ -22,11 +22,17 @@ class AbsenController extends Controller
     //     $localtime = $date->format('H:i:s');
     //     $timestamp = $date->format('Y-m-d H:i:s');
 
+<<<<<<< HEAD
+        return redirect()->route('tampilan')->with(['Telah melakukan Absen']);
+    }
+=======
     //     return redirect()->route('absen')->with(['Telah melakukan Absen']);
     // }
+>>>>>>> fe5fbb84e60c096c5cdb81e4ecb565235f3fce48
     public function simpanAbsen(Request $request)
     {
         var_dump($request->all()); exit();
+        return view('tampilan');
     }
     public function Absensi(Request $request) 
     {   
