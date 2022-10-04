@@ -15,7 +15,8 @@ return new class extends Migration
     {
         Schema::create('tb_absensi', function (Blueprint $table) {
             $table->id('id_absensi');
-            $table->string('id_detail_user');
+            $table->string('lattitude', 70);
+            $table->string('longitude', 70);
             $table->string('koordinat',100 );
             $table->timestamps();
         });

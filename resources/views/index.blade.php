@@ -41,6 +41,19 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+        <a href= "{{route('profile')}}"  class="btn btn-primary">profile</a>  
+        </li>
+        <li class="nav-item">            
+        <a href= "{{route('history')}}"  class="btn btn-primary">history</a>          
+        </li>   
+        <li class="nav-item">            
+        <a href= "{{route('login')}}"  class="btn btn-primary">Logout</a>          
+        </li>
+      </ul>
+    </div>
+    <div class="collapse navbar-collapse" id="navbarNav">
     </div>
       </div>
       </nav>
@@ -51,6 +64,8 @@
   <h1 class="display-4">Welcome</h1>
   <h1>{{$user->name}}</h1>
   <p>{{$user->name}}</p>
+  <p>{{$user->email}}</p>
+  <p>{{$user->perusahaan}}</p>
   <div>
   <a href="absen" class="fw-medium text-primary">kembali ke absen</a>
   </div>
