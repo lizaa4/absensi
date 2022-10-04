@@ -67,7 +67,14 @@
     <div class="content">
       <div class="row">
         <div class="col-sm-12">
-          <div align="center">
+          <div class="align-center">
+          <div class=mt-20 text-center>
+                  @if (session('error')) 
+                    <div class="alert alert-danger"> 
+                        {{ session('error') }} 
+                    </div> 
+                @endif 
+                  </div>
             <body>
 
 <p>lokasi anda saat ini: <span type="text" id="lokasi"></span></p>
@@ -135,8 +142,9 @@
        <br> <input type="text" class="form-control" id="longitude"></br>
 
         </div> -->
-         <div class="btn btn-primary btn-lg">
-              <div class="simpanAbsen.proses" onclick="simpan()">Submit</div>
+        <div class="mt-3 d-grid">
+      <a href="tampilan" class="btn btn-primary waves-effect waves-light" type="submit">Submit</a>
+   </div>
             </div>
               
 

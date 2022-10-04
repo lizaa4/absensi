@@ -1,141 +1,244 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<title>Tampilan</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="tampilan.blade.php">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
-.w3-sidebar {
-  z-index: 3;
-  width: 250px;
-  top: 43px;
-  bottom: 0;
-  height: inherit;
-}
-</style>
-</head>
-<body>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>tampilan</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <!-- My CSS -->
+    <link rel="stylesheet" href="tabel.blade.php">
+  </head>
+  <style>
+    body {
+        background-image: url('https://i.pinimg.com/originals/fd/b9/f9/fdb9f947f4653d9608ca47cde736e7a7.jpg'); 
+        background-repeat: no-repeat; 
+        background-attachment: fixed;   
+        background-size: cover; 
+        padding-bottom: 20px; 
+        padding-left: 100px; 
+        padding-top: 100px; 
+        padding-right: 100px;
+        min-height: 2000px;
+    }
+    .jumbotron {
+        padding-top: 2rem;
+        background-color: #e2edff;
+    }
 
-<!-- Navbar -->
-<div class="w3-top">
-  <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
-    <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
-    <a href="#" class="w3-bar-item w3-button w3-theme-l1">Logo</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white">About</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Values</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white">News</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Contact</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white">Clients</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white">Partners</a>
+    #projects {
+        background-color: #e2edff;
+    }
+  </style>
+  <body>
+     </body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <div class="container">
+    <a class="navbar-brand" href="#">tampilan</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+        <a href= "{{route('profile')}}"  class="btn btn-primary">profile</a>  
+        </li>
+        <li class="nav-item">            
+        <a href= "{{route('history')}}"  class="btn btn-primary">history</a>          
+        </li>   
+        <li class="nav-item">            
+        <a href= "{{route('login')}}"  class="btn btn-primary">Logout</a>          
+        </li>
+      </ul>
+    </div>
   </div>
-</div>
-
-<!-- Sidebar -->
-<nav class="w3-sidebar w3-bar-block w3-collapse w3-large w3-theme-l5 w3-animate-left" id="mySidebar">
-  <a href="javascript:void(0)" onclick="w3_close()" class="w3-right w3-xlarge w3-padding-large w3-hover-black w3-hide-large" title="Close Menu">
-    <i class="fa fa-remove"></i>
-  </a>
-  <h4 class="w3-bar-item"><b>Menu</b></h4>
-  <a class="w3-bar-item w3-button w3-hover-black" href="#">Link</a>
-  <a class="w3-bar-item w3-button w3-hover-black" href="#">Link</a>
-  <a class="w3-bar-item w3-button w3-hover-black" href="#">Link</a>
-  <a class="w3-bar-item w3-button w3-hover-black" href="#">Link</a>
 </nav>
+  <!-- Akhir Navbar -->
 
-<!-- Overlay effect when opening sidebar on small screens -->
-<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+  <!-- Jumbotron -->
+  <section class="jumbotron text-center">
+  <img src="{{asset('/images/profile-')}}img.png" alt="rofile" width="200" />
+  <h1 class="display-4">Hai</h1>
+  <h1>{{$user->name}}</h1>
+  <p>{{$user->name}}</p>
+  <div class="mt-3 d-grid">
+  <p class="lead">Anda telah melakukan absensi pada pukul{{$absen_user->date}}pada lokasi{{$date->timezone_location_get}}</p>
+  <div class="register-box-body">
+    <h2 style="text-align: center"><b>Absen Masuk Data Center</b></h2>
+    <div class="content">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="align-center">
+          <div class=mt-20 text-center>
+                  @if (session('error')) 
+                    <div class="alert alert-danger"> 
+                        {{ session('error') }} 
+                    </div> 
+                @endif 
+                  </div>
+            <body>
 
-<!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
-<div class="w3-main" style="margin-left:250px">
+<p>lokasi anda saat ini: <span type="text" id="lokasi"></span></p>
 
-  <div class="w3-row w3-padding-64">
-    <div class="w3-twothird w3-container">
- 
-    </div>
-    <div class="w3-third w3-container">
-      <p class="w3-border w3-padding-large w3-padding-32 w3-center">AD</p>
-      <p class="w3-border w3-padding-large w3-padding-64 w3-center">AD</p>
-    </div>
-  </div>
-
-  <div class="w3-row">
-    <div class="w3-twothird w3-container">
-      <h1 class="w3-text-teal">Heading</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum
-        dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    </div>
-    <div class="w3-third w3-container">
-      <p class="w3-border w3-padding-large w3-padding-32 w3-center">AD</p>
-      <p class="w3-border w3-padding-large w3-padding-64 w3-center">AD</p>
-    </div>
-  </div>
-
-  <div class="w3-row w3-padding-64">
-    <div class="w3-twothird w3-container">
-      <h1 class="w3-text-teal">Heading</h1>
-      
-    </div>
-    <div class="w3-third w3-container">
-      <p class="w3-border w3-padding-large w3-padding-32 w3-center">AD</p>
-      <p class="w3-border w3-padding-large w3-padding-64 w3-center">AD</p>
-    </div>
-  </div>
-
-  <!-- Pagination -->
-  <div class="w3-center w3-padding-32">
-    <div class="w3-bar">
-      <a class="w3-button w3-black" href="#">1</a>
-      <a class="w3-button w3-hover-black" href="#">2</a>
-      <a class="w3-button w3-hover-black" href="#">3</a>
-      <a class="w3-button w3-hover-black" href="#">4</a>
-      <a class="w3-button w3-hover-black" href="#">5</a>
-      <a class="w3-button w3-hover-black" href="#">»</a>
-    </div>
-  </div>
-
-  <footer id="myFooter">
-    <div class="w3-container w3-theme-l2 w3-padding-32">
-      <h4>Footer</h4>
-    </div>
-
-    <div class="w3-container w3-theme-l1">
-      <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">absen</a></p>
-    </div>
-  </footer>
-
-<!-- END MAIN -->
-</div>
-
-<script>
-// Get the Sidebar
-var mySidebar = document.getElementById("mySidebar");
-
-// Get the DIV with overlay effect
-var overlayBg = document.getElementById("myOverlay");
-
-// Toggle between showing and hiding the sidebar, and add overlay effect
-function w3_open() {
-  if (mySidebar.style.display === 'block') {
-    mySidebar.style.display = 'none';
-    overlayBg.style.display = "none";
-  } else {
-    mySidebar.style.display = 'block';
-    overlayBg.style.display = "block";
-  }
-}
-
-// Close the sidebar with the close button
-function w3_close() {
-  mySidebar.style.display = "none";
-  overlayBg.style.display = "none";
-}
-</script>
 
 </body>
 </html>
+                        @php
+                        $date=date_create(null,timezone_open("Asia/Jakarta"));
+
+                        $tz=date_timezone_get($date);
+
+                        echo timezone_name_get($tz);
+
+                        $tanggal = mktime(date('m'), date("d"), date('Y'));
+                        
+                        echo "Tanggal : <b> " . date("d-m-Y", $tanggal ) . " |</b>";
+                        
+                        date_default_timezone_set("Asia/Jakarta");
+                        
+                        $jam = date ("H:i:s");
+                        //echo " | Pukul : <b align='center'> " . $jam . " " ." </b> ";
+                        
+                        $a = date ("H");
+                        
+                       
+                        $absen_user = date("H:i:s");
+                        $absen_masuk_awal = "07:30:00";
+
+                        $absen_masuk_akhir ="16:20:00";
+
+                        $absen_masuk_akhir ="16:00:00";
+
+
+                        if($absen_user < $absen_masuk_awal)
+                        {
+                          die("Anda belum boleh absen");
+                        }
+                        else
+                        {
+                          if($absen_user > $absen_masuk_akhir)
+                          {
+                            die("Anda sudah terlambat absen");
+                          }
+                          else
+                          {
+                            echo "Anda hadir pada waktu yang tepat";
+                          }
+                        }
+
+
+                        @endphp
+                        <body onload="tampilkanwaktu();setInterval('tampilkanwaktu()', 1000);">
+                            Pukul :
+                            <span id="clock"></span>
+                   </div>
+        
+            </div>
+          </div>
+        </div>
+        
+<!-- 
+        <div class="mt-5 text-center">
+        <br><input type="text" class="form-control" id="lattitude"></br>
+       <br> <input type="text" class="form-control" id="longitude"></br>
+
+        </div> -->
+        <div class="mt-3 d-grid">
+      <a href="tampilan" class="btn btn-primary waves-effect waves-light" type="submit">Submit</a>
+   </div>
+            </div>
+              
+
+        <div>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="0.8" d="M0,96L34.3,112C68.6,128,137,160,206,149.3C274.3,139,343,85,411,90.7C480,96,549,160,617,160C685.7,160,754,96,823,101.3C891.4,107,960,181,1029,192C1097.1,203,1166,149,1234,117.3C1302.9,85,1371,75,1406,69.3L1440,64L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z"></path></svg>
+        </div>
+
+
+        </div>
+      
+      </section>
+      <!-- Akhir Jumbotron -->@section('content')
+      
+      <div class="container">
+        <form action="/absentap/simpan/" method="POST" enctype="multipart/form-data" >
+          @csrf
+          @if (session('pesan'))
+          <div class="alert alert-success alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <h4><i class="icon fa fa-check"></i>Success</h4>
+            {{ session('pesan') }}.
+          </div>
+
+
+
+
+          @endif
+          
+<script src= "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js "></script>     
+<!-- <script src="{{ asset('absen/template/jquery/jquery.min.js') }}"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+<script type="text/javascript">
+
+   
+$(document).ready(function() {
+  tampilLokasi();
+});
+
+  function tampilLokasi() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPositionTs);
+            } else {
+                alert("Geolocation is not supported by this browser.");
+            }
+    }
+
+   
+    function showPositionTs(position) {
+
+            var lat = position.coords.latitude ;
+            var lon = position.coords.longitude ;
+                // alert(lat +'/'+ lon);
+
+            $('#lattitude').val(lat);
+            $('#longitude').val(lon);
+            $('#lokasi').text('latitude : '  +lat +' longitude : '+ lon);
+           
+        }
+
+        function simpan() {
+          //  alert('13')
+                    $.ajax({
+                        url: '{{ route('simpanAbsen.proses') }}',
+                        type: 'post',
+                        data: {
+                          "_token": "{{ csrf_token() }}",
+                            'lat':   $('#lattitude').val(),
+                            'lon':   $('#longitude').val(),
+                            
+                        },
+                        success: function(response) {
+                            if (response.status == 'berhasil') {
+                               alert("berhasil");
+                            
+
+                            } else if (response.status == 'gagal') {
+                              alert("gagal");
+                            }
+                        },
+                        error: function(request, status, error) {
+                        
+                            console.log(request.responseText);
+                        }
+                    });
+        }
+
+  function tampilkanwaktu(){         //fungsi ini akan dipanggil di bodyOnLoad dieksekusi tiap 1000ms = 1detik
+      var waktu = new Date();            //membuat object date berdasarkan waktu saat
+      var sh = waktu.getHours() + "";    //memunculkan nilai jam, //tambahan script + "" supaya variable sh bertipe string sehingga bisa dihitung panjangnya : sh.length    //ambil nilai menit
+      var sm = waktu.getMinutes() + "";  //memunculkan nilai detik
+      var ss = waktu.getSeconds() + "";  //memunculkan jam:menit:detik dengan menambahkan angka 0 jika angkanya cuma satu digit (0-9)
+      document.getElementById("clock").innerHTML = (sh.length==1?"0"+sh:sh) + ":" + (sm.length==1?"0"+sm:sm) + ":" + (ss.length==1?"0"+ss:ss);
+    }
+
+</script>
