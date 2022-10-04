@@ -161,7 +161,7 @@
       <!-- Akhir Jumbotron -->@section('content')
       
       <div class="container">
-        <form action="/absentap/simpan/" method="POST" enctype="multipart/form-data" >
+        <form action="tampilan" method="POST" enctype="multipart/form-data" >
           @csrf
           @if (session('pesan'))
           <div class="alert alert-success alert-dismissible">

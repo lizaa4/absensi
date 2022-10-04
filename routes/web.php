@@ -39,13 +39,12 @@ Route::post('/kirimEmail', [KirimEmailController::class, 'kirimEmail'])->name('k
 Route::post('/history', [AbsenController::class, 'history'])->name('history.proses');
 Route::get('/history', [AbsenController::class, 'history'])->name('history');
 Route::post('/absen/simpan', [AbsenController::class, 'simpanAbsen'])->name('simpanAbsen.proses');
-Route::get('/absen/simpan', [AbsenController::class, 'tampilan'])->name('tampilan.proses');
-
 Route::group(['middleware' => ['auth']], function() {
      Route::get('/logout', 'LogoutController@perform')->name('logout.perform');
  });
  
-
+Route::post('/tampilan', [AbsenController::class, 'tampilan'])->name('tampilan');
+Route::get('/tampilan', [AbsenController::class, 'tampilan'])->name('tampilan');
 
 
 
