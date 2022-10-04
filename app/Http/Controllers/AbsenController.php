@@ -36,7 +36,7 @@ class AbsenController extends Controller
            'longitude'  => 'required',
            'koordinat'  => 'required'
             ]);
-           $absensi = new Absen();
+           $absensi = new Absensi();
            $absensi->koordinat = $request->access;
            $absensi->lattitude = $request->lattitude;
            $absensi->longitude = $request->longitude;
