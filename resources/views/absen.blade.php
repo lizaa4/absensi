@@ -106,8 +106,6 @@
 
                         $absen_masuk_akhir ="16:20:00";
 
-                        $absen_masuk_akhir ="16:00:00";
-
 
                         if($absen_user < $absen_masuk_awal)
                         {
