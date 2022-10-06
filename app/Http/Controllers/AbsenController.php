@@ -44,6 +44,12 @@ class AbsenController extends Controller
 
          
         }
+        public function tampilan() {
+            return view('tampilan');
+        }
+        public function tampilan1() {
+            return view('tampilan1');
+        }
 
     }
 
