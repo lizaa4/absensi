@@ -17,6 +17,8 @@ class Absensi extends Model
     protected $fillable = [
         'id_absensi',
         'id_detail_user',
-        'koordinat'
+        'lattitude',
+        'longitude'
+        
     ];
 }

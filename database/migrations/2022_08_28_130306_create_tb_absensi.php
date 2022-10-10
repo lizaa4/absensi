@@ -17,7 +17,6 @@ return new class extends Migration
             $table->id('id_absensi');
             $table->string('lattitude', 70);
             $table->string('longitude', 70);
-            $table->string('koordinat',100 );
             $table->timestamps();
         });
     }
