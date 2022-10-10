@@ -26,8 +26,8 @@ Route::get('/forgot', [LoginController::class, 'forgot'])->name('forgot');
 Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
 Route::get('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
 Route::post('/profile/update', [ProfileController::class, 'updateproses'])->name('profile.update.proses');
-Route::get('/reset', [kirimEmailController::class, 'reset'])->name('reset');
-Route::post('/reset', [kirimEmailController::class, 'reset'])->name('reset.proses');
+Route::get('/reset', [LoginController::class, 'reset'])->name('reset');
+Route::post('/reset', [LoginController::class, 'reset'])->name('reset.proses');
 Route::get('/update', [ProfileController::class, 'update'])->name('update');
 Route::post('/update', [ProfileController::class, 'update'])->name('update.proses');
 Route::get('/ubah', [LoginController::class, 'ubah'])->name('ubah');
@@ -39,13 +39,12 @@ Route::post('/kirimEmail', [KirimEmailController::class, 'kirimEmail'])->name('k
 Route::post('/history', [AbsenController::class, 'history'])->name('history.proses');
 Route::get('/history', [AbsenController::class, 'history'])->name('history');
 Route::post('/absen/simpan', [AbsenController::class, 'simpanAbsen'])->name('simpanAbsen.proses');
-Route::get('/absen/simpan', [AbsenController::class, 'tampilan'])->name('tampilan.proses');
-
 Route::group(['middleware' => ['auth']], function() {
      Route::get('/logout', 'LogoutController@perform')->name('logout.perform');
  });
  
-
+Route::post('/tampilan', [AbsenController::class, 'tampilan'])->name('tampilan1.proses');
+Route::get('/tampilan', [AbsenController::class, 'tampilan'])->name('tampilan');
 
 
 

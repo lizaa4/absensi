@@ -69,14 +69,14 @@
                   </div>
                 </a>
                 </div>
-                <form  method="POST" class="form-email">
+                <form action="reset" method="POST" class="form-email">
                   <div class="form-group">
                   <div class="p-2">
                     <label for="Email" class="form-label">Email</label>
                     <input type="text" class="form-control" id="Email" placeholder="Masukkan email" required>
                     <div class="mt-3 d-grid">
                     <td class="text-center">
-                    <a href="reset" id="reset" class="btn btn-primary btn-sm" onclick="kirimEmail()">Send</a>
+                    <button id="reset" type="button" class="btn btn-primary btn-sm" onclick="kirimEmail();">Send</button>
                     </td>
                   </div>
          
@@ -100,7 +100,7 @@
   <script src="{{ asset('js/app.js') }}"></script>
   <script>
 
-    $(document).ready(function() 
+    $(document).ready(function(reset) 
     {
     kirimEmail();
     });
@@ -140,6 +140,11 @@
                         // alert('Terjadi Kesalahan');
                         console.log(request.responseText);
                     }
+                });
+                const reset = document.getElementById('reset');
+                reset.addEventListener('click', function(){
+                    clearTimeout(reset);
+                    console.log('selesai');
                 });
             }
 

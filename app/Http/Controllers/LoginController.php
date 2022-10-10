@@ -42,7 +42,7 @@ class LoginController extends Controller
     {
         //auth()-> forgot();
 
-        //return redirect()->route('forgot');
+        // return redirect()->route('forgot');
 
         return view('password.forgot-password');
     }
@@ -51,7 +51,7 @@ class LoginController extends Controller
     {
         // auth()-> reset();
 
-        return redirect()->route('reset.proses');
+         return redirect()->route('reset.proses');
 
         return view('reset-password');
     }
