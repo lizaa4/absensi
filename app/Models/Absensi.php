@@ -1,5 +1,3 @@
-(16 sloc)  379 Bytes
-
 <?php
 
 namespace App\Models;
