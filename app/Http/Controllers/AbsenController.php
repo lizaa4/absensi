@@ -37,7 +37,10 @@ class AbsenController extends Controller
         
             ]);
            $absensi = new Absensi();
+<<<<<<< HEAD
           
+=======
+>>>>>>> cbccb2251212027a58821d0dc1dcde0f66bd158e
            $absensi->lattitude = $request->lattitude;
            $absensi->longitude = $request->longitude;
            $absensi->save();
