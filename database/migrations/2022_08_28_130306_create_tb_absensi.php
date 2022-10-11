@@ -15,10 +15,13 @@ return new class extends Migration
     {
         Schema::create('tb_absensi', function (Blueprint $table) {
             $table->id('id_absensi');
+            // karena setiap tabel ada yang namanya primary key(sebagai identifier (pengenal dan pembeda dan bersifat uniqe))
+            $table->biginteger('id_user');
             $table->string('lattitude', 70);
             $table->string('longitude', 70);
-            $table->string('koordinat',100 );
             $table->timestamps();
+        //mewakili created_at dan update_at  
+    
         });
     }
 

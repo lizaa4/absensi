@@ -14,21 +14,22 @@
   <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js" integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg=" crossorigin=""></script>
 
 	<style>
-		html, body {
+    body {margin: 0;
       background-image: url('https://i.pinimg.com/originals/fd/b9/f9/fdb9f947f4653d9608ca47cde736e7a7.jpg'); 
       background-repeat: no-repeat; 
       background-attachment: fixed;   
       background-size: cover; 
-      padding-bottom: 20px; 
-      padding-left: 100px; 
-      padding-top: 100px; 
-      padding-right: 100px;
-      min-height: 2000px;
-      margin: 0;
-	
+      padding-bottom: 0; 
+      padding-left: 0; 
+      padding-top: 0; 
+      padding-right: 0;
+      
     }
-    .jumbotron {
-      padding-top: 2rem;
+
+     .jumbotron {
+      padding-top: 20px;
+      margin-top: 30px;
+      height: 1500px;
       background-color: #e2edff;
     }
 
@@ -41,20 +42,67 @@
     #projects {
         background-color: #e2edff;
     }
+
+  ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #e2edff;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  }
+
+  li {
+  float: left;
+  }
+
+  li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  margin: 0;
+  text-decoration: none;
+  }
+
+  li a:hover:not(.active) {
+  background-color: #ddd;
+  }
+
+  .active {
+  background-color: #04AA6D;
+  }
+	
+   
 	</style>
 
 	
 </head>
 <body>
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
-  <div class="container">
-  <a class="navbar-brand" href="#">Tampilan</a>
-  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-  <span class="navbar-toggler-icon"></span>
-  </button>
-  </div>
-  </nav>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+        <div class="container">
+        <a class="navbar-brand" href="{{route('absen')}}">Tampilan</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+        <li class="nav-item"> 
+        <a class="active" href="{{route('absen')}}">Home</a>
+        </li>
+        <li class="nav-item"> 
+        <a href="{{route('history')}}">History</a>
+        </li>
+        <li class="nav-item"> 
+        <a href="{{route('login')}}">Logout</a>
+        </li> 
+        </ul>
+        </div>
+        </div>
+        </nav>
   <!-- Akhir Navbar -->
 
   <!-- Jumbotron -->
@@ -73,7 +121,7 @@
   <div id="map" style="width: 900px; height: 500px;"></div>
   <script>
 
-	var map = L.map('map').setView([-7.28481921903077, 112.78121355255732], 13);
+	var map = L.map('map').setView([-7.28481921903077, 112.78121355255732], 11);
 
 	var tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 		maxZoom: 19,
@@ -81,7 +129,7 @@
 	}).addTo(map);
 
 	var marker = L.marker([-7.28481921903077, 112.78121355255732]).addTo(map)
-		.bindPopup('<b>Telkom Indonesia regional 5</b><br />Ini adalah tempat magangku.').openPopup();
+		.bindPopup('<b>Telkom Landmark Tower</b><br />Ini adalah tempat magangku.').openPopup();
 
 
 	var popup = L.popup()

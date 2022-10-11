@@ -10,25 +10,68 @@
     <link rel="stylesheet" href="tabel.blade.php">
   </head>
   <style>
-    body {
-        background-image: url('https://i.pinimg.com/originals/fd/b9/f9/fdb9f947f4653d9608ca47cde736e7a7.jpg'); 
-        background-repeat: no-repeat; 
-        background-attachment: fixed;   
-        background-size: cover; 
-        padding-bottom: 20px; 
-        padding-left: 100px; 
-        padding-top: 100px; 
-        padding-right: 100px;
-        min-height: 2000px;
-    }
-    .jumbotron {
-        padding-top: 2rem;
-        background-color: #e2edff;
+    body {margin: 0;
+      background-image: url('https://i.pinimg.com/originals/fd/b9/f9/fdb9f947f4653d9608ca47cde736e7a7.jpg'); 
+      background-repeat: no-repeat; 
+      background-attachment: fixed;   
+      background-size: cover; 
+      padding-bottom: 0; 
+      padding-left: 0; 
+      padding-top: 0; 
+      padding-right: 0;
+      
     }
 
+     .jumbotron {
+      padding-top: 20px;
+      margin-top: 30px;
+      height: 1500px;
+      background-color: #e2edff;
+    }
+
+		.leaflet-container {
+      height: 400px;
+			width: 600px;
+			max-width: 100%;
+			max-height: 100%;
+		}
     #projects {
         background-color: #e2edff;
     }
+
+  ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #e2edff;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  }
+
+  li {
+  float: left;
+  }
+
+  li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  margin: 0;
+  text-decoration: none;
+  }
+
+  li a:hover:not(.active) {
+  background-color: #ddd;
+  }
+
+  .active {
+  background-color: #04AA6D;
+  }
+	
+   
   </style>
   <body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>

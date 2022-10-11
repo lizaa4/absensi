@@ -75,8 +75,8 @@
                     <label for="Email" class="form-label">Email</label>
                     <input type="text" class="form-control" id="Email" placeholder="Masukkan email" required>
                     <div class="mt-3 d-grid">
-                    <td class="text-center">
-                    <button id="reset" type="button" class="btn btn-primary btn-sm" onclick="kirimEmail();">Send</button>
+                    <td class="text-center"> 
+                    <a href= "{{route('reset')}}"  class="btn btn-primary btn-sm" onclick="kirimEmail();">Send</a>          
                     </td>
                   </div>
          
@@ -114,6 +114,10 @@
             $('.btn-kirim').addClass('d-none');
             $('.btn-kirim-loading').removeClass('d-none');
             let email = $(".email").val();
+
+      function kirimEmail(){
+        alert('kirimEmail');
+      }      
 
             $.ajax({
                     email: $("email"),

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Absensi;
+use Illuminate\Support\Facades\Auth;
 
 class AbsenController extends Controller
 {
@@ -33,22 +34,33 @@ class AbsenController extends Controller
            'access'   => 'requied',
            'lattitude'  => 'required',
            'longitude'  => 'required',
-           'koordinat'  => 'required'
+        
             ]);
            $absensi = new Absensi();
-           $absensi->koordinat = $request->access;
+          
            $absensi->lattitude = $request->lattitude;
            $absensi->longitude = $request->longitude;
            $absensi->save();
+
+           return redirect()->route('absen')->with(['success' => 'Data Berhasil Disimpan!']);  
         
 
          
         }
         public function tampilan() {
-            return view('tampilan');
+            return view('tampilan1');
         }
         public function tampilan1() {
             return view('tampilan1');
+        }
+        public function simpan(Request $request) {
+            // dd($request->all());
+            $absensi = new Absensi();
+            // instansiasi (bikin objek baru/manggil objek)
+            $absensi->id_user =  Auth::user()->id;
+            $absensi->lattitude = $request->lat;
+            $absensi->longitude = $request->lon;
+            $absensi->save();
         }
 
     }

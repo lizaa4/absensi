@@ -10,28 +10,71 @@
     <link rel="stylesheet" href="tabel.blade.php">
   </head>
   <style>
-    body {
-        background-image: url('https://i.pinimg.com/originals/fd/b9/f9/fdb9f947f4653d9608ca47cde736e7a7.jpg'); 
-        background-repeat: no-repeat; 
-        background-attachment: fixed;   
-        background-size: cover; 
-        padding-bottom: 20px; 
-        padding-left: 100px; 
-        padding-top: 100px; 
-        padding-right: 100px;
-        min-height: 2000px;
-    }
-    .jumbotron {
-        padding-top: 2rem;
-        background-color: #e2edff;
+    body {margin: 0;
+      background-image: url('https://i.pinimg.com/originals/fd/b9/f9/fdb9f947f4653d9608ca47cde736e7a7.jpg'); 
+      background-repeat: no-repeat; 
+      background-attachment: fixed;   
+      background-size: cover; 
+      padding-bottom: 0; 
+      padding-left: 0; 
+      padding-top: 0; 
+      padding-right: 0;
+      
     }
 
+     .jumbotron {
+      padding-top: 20px;
+      margin-top: 30px;
+      height: 1500px;
+      background-color: #e2edff;
+    }
+
+		.leaflet-container {
+      height: 400px;
+			width: 600px;
+			max-width: 100%;
+			max-height: 100%;
+		}
     #projects {
         background-color: #e2edff;
     }
+
+  ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #e2edff;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  }
+
+  li {
+  float: left;
+  }
+
+  li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  margin: 0;
+  text-decoration: none;
+  }
+
+  li a:hover:not(.active) {
+  background-color: #ddd;
+  }
+
+  .active {
+  background-color: #04AA6D;
+  }
+	
+   
   </style>
   <body>
-     </body>
+    
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
   <div class="container">
@@ -42,13 +85,13 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-        <a href= "{{route('profile')}}"  class="btn btn-primary">profile</a>  
+        <a href= "{{route('profile')}}">profile</a>  
         </li>
         <li class="nav-item">            
-        <a href= "{{route('history')}}"  class="btn btn-primary">history</a>          
+        <a href= "{{route('history')}}">history</a>          
         </li>   
         <li class="nav-item">            
-        <a href= "{{route('login')}}"  class="btn btn-primary">Logout</a>          
+        <a href= "{{route('login')}}">Logout</a>          
         </li>
       </ul>
     </div>
@@ -125,31 +168,14 @@
         
             </div>
           </div>
-        </div>
-        
-<!-- 
-        <div class="mt-5 text-center">
-        <br><input type="text" class="form-control" id="lattitude"></br>
-       <br> <input type="text" class="form-control" id="longitude"></br>
-<<<<<<< HEAD
-
-        </div> -->
-        <div class="mt-3 d-grid">
-                    <button class="btn btn-primary waves-effect waves-light" type="submit">Submit</button>
-                  </div>
-              
-            </div>
-              
-
-=======
-        </div> -->
-      
-        <div>
-       <br> <button type="button" class="btn btn-primary btn-lg" onclick="simpan()">Submit</button></br>
-        </div> 
-        <div class="mt-5 text-center">
-
->>>>>>> 777d4fd53df5baf1e322e4745d38a6d29121f4f8
+          
+          <div class="mt-4 text-center">
+          <div class="nav-item">            
+                
+                      </div>
+          
+                        
+</a>
         <div>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="0.8" d="M0,96L34.3,112C68.6,128,137,160,206,149.3C274.3,139,343,85,411,90.7C480,96,549,160,617,160C685.7,160,754,96,823,101.3C891.4,107,960,181,1029,192C1097.1,203,1166,149,1234,117.3C1302.9,85,1371,75,1406,69.3L1440,64L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z"></path></svg>
         </div>
@@ -174,7 +200,10 @@
 
 
           @endif
-          
+          <input type="hidden" name="lat" class="latAbsen">
+          <input type="hidden" name="lon" class="lonAbsen">
+          <button  class="btn btn-primary">Submit</button>    
+        </form>
 <script src= "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js "></script>     
 <!-- <script src="{{ asset('absen/template/jquery/jquery.min.js') }}"></script> -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
@@ -184,6 +213,7 @@
 $(document).ready(function() {
   tampilLokasi();
 });
+// untuk mengeksekusi walaupun tnpa perintah dari user
 
   function tampilLokasi() {
             if (navigator.geolocation) {
@@ -203,6 +233,8 @@ $(document).ready(function() {
             $('#lattitude').val(lat);
             $('#longitude').val(lon);
             $('#lokasi').text('latitude : '  +lat +' longitude : '+ lon);
+            $('.latAbsen').val(lat);
+            $('.lonAbsen').val(lon);
            
         }
 

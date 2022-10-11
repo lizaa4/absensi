@@ -51,7 +51,7 @@ class LoginController extends Controller
     {
         // auth()-> reset();
 
-         return redirect()->route('reset.proses');
+         return redirect()->route('reset');
 
         return view('reset-password');
     }

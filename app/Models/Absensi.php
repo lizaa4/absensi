@@ -6,17 +6,15 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Absensi extends Model
+// class extends ini adalah model(mengkoneksikan tabel yan telah dibuat)
 {
-    use HasFactory;
-    
+    // use HasFactory;
+    protected $table = 'tb_absensi';
+    // protected harus diisi
     /**
      * fillable
      *
      * @var array
      */
-    protected $fillable = [
-        'id_absensi',
-        'id_detail_user',
-        'koordinat'
-    ];
+  
 }

@@ -28,23 +28,29 @@ Route::get('/profile/update', [ProfileController::class, 'update'])->name('profi
 Route::post('/profile/update', [ProfileController::class, 'updateproses'])->name('profile.update.proses');
 Route::get('/reset', [LoginController::class, 'reset'])->name('reset');
 Route::post('/reset', [LoginController::class, 'reset'])->name('reset.proses');
+// route untuk mengalamatkan/ yang mau di akses, slash dipangggil di web, name ditampilkan di view nya, class(update)adalah nama function yang di akses di controller
 Route::get('/update', [ProfileController::class, 'update'])->name('update');
 Route::post('/update', [ProfileController::class, 'update'])->name('update.proses');
 Route::get('/ubah', [LoginController::class, 'ubah'])->name('ubah');
 Route::post('/ubah', [LoginController::class, 'ubah'])->name('ubah.proses');
-Route::get('/absen', [AbsenController::class, 'absen'])->name('absen');
-Route::get('/absen', [AbsenController::class, 'absen'])->name('absen');
-Route::post('/absen', [AbsenController::class, 'absen'])->name('absen.proses');
+Route::post('/absentap/simpan/', [AbsenController::class, 'simpan'])->name('absen.simpan');
+
 Route::post('/kirimEmail', [KirimEmailController::class, 'kirimEmail'])->name('kirimEmail.proses');
+// 
 Route::post('/history', [AbsenController::class, 'history'])->name('history.proses');
 Route::get('/history', [AbsenController::class, 'history'])->name('history');
 Route::post('/absen/simpan', [AbsenController::class, 'simpanAbsen'])->name('simpanAbsen.proses');
 Route::group(['middleware' => ['auth']], function() {
      Route::get('/logout', 'LogoutController@perform')->name('logout.perform');
- });
- 
-Route::post('/tampilan', [AbsenController::class, 'tampilan'])->name('tampilan1.proses');
+Route::get('/absen', [AbsenController::class, 'absen'])->name('absen');
 Route::get('/tampilan', [AbsenController::class, 'tampilan'])->name('tampilan');
+Route::post('/tampilan', [AbsenController::class, 'tampilan'])->name('tampilan1.proses');
+
+
+
+ });
+
+ 
 
 
 
