@@ -8,6 +8,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <!-- My CSS -->
     <link rel="stylesheet" href="tabel.blade.php">
+    <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
   </head>
   <style>
     body {margin: 0;
@@ -41,12 +44,12 @@
 
   ul {
   list-style-type: none;
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
   overflow: hidden;
-  background-color: #e2edff;
+  background-color: black;
   position: fixed;
-  top: 0;
+  top: 0px;
   width: 100%;
   }
 
@@ -59,16 +62,17 @@
   color: white;
   text-align: center;
   padding: 14px 16px;
-  margin: 0;
+  margin: 0px;
   text-decoration: none;
+  width: 100%;
   }
 
   li a:hover:not(.active) {
-  background-color: #ddd;
+  background-color: white;
   }
 
   .active {
-  background-color: #04AA6D;
+  background-color: black;
   }
 	
    
@@ -76,14 +80,9 @@
   <body>
     
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
-  <div class="container">
-    <a class="navbar-brand" href="#">Absen</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+  <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
+        <ul class="navbar-nav ms-auto">
         <li class="nav-item">
         <a href= "{{route('profile')}}">profile</a>  
         </li>
@@ -92,6 +91,9 @@
         </li>   
         <li class="nav-item">            
         <a href= "{{route('login')}}">Logout</a>          
+        </li>
+        <li class="nav-item">
+        <a href="{{route('tampilan')}}">Cek</a>
         </li>
       </ul>
     </div>
@@ -111,13 +113,12 @@
       <div class="row">
         <div class="col-sm-12">
           <div class="align-center">
-            <body>
+          
 
 <p>lokasi anda saat ini: <span type="text" id="lokasi"></span></p>
 
 
-</body>
-</html>
+
                         @php
                         $date=date_create(null,timezone_open("Asia/Jakarta"));
 
@@ -164,23 +165,8 @@
                         <body onload="tampilkanwaktu();setInterval('tampilkanwaktu()', 1000);">
                             Pukul :
                             <span id="clock"></span>
-                   </div>
-        
-            </div>
-          </div>
-
-          
-        <div>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="0.8" d="M0,96L34.3,112C68.6,128,137,160,206,149.3C274.3,139,343,85,411,90.7C480,96,549,160,617,160C685.7,160,754,96,823,101.3C891.4,107,960,181,1029,192C1097.1,203,1166,149,1234,117.3C1302.9,85,1371,75,1406,69.3L1440,64L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z"></path></svg>
-        </div>
-
-
-        </div>
-      
-      </section>
-      <!-- Akhir Jumbotron -->@section('content')
-      
-      <div class="container">
+                        </body>
+                   <div class="container">
         <form action="/absentap/simpan/" method="POST" enctype="multipart/form-data" >
           @csrf
           @if (session('pesan'))
@@ -188,7 +174,7 @@
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
             <h4><i class="icon fa fa-check"></i>Success</h4>
             {{ session('pesan') }}.
-          </div>
+
 
 
 
@@ -196,8 +182,13 @@
           @endif
           <input type="hidden" name="lat" class="latAbsen">
           <input type="hidden" name="lon" class="lonAbsen">
-          <button  class="btn btn-primary">Submit</button>    
+          <br><button  class="btn btn-primary">Submit</button></br>  
+                      </div>  
         </form>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="0.8" d="M0,96L34.3,112C68.6,128,137,160,206,149.3C274.3,139,343,85,411,90.7C480,96,549,160,617,160C685.7,160,754,96,823,101.3C891.4,107,960,181,1029,192C1097.1,203,1166,149,1234,117.3C1302.9,85,1371,75,1406,69.3L1440,64L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z"></path></svg>
+      </section>
+      <!-- Akhir Jumbotron -->@section('content')
+     
 <script src= "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js "></script>     
 <!-- <script src="{{ asset('absen/template/jquery/jquery.min.js') }}"></script> -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
@@ -268,3 +259,5 @@ $(document).ready(function() {
     }
 
 </script>
+  </body>
+</html>
