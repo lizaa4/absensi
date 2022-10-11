@@ -114,11 +114,7 @@
         <div class="col-sm-12">
           <div class="align-center">
           
-
-<p>lokasi anda saat ini: <span type="text" id="lokasi"></span></p>
-
-
-
+<!-- <p>lokasi anda saat ini: <span type="text" id="lokasi"></span></p> -->
                         @php
                         $date=date_create(null,timezone_open("Asia/Jakarta"));
 
