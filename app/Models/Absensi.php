@@ -1,3 +1,5 @@
+(16 sloc)  379 Bytes
+
 <?php
 
 namespace App\Models;
@@ -16,15 +18,5 @@ class Absensi extends Model
      *
      * @var array
      */
-<<<<<<< HEAD
   
-=======
-    protected $fillable = [
-        'id_absensi',
-        'id_detail_user',
-        'lattitude',
-        'longitude'
-        
-    ];
->>>>>>> cbccb2251212027a58821d0dc1dcde0f66bd158e
 }
