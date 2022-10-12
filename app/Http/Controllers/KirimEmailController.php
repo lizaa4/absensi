@@ -40,8 +40,8 @@ class kirimEmailController extends Controller
 
     public function reset()
     {
-        return redirect()->route('reset.proses')->with(['Password Telah Diganti']);
-        return view('reset-password');
+        // return redirect()->route('reset.proses')->with(['Password Telah Diganti']);
+        return view('reset');
     }
     
 

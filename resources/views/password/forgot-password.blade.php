@@ -69,16 +69,34 @@
                   </div>
                 </a>
                 </div>
-                <form action="reset" method="POST" class="form-email">
+                <form action="/reset.proses" method="POST" class="form-email">
                   <div class="form-group">
                   <div class="p-2">
                     <label for="Email" class="form-label">Email</label>
                     <input type="text" class="form-control" id="Email" placeholder="Masukkan email" required>
-                    <div class="mt-3 d-grid">
-                    <td class="text-center"> 
-                    <a href= "{{route('reset')}}"  class="btn btn-primary btn-sm" onclick="kirimEmail();">Send</a>          
-                    </td>
                   </div>
+                  </div>
+                  <div class="container">
+        <form action="/reset.proses" method="POST" enctype="multipart/form-data" >
+          @csrf
+          @if (session('pesan'))
+          <div class="alert alert-success alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <h4><i class="icon fa fa-check"></i>Success</h4>
+            {{ session('pesan') }}.
+
+
+
+
+
+          @endif
+          <input type="hidden" name="email" class="">
+          <div class="mt-3 d-grid">
+          <td class="text-center">
+          <button  class="btn btn-primary">Send</button>
+          </td> 
+                      </div>  
+        </form>
          
 
             </form>
