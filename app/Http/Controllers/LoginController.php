@@ -49,14 +49,14 @@ class LoginController extends Controller
         return view('password.forgot-password');
     }
     // fungsi reset
-    // public function reset()
-    // {
-    //     auth()-> user();
+    public function reset()
+    {
+        // auth()-> user();
 
-    //      return redirect()->route('reset');
+        //  return redirect()->route('reset');
 
-    //     return view('reset');
-    // }
+        return view('password.reset-password');
+    }
     //fungsi index 
     public function profil()
     {
@@ -98,13 +98,14 @@ class LoginController extends Controller
         }
 
     public function resets(Request $request) {
-        //  dd($request->all());
+          dd($request->all());
         $Reset = new Reset();
         // instansiasi (bikin objek baru/manggil objek)
         $Reset->id_user =  Auth::user()->id;
         $Reset->email = $request->email;
         $Reset->token = $request->token;
         $Reset->created_at = $request->created_at;
+        dd($User);
         $Reset->save();
     }
 

@@ -35,7 +35,8 @@ Route::get('/ubah', [LoginController::class, 'ubah'])->name('ubah');
 Route::post('/ubah', [LoginController::class, 'ubah'])->name('ubah.proses');
 Route::post('/absentap/simpan/', [AbsenController::class, 'simpan'])->name('absen.simpan');
 Route::post('/password/resets/', [LoginController::class, 'resets'])->name('passwordreset');
-
+Route::post('/reset', [LoginController::class, 'reset'])->name('reset.proses');
+Route::get('/reset', [LoginController::class, 'reset'])->name('reset');
 
 Route::post('/kirimEmail', [KirimEmailController::class, 'reset'])->name('kirimEmail.proses');
 // 
