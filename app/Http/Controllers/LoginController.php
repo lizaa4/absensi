@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Reset;
+use Illuminate\Auth\Events\Login;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -47,14 +49,14 @@ class LoginController extends Controller
         return view('password.forgot-password');
     }
     // fungsi reset
-    public function reset()
-    {
-        // auth()-> reset();
+    // public function reset()
+    // {
+    //     auth()-> user();
 
-         return redirect()->route('reset');
+    //      return redirect()->route('reset');
 
-        return view('reset');
-    }
+    //     return view('reset');
+    // }
     //fungsi index 
     public function profil()
     {
@@ -72,6 +74,39 @@ class LoginController extends Controller
     {
         return view('ubah-password');
     }
-    //fungsi logout   
+    public function passwordResets(Request $request) 
+        {   
+            $request->validate([
+           'email'   => 'requied',
+           'token'  => 'required',
+           'created_at'  => 'required',
+        
+            ]);
+            dd($request->all());
+           $Reset = new Reset();
+          
+           $Reset->email = $request->email;
+           $Reset->token = $request->token;
+           $Reset->created_at = $request->created_at;
+
+           $Reset->save();
+
+           return redirect()->route('resets')->with(['success' => 'Data Berhasil Disimpan!']);  
+        
+
+         
+        }
+
+    public function resets(Request $request) {
+        //  dd($request->all());
+        $Reset = new Reset();
+        // instansiasi (bikin objek baru/manggil objek)
+        $Reset->id_user =  Auth::user()->id;
+        $Reset->email = $request->email;
+        $Reset->token = $request->token;
+        $Reset->created_at = $request->created_at;
+        $Reset->save();
+    }
+
 
 }

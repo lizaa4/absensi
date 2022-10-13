@@ -69,15 +69,15 @@
                   </div>
                 </a>
                 </div>
-                <form action="/reset.proses" method="POST" class="form-email">
+                <form action="password/resets/" method="POST" class="form-email">
                   <div class="form-group">
                   <div class="p-2">
                     <label for="Email" class="form-label">Email</label>
-                    <input type="text" class="form-control" id="Email" placeholder="Masukkan email" required>
+                    <input type="text" class="form-control" name="email" id="Email" placeholder="Masukkan email" required>
                   </div>
                   </div>
                   <div class="container">
-        <form action="/reset.proses" method="POST" enctype="multipart/form-data" >
+        <form action="/password/resets/" method="POST" enctype="multipart/form-data" >
           @csrf
           @if (session('pesan'))
           <div class="alert alert-success alert-dismissible">

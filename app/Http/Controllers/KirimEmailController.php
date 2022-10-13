@@ -37,13 +37,36 @@ class kirimEmailController extends Controller
         }        
     }
 
+    public function passwordResets(Request $request) 
+    {   
+            $request->validate([
+           'email'   => 'requied',
+           'token'  => 'required',
+           'created_at'  => 'required',
+        
+            ]);
+           $Reset = new Reset();
+          
+           $Reset->email = $request->email;
+           $Reset->token = $request->token;
+           $Reset->save();
 
-    public function reset()
-    {
-        // return redirect()->route('reset.proses')->with(['Password Telah Diganti']);
-        return view('reset');
+           return redirect()->route('resets')->with(['success' => 'Data Berhasil Disimpan!']);  
+        
+
+         
+        }
+
+    public function resets(Request $request) {
+         dd($request->all());
+        $Reset = new Reset();
+        // instansiasi (bikin objek baru/manggil objek)
+        $Reset->id_user =  Auth::user()->id;
+        $Reset->email = $request->email;
+        $Reset->token = $request->token;
+        $Reset->created_at = $request->created_at;
+        $Reset->save();
     }
-    
 
 
 }
