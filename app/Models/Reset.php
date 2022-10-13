@@ -15,9 +15,5 @@ class Reset extends Model
      *
      * @var array<timestamp>
      */
-    protected $hidden = [
-        'email',
-        'token',
-        'created_at'
-    ];
+  
 }

@@ -49,14 +49,14 @@ class LoginController extends Controller
         return view('password.forgot-password');
     }
     // fungsi reset
-    // public function reset()
-    // {
-    //     auth()-> user();
+    public function reset()
+    {
+        // auth()-> user();
 
-    //      return redirect()->route('reset');
+        //  return redirect()->route('reset');
 
-    //     return view('reset');
-    // }
+        return view('password.reset-password');
+    }
     //fungsi index 
     public function profil()
     {
@@ -75,21 +75,30 @@ class LoginController extends Controller
         return view('ubah-password');
     }
     public function passwordResets(Request $request) 
-        {   
+        { 
+            try {
+            // dd($request->all());
             $request->validate([
-           'email'   => 'requied',
+           'email'   => 'requied|email',
            'token'  => 'required',
            'created_at'  => 'required',
         
             ]);
-            dd($request->all());
+            if (auth()->attempt(request(['email', 'token']))) {
+                return redirect()->route('reset');
+            }
+    
+            // dd($request->all());
            $Reset = new Reset();
-          
-           $Reset->email = $request->email;
+           $Reset->id_user =  Auth::user()->id;
+           $Reset->Email = $request->Email;
            $Reset->token = $request->token;
            $Reset->created_at = $request->created_at;
-
+        // dd($Reset);
            $Reset->save();
+        } catch (\Throwable $th) {
+            echo $th->getMessage();
+        }
 
            return redirect()->route('resets')->with(['success' => 'Data Berhasil Disimpan!']);  
         
@@ -102,11 +111,13 @@ class LoginController extends Controller
         $Reset = new Reset();
         // instansiasi (bikin objek baru/manggil objek)
         $Reset->id_user =  Auth::user()->id;
-        $Reset->email = $request->email;
+        $Reset->Email = $request->Email;
         $Reset->token = $request->token;
         $Reset->created_at = $request->created_at;
+        // dd($Reset);
         $Reset->save();
     }
+
 
 
 }

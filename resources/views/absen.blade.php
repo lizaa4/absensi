@@ -92,9 +92,7 @@
         <li class="nav-item">            
         <a href= "{{route('login')}}">Logout</a>          
         </li>
-        <li class="nav-item">
-        <a href="{{route('tampilan')}}">Cek</a>
-        </li>
+        
       </ul>
     </div>
   </div>

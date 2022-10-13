@@ -62,7 +62,7 @@
                   <div class="form-group">
                   <div class="p-2">
                     <label for="password" class="form-label">Password</label>
-                    <input type="text" class="form-control" id="password" placeholder="Masukkan Password" required>
+                    <input type="text" name="password" class="form-control" id="password" placeholder="Masukkan Password" required>
                   </div>
 
                   <div class="p-2">
@@ -70,11 +70,11 @@
                   <div class="mb-3">
                     <label class="form-label">Confirmation Password</label>
                     <div class="input-group auth-pass-inputgroup">
-                      <input type="password" class="form-control" placeholder="Masukkan Konfirmasi Password" aria-label="Password" aria-describedby="password-addon" required>
+                      <input type="password" name="confirmation password" class="form-control" placeholder="Masukkan Konfirmasi Password" aria-label="Password" aria-describedby="password-addon" required>
                       <button class="btn btn-light " type="button" id="password-addon"><i class="mdi mdi-eye-outline"></i></button>
                     </div>
 
-                    <div class="p-2">
+                    <!-- <div class="p-2">
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" id="remember-check">
                     <label class="form-check-label" for="remember-check">
@@ -82,10 +82,27 @@
                     </label>
                   </div>
 
-                  <div class="mt-3 d-grid">
-                  <div class="mt-5 text-center">
-                    <button class="btn btn-primary waves-effect waves-light" type="submit">Reset Password</button>
-                  </div>
+                  <div class="mt-3 d-grid"> -->
+                  <div class="container">
+        <form action="/password/resets/" method="POST" enctype="multipart/form-data" >
+          @csrf
+          @if (session('pesan'))
+          <div class="alert alert-success alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <h4><i class="icon fa fa-check"></i>Success</h4>
+            {{ session('pesan') }}.
+
+
+
+
+
+          @endif
+          <input type="hidden" name="password" class="password">
+          <input type="hidden" name="confirmation password" class="confirmation password">
+          <div class="mt-3 d-grid">
+                  <td class="mt-5 text-center">
+                    <button class="btn btn-primary waves-effect waves-light">Reset Password</button>
+</td>
     
 
             </form>

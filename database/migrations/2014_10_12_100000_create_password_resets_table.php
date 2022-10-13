@@ -17,8 +17,10 @@ return new class extends Migration
             $table->id('id_password_resets');
             $table->bigInteger('id_user');
             $table->string('email', 70)->index();
+            $table->timestamp('email_verified_at')->unique();
             $table->string('token', 70);
-            $table->timestamp('created_at');
+            $table->rememberToken();
+            $table->timestamps();
         });
     }
 
