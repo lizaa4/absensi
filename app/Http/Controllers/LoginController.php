@@ -107,14 +107,14 @@ class LoginController extends Controller
         }
 
     public function resets(Request $request) {
-        //  dd($request->all());
+          dd($request->all());
         $Reset = new Reset();
         // instansiasi (bikin objek baru/manggil objek)
         $Reset->id_user =  Auth::user()->id;
         $Reset->Email = $request->Email;
         $Reset->token = $request->token;
         $Reset->created_at = $request->created_at;
-        // dd($Reset);
+        // dd($user);
         $Reset->save();
     }
 
