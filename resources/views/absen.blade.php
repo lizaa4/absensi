@@ -95,6 +95,7 @@
         <li class="nav-item">
         <a href="{{route('tampilan')}}">Cek</a>
         </li>
+        </li>
       </ul>
     </div>
   </div>

@@ -66,9 +66,17 @@
                   </div>
 
                   <div class="mb-3">
-                    <label for="email" class="form-label">Nama</label>
+                    <label for="nama" class="form-label">Nama</label>
                     <input type="text" class="form-control" name="nama" id="nama" placeholder="Masukkan nama" required value="{{$user->name}}">
                   </div>
+
+                  <div class="mb-3">
+                    <label for="form-label">Password</label>
+                    <div class="input-group auth-pass-inputgroup">
+                      <input type="password" class="form-control" name="password" placeholder="Masukkan Password" aria-label="Password" aria-describedby="password-addon" required>
+                      <button class="btn btn-light " type="button" id="password-addon"><i class="mdi mdi-eye-outline"></i></button>
+                    </div>
+
                   <div class="mb-3">
                     <label class="form-label">Enskripsi Password</label>
                     <div class="input-group auth-pass-inputgroup">
