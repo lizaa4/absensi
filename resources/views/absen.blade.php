@@ -92,14 +92,12 @@
         <li class="nav-item">            
         <a href= "{{route('login')}}">Logout</a>          
         </li>
-<<<<<<< HEAD
-        
-=======
+        </li>
         <li class="nav-item">
-        <a href="{{route('tampilan')}}">Cek</a>
+        <a href="{{route('ubah')}}">Ubah password</a>
         </li>
         </li>
->>>>>>> ebd7a8b32222c1a12aab38d688b88c4fd67d3795
+        
       </ul>
     </div>
   </div>
