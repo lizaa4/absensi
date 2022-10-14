@@ -75,30 +75,21 @@ class LoginController extends Controller
         return view('ubah-password');
     }
     public function passwordResets(Request $request) 
-        { 
-            try {
-            // dd($request->all());
+        {   
             $request->validate([
-           'email'   => 'requied|email',
+           'email'   => 'requied',
            'token'  => 'required',
            'created_at'  => 'required',
         
             ]);
-            if (auth()->attempt(request(['email', 'token']))) {
-                return redirect()->route('reset');
-            }
-    
-            // dd($request->all());
+            dd($request->all());
            $Reset = new Reset();
-           $Reset->id_user =  Auth::user()->id;
-           $Reset->Email = $request->Email;
+          
+           $Reset->email = $request->email;
            $Reset->token = $request->token;
            $Reset->created_at = $request->created_at;
-        // dd($Reset);
+
            $Reset->save();
-        } catch (\Throwable $th) {
-            echo $th->getMessage();
-        }
 
            return redirect()->route('resets')->with(['success' => 'Data Berhasil Disimpan!']);  
         
@@ -107,17 +98,16 @@ class LoginController extends Controller
         }
 
     public function resets(Request $request) {
-          dd($request->all());
+          //dd($request->all());
         $Reset = new Reset();
         // instansiasi (bikin objek baru/manggil objek)
         $Reset->id_user =  Auth::user()->id;
-        $Reset->Email = $request->Email;
+        $Reset->email = $request->email;
         $Reset->token = $request->token;
         $Reset->created_at = $request->created_at;
-        // dd($user);
+       //dd($User);
         $Reset->save();
     }
-
 
 
 }
