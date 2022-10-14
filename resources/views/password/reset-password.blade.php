@@ -58,31 +58,35 @@
                   </div>
                 </a>
                 </div>
+                <div class="p-2">
                 <form action="{{ route('reset.proses') }}" method="POST">
-                  <div class="form-group">
-                  <div class="p-2">
+                @csrf
+                  <div class="mb-3">
                     <label for="password" class="form-label">Password</label>
                     <input type="text" name="password" class="form-control" id="password" placeholder="Masukkan Password" required>
+                    @if ($errors->has('password')) 
+                            <div class="text-danger"> 
+                                {{ $errors->first('password') }} 
+                            </div> 
+                        @endif 
                   </div>
 
                   <div class="p-2">
                 <form action="{{ route('reset.proses') }}" method="POST">
+                  @csrf
                   <div class="mb-3">
                     <label class="form-label">Confirmation Password</label>
                     <div class="input-group auth-pass-inputgroup">
                       <input type="password" name="confirmation password" class="form-control" placeholder="Masukkan Konfirmasi Password" aria-label="Password" aria-describedby="password-addon" required>
                       <button class="btn btn-light " type="button" id="password-addon"><i class="mdi mdi-eye-outline"></i></button>
+                      @if ($errors->has('confirmation password'))
+                      <div class="text-denger">
+                        {{ $errors->first('confirmation password') }}
+                    </div>
+                    @endif
                     </div>
 
-                    <!-- <div class="p-2">
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="remember-check">
-                    <label class="form-check-label" for="remember-check">
-                      anda sudah yakin?
-                    </label>
-                  </div>
-
-                  <div class="mt-3 d-grid"> -->
+                    
                   <div class="container">
         <form action="/password/resets/" method="POST" enctype="multipart/form-data" >
           @csrf

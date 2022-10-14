@@ -69,12 +69,17 @@
                   </div>
                 </a>
                 </div>
-                <form action="/reset" method="POST" class="form-email">
-                  <div class="form-group">
-                  <div class="p-2">
+                <div class="p-2">
+                <form action="/reset" method="POST">
+                @csrf
+                  <div class="mb-3">
                     <label for="Email" class="form-label">Email</label>
-                    <input type="text" class="form-control" name="Email" id="Email" placeholder="Masukkan email" required>
-                  </div>
+                    <input type="text" name="Email" class="form-control" id="Email" placeholder="Masukkan Email" required>
+                    @if ($errors->has('email')) 
+                            <div class="text-danger"> 
+                                {{ $errors->first('email') }} 
+                            </div> 
+                        @endif 
                   </div>
                   <div class="container">
         <form action="/reset" method="POST" enctype="multipart/form-data" >
