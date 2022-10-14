@@ -34,16 +34,10 @@ Route::post('/update', [ProfileController::class, 'update'])->name('update.prose
 Route::get('/ubah', [LoginController::class, 'ubah'])->name('ubah');
 Route::post('/ubah', [LoginController::class, 'ubah'])->name('ubah.proses');
 Route::post('/absentap/simpan/', [AbsenController::class, 'simpan'])->name('absen.simpan');
-<<<<<<< HEAD
 Route::post('/password/resets/', [LoginController::class, 'passwordResets'])->name('passwordreset');
 Route::get('/password/resets/', [LoginController::class, 'passwordResets'])->name('passwordreset');
 
 
-=======
-Route::post('/password/resets/', [LoginController::class, 'resets'])->name('passwordreset');
-Route::post('/reset', [LoginController::class, 'reset'])->name('reset.proses');
-Route::get('/reset', [LoginController::class, 'reset'])->name('reset');
->>>>>>> ebd7a8b32222c1a12aab38d688b88c4fd67d3795
 
 Route::post('/kirimEmail', [KirimEmailController::class, 'reset'])->name('kirimEmail.proses');
 // 
