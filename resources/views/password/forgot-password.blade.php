@@ -69,15 +69,16 @@
                   </div>
                 </a>
                 </div>
+                
                 <div class="p-2">
                 <form action="/reset" method="POST">
                 @csrf
                   <div class="mb-3">
                     <label for="Email" class="form-label">Email</label>
                     <input type="text" name="Email" class="form-control" id="Email" placeholder="Masukkan Email" required>
-                    @if ($errors->has('email')) 
+                    @if ($errors->has('Email')) 
                             <div class="text-danger"> 
-                                {{ $errors->first('email') }} 
+                                {{ $errors->first('Email') }} 
                             </div> 
                         @endif 
                   </div>
@@ -102,7 +103,9 @@
           </td> 
                       </div>  
         </form>
-         
+        <div class="mt-4 text-center">
+          <a href="login" class="text-muted">selesai</a>
+          </div>
 
             </form>
         </div>               

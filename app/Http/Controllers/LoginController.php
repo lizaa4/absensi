@@ -45,8 +45,8 @@ class LoginController extends Controller
         //auth()-> forgot();
 
         // return redirect()->route('forgot');
-
-        return view('password.forgot-password');
+        $data['title'] = 'Change Password';
+        return view('password.forgot-password', $data);
     }
     // fungsi reset
     public function reset()
@@ -74,10 +74,10 @@ class LoginController extends Controller
     {
         return view('ubah-password');
     }
-    public function passwordResets(Request $request) 
+    public function password_Resets(Request $request) 
         {   
             $request->validate([
-           'email'   => 'requied',
+           'email'   => 'requied|unique:users',
            'token'  => 'required',
            'created_at'  => 'required',
         

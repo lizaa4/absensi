@@ -102,7 +102,10 @@
                       <button class="btn btn-light " type="button" id="password-addon" ><i class="mdi mdi-eye-outline"></i></button>
                     </div>
                   </div>
-
+                  <div class="mb-3">
+                <label>Password Confirmation<span class="text-danger">*</span></label>
+                <input class="form-control" type="password" name="password_confirm" />
+                </div>
                   <!-- <div class="form-check">
                     <input class="form-check-input" type="checkbox" id="remember-check">
                     <label class="form-check-label" for="remember-check">
