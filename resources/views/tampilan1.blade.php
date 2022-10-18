@@ -15,49 +15,51 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
     
 	<style>
-		html, body {
-            background-image: url('https://i.pinimg.com/originals/fd/b9/f9/fdb9f947f4653d9608ca47cde736e7a7.jpg'); 
-            background-repeat: no-repeat; 
-            background-attachment: fixed;   
-            background-size: cover; 
-            padding-bottom: 20px; 
-            padding-left: 100px; 
-            padding-top: 100px; 
-            padding-right: 100px;
-			min-height: 2000px;
-			margin: 0;
-
-		}
-        .jumbotron {
-            padding-top: 2rem;
-            background-color: #e2edff;
-        }
-
-		.leaflet-container {
-			height: 400px;
-			width: 600px;
-			max-width: 100%;
-			max-height: 100%;
-		}
-        #projects {
+body {
+        background-image: url('https://i.pinimg.com/originals/fd/b9/f9/fdb9f947f4653d9608ca47cde736e7a7.jpg'); 
+        background-repeat: no-repeat; 
+        background-attachment: fixed;   
+        background-size: cover; 
+        padding-bottom: 20px; 
+        padding-left: 100px; 
+        padding-top: 100px; 
+        padding-right: 100px;
+        min-height: 2000px;
+    }
+    .jumbotron {
+        padding-top: 2rem;
         background-color: #e2edff;
     }
-	</style>
+    #projects {
+        background-color: #e2edff;
+    }
 
-	
-</head>
-<body>
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
-<div class="container">
-<a class="navbar-brand" href="#">Tampilan</a>
-<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-<span class="navbar-toggler-icon"></span>
-</button>
-    
-</div>
+  </style>
+  <body>
+       <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">ABSENSI</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+        <a href= "{{route('profile')}}"  class="btn btn-primary">profile</a>  
+        </li>
+        <li class="nav-item">            
+        <a href= "{{route('history')}}"  class="btn btn-primary">history</a>          
+        </li>   
+        <li class="nav-item">            
+        <a href= "{{route('login')}}"  class="btn btn-primary">Logout</a>          
+        </li>
+      </ul>
+    </div>
+  </div>
 </nav>
-<!-- Akhir Navbar -->
+  <!-- Akhir Navbar -->
+	
 
 <!-- Jumbotron -->
 <section class="jumbotron text-center">

@@ -15,5 +15,14 @@ class Reset extends Model
      *
      * @var array<timestamp>
      */
-  
+    protected $fillable = [
+        'email',
+        'token',
+    ];
+
+    protected $hidden = [
+        'email',
+        'password',
+        'remember_token',
+    ];
 }

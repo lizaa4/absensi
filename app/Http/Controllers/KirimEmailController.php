@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Reset;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 // use PharIo\Manifest\Email;
 
 class kirimEmailController extends Controller
@@ -16,7 +19,7 @@ class kirimEmailController extends Controller
 
             if ($data != id) {
                 $data->link = $url . '/kirimEmail' . $data->id;
-                Email::to($data->email)->send(new kirimEmail($data->nama, $data->link));
+                Email:to($data->email)->send(new kirimEmail($data->nama, $data->link));
 
                 return response()->json([
                     'status' => 'ada'
@@ -37,36 +40,38 @@ class kirimEmailController extends Controller
         }        
     }
 
-    public function passwordResets(Request $request) 
+    public function password_Resets(Request $request) 
     {   
-            $request->validate([
-           'email'   => 'requied',
-           'token'  => 'required',
-           'created_at'  => 'required',
-        
-            ]);
-           $Reset = new Reset();
-          
-           $Reset->email = $request->email;
-           $Reset->token = $request->token;
-           $Reset->save();
+        $request->validate([
+       'email'   => 'requied|unique:users',
+       'token'  => 'required',
+       'created_at'  => 'required',
+    
+        ]);
+        dd($request->all());
+       $Reset = new Reset();
+      
+       $Reset->email = $request->email;
+       $Reset->token = $request->token;
+       $Reset->created_at = $request->created_at;
 
-           return redirect()->route('resets')->with(['success' => 'Data Berhasil Disimpan!']);  
-        
+       $Reset->save();
 
-         
-        }
-
-    public function resets(Request $request) {
-         dd($request->all());
-        $Reset = new Reset();
-        // instansiasi (bikin objek baru/manggil objek)
-        $Reset->id_user =  Auth::user()->id;
-        $Reset->email = $request->email;
-        $Reset->token = $request->token;
-        $Reset->created_at = $request->created_at;
-        $Reset->save();
+       return redirect()->route('resets')->with(['success' => 'Data Berhasil Disimpan!']);  
+    
     }
+    
+    public function resets(Request $request) {
+        dd($request->all());
+      $Reset = new Reset();
+      // instansiasi (bikin objek baru/manggil objek)
+      $Reset->id_user =  Auth::user()->id;
+      $Reset->email = $request->email;
+      $Reset->token = $request->token;
+      $Reset->created_at = $request->created_at;
+  //    dd($User);
+      $Reset->save();
+  }
 
 
 }

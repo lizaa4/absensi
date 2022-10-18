@@ -32,6 +32,7 @@
                 <div class="text-primary p-4">
                     <h5 class="text-primary">Welcome !</h5>
                     <p>Forgot Password.</p>
+                    <h7 class="text-muted">Silahkan masukkan email akun anda dibawah ini</h7>
                 </div>
               </div>
                  <div class="col-5 align-self-end">
@@ -71,7 +72,7 @@
                 </div>
                 
                 <div class="p-2">
-                <form action="/reset" method="POST">
+                <form action="/kotakmasuk" method="POST">
                 @csrf
                   <div class="mb-3">
                     <label for="Email" class="form-label">Email</label>
@@ -83,7 +84,7 @@
                         @endif 
                   </div>
                   <div class="container">
-        <form action="/reset" method="POST" enctype="multipart/form-data" >
+        <form action="/kotakmasuk" method="POST" enctype="multipart/form-data" >
           @csrf
           @if (session('pesan'))
           <div class="alert alert-success alert-dismissible">
@@ -103,9 +104,9 @@
           </td> 
                       </div>  
         </form>
-        <div class="mt-4 text-center">
+        <!-- <div class="mt-4 text-center">
           <a href="login" class="text-muted">selesai</a>
-          </div>
+          </div> -->
 
             </form>
         </div>               

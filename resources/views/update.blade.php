@@ -19,7 +19,50 @@
   <!-- App Css-->
   <link href="{{ asset('css/app.min.css') }}" id="app-style" rel="stylesheet" type="text/css" />
 </head>
+<style>
+   body {
+        background-image: url('https://i.pinimg.com/originals/fd/b9/f9/fdb9f947f4653d9608ca47cde736e7a7.jpg'); 
+        background-repeat: no-repeat; 
+        background-attachment: fixed;   
+        background-size: cover; 
+        padding-bottom: 20px; 
+        padding-left: 100px; 
+        padding-top: 100px; 
+        padding-right: 100px;
+        min-height: 2000px;
+    }
 
+    #projects {
+        background-color: #e2edff;
+    }
+
+  </style>
+  <body>
+       <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="/absen">ABSENSI</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+        <a href= "{{route('profile')}}"  class="btn btn-primary">profile</a>  
+        </li>
+        <li class="nav-item">            
+        <a href= "{{route('history')}}"  class="btn btn-primary">history</a>          
+        </li>   
+        <li class="nav-item">            
+        <a href= "{{route('login')}}"  class="btn btn-primary">Logout</a>          
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+  <!-- Akhir Navbar -->
+</style>
 <body>
   <div class="account-pages my-5 pt-sm-5">
     <div class="container">
@@ -111,14 +154,6 @@
                   <div class="mt-3 d-grid">
                     <button class="btn btn-primary waves-effect waves-light" type="submit">simpan</button>
                   </div>
-
-                  <div class="mt-3 text-center" >
-
-                  <div>
-                  <p>back to absen?<a href="absen" class="fw-medium text-primary"> Back now </a> </p>
-                  </div>
-
-                   </div>
 
 
 

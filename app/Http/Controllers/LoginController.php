@@ -54,7 +54,7 @@ class LoginController extends Controller
         // auth()-> user();
 
         //  return redirect()->route('reset');
-
+        // $user=Reset::where('id_user', Auth::user()->id)->first();
         return view('password.reset-password');
     }
     //fungsi index 
@@ -108,6 +108,9 @@ class LoginController extends Controller
     //    dd($User);
         $Reset->save();
     }
-
+    public function kotakmasuk ()
+    {
+        return view('password.kotak-masuk');
+    }
 
 }

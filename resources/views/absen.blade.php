@@ -13,89 +13,44 @@
     
   </head>
   <style>
-    body {margin: 0;
-      background-image: url('https://i.pinimg.com/originals/fd/b9/f9/fdb9f947f4653d9608ca47cde736e7a7.jpg'); 
-      background-repeat: no-repeat; 
-      background-attachment: fixed;   
-      background-size: cover; 
-      padding-bottom: 0; 
-      padding-left: 0; 
-      padding-top: 0; 
-      padding-right: 0;
-      
+     body {
+        background-image: url('https://i.pinimg.com/originals/fd/b9/f9/fdb9f947f4653d9608ca47cde736e7a7.jpg'); 
+        background-repeat: no-repeat; 
+        background-attachment: fixed;   
+        background-size: cover; 
+        padding-bottom: 20px; 
+        padding-left: 100px; 
+        padding-top: 100px; 
+        padding-right: 100px;
+        min-height: 2000px;
     }
-
-     .jumbotron {
-      padding-top: 20px;
-      margin-top: 30px;
-      height: 1500px;
-      background-color: #e2edff;
+    .jumbotron {
+        padding-top: 2rem;
+        background-color: #e2edff;
     }
-
-		.leaflet-container {
-      height: 400px;
-			width: 600px;
-			max-width: 100%;
-			max-height: 100%;
-		}
     #projects {
         background-color: #e2edff;
     }
 
-  ul {
-  list-style-type: none;
-  margin: 0px;
-  padding: 0px;
-  overflow: hidden;
-  background-color: black;
-  position: fixed;
-  top: 0px;
-  width: 100%;
-  }
-
-  li {
-  float: left;
-  }
-
-  li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  margin: 0px;
-  text-decoration: none;
-  width: 100%;
-  }
-
-  li a:hover:not(.active) {
-  background-color: white;
-  }
-
-  .active {
-  background-color: black;
-  }
-	
-   
   </style>
   <body>
-    
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark">
+       <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="/absen">ABSENSI</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
+      <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-        <a href= "{{route('profile')}}">profile</a>  
+        <a href= "{{route('profile')}}"  class="btn btn-primary">profile</a>  
         </li>
         <li class="nav-item">            
-        <a href= "{{route('history')}}">history</a>          
+        <a href= "{{route('history')}}"  class="btn btn-primary">history</a>          
         </li>   
         <li class="nav-item">            
-        <a href= "{{route('login')}}">Logout</a>          
-        </li>
-        </li>
-        <li class="nav-item">
-        <a href="{{route('ubah')}}">Ubah password</a>
-        </li>
+        <a href= "{{route('login')}}"  class="btn btn-primary">Logout</a>          
         </li>
         
       </ul>

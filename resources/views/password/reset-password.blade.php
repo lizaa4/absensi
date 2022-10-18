@@ -91,7 +91,7 @@
 
                     
                   <div class="container">
-        <form action="/password/resets/" method="POST" enctype="multipart/form-data" >
+        <form action="/kirimEmail" method="POST" enctype="multipart/form-data" >
           @csrf
           @if (session('pesan'))
           <div class="alert alert-success alert-dismissible">
@@ -111,7 +111,7 @@
           <button class="btn btn-primary waves-effect waves-light">Reset Password</button>
           </td>
           <div class="mt-4 text-center">
-          <a href="forgot" class="text-muted"><i class="mdi mdi-lock me-1"></i>selesai</a>
+          <a href="login" class="text-muted"><i class="mdi mdi-lock me-1"></i>selesai</a>
           </div>
 
             </form>

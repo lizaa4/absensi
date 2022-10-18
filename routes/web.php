@@ -36,10 +36,12 @@ Route::post('/ubah', [LoginController::class, 'ubah'])->name('ubah.proses');
 Route::post('/absentap/simpan/', [AbsenController::class, 'simpan'])->name('absen.simpan');
 Route::post('/password/resets/', [LoginController::class, 'passwordResets'])->name('passwordreset');
 Route::get('/password/resets/', [LoginController::class, 'passwordResets'])->name('passwordreset');
+Route::get('/kotakmasuk', [LoginController::class, 'kotakmasuk'])->name('kotakmasuk');
+Route::post('/kotakmasuk', [LoginController::class, 'kotakmasuk'])->name('kotakmasuk.proses');
 
 
 
-Route::post('/kirimEmail', [KirimEmailController::class, 'reset'])->name('kirimEmail.proses');
+Route::post('/kirimEmail', [KirimEmailController::class, 'forgot'])->name('kirimEmail.proses');
 // 
 Route::post('/history', [AbsenController::class, 'history'])->name('history.proses');
 Route::get('/history', [AbsenController::class, 'history'])->name('history');
