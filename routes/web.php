@@ -26,8 +26,8 @@ Route::get('/forgot', [LoginController::class, 'forgot'])->name('forgot');
 Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
 Route::get('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
 Route::post('/profile/update', [ProfileController::class, 'updateproses'])->name('profile.update.proses');
-Route::get('/reset', [LoginController::class, 'reset'])->name('reset');
-Route::post('/reset', [LoginController::class, 'reset'])->name('reset.proses');
+Route::get('/reset/{id}', [LoginController::class, 'reset'])->name('reset');
+Route::post('/reset', [LoginController::class, 'resetProses'])->name('reset.proses');
 // route untuk mengalamatkan/ yang mau di akses, slash dipangggil di web, name ditampilkan di view nya, class(update)adalah nama function yang di akses di controller
 Route::get('/update', [ProfileController::class, 'update'])->name('update');
 Route::post('/update', [ProfileController::class, 'update'])->name('update.proses');
@@ -41,8 +41,7 @@ Route::post('/kotakmasuk', [LoginController::class, 'kotakmasuk'])->name('kotakm
 
 
 
-Route::post('/kirimEmail', [KirimEmailController::class, 'forgot'])->name('kirimEmail.proses');
-// 
+Route::post('/kirimEmail', [KirimEmailController::class, 'kirimEmail'])->name('kirimEmail.proses');
 Route::post('/history', [AbsenController::class, 'history'])->name('history.proses');
 Route::get('/history', [AbsenController::class, 'history'])->name('history');
 Route::post('/absen/simpan', [AbsenController::class, 'simpanAbsen'])->name('simpanAbsen.proses');

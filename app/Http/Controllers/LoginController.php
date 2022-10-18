@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Reset;
+use App\Models\User;
 use Illuminate\Auth\Events\Login;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -49,13 +50,10 @@ class LoginController extends Controller
         return view('password.forgot-password', $data);
     }
     // fungsi reset
-    public function reset()
+    public function reset($id)
     {
-        // auth()-> user();
-
-        //  return redirect()->route('reset');
-        // $user=Reset::where('id_user', Auth::user()->id)->first();
-        return view('password.reset-password');
+        
+        return view('password.reset-password', compact('id'));
     }
     //fungsi index 
     public function profil()
@@ -108,9 +106,16 @@ class LoginController extends Controller
     //    dd($User);
         $Reset->save();
     }
-    public function kotakmasuk ()
+    // public function kotakmasuk ()
+    // {
+    //     return view('password.kotak-masuk');
+    // }
+    public function resetProses (Request $request) 
     {
-        return view('password.kotak-masuk');
+        $user = User::where('id', Auth::user()->id)->first();
+        $user->password   = bcrypt($request->password);
+        // dd($user);
+        $user->save();
+        return redirect()->route('login');
     }
-
 }

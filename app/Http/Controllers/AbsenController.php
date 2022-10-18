@@ -54,7 +54,7 @@ class AbsenController extends Controller
             return view('tampilan1');
         }
         public function simpan(Request $request) {
-            dd($request->all());
+            //dd($request->all());
             $absensi = new Absensi();
             // instansiasi (bikin objek baru/manggil objek)
             $absensi->id_user =  Auth::user()->id;

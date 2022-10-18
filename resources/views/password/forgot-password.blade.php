@@ -72,7 +72,7 @@
                 </div>
                 
                 <div class="p-2">
-                <form action="/kotakmasuk" method="POST">
+                <form class="forgot-password" method="POST">
                 @csrf
                   <div class="mb-3">
                     <label for="Email" class="form-label">Email</label>
@@ -82,32 +82,9 @@
                                 {{ $errors->first('Email') }} 
                             </div> 
                         @endif 
+                        <button type="button"  class="btn btn-primary btn-kirim" onclick="kirimEmail()">Send</button>
                   </div>
                   <div class="container">
-        <form action="/kotakmasuk" method="POST" enctype="multipart/form-data" >
-          @csrf
-          @if (session('pesan'))
-          <div class="alert alert-success alert-dismissible">
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-            <h4><i class="icon fa fa-check"></i>Success</h4>
-            {{ session('pesan') }}.
-
-
-
-
-
-          @endif
-          <input type="hidden" name="Email" class="Email">
-          <div class="mt-3 d-grid">
-          <td class="text-center">
-          <button  class="btn btn-primary">Send</button>
-          </td> 
-                      </div>  
-        </form>
-        <!-- <div class="mt-4 text-center">
-          <a href="login" class="text-muted">selesai</a>
-          </div> -->
-
             </form>
         </div>               
     </div>
@@ -127,38 +104,29 @@
   <script src="{{ asset('js/app.js') }}"></script>
   <script>
 
-    $(document).ready(function(reset) 
-    {
-    kirimEmail();
-    });
+   
     
-      function kirimEmail(){
-       
-        if($('#Email').val() == ''){
-          alert('Email Harus Diisi');
-        }
-          else {
-            $('.btn-kirim').addClass('d-none');
-            $('.btn-kirim-loading').removeClass('d-none');
-            let email = $(".email").val();
+    function kirimEmail() {
+      // alert($("#Email").val())
+            if ($("#Email").val() == "" || $("#Email").val() == null) {
+               alert('email Harus Diisi!');
+            } else {
+                $('.btn-kirim').addClass('d-none');
+                
+                let email = $("#Email").val();
 
-      function kirimEmail(){
-        alert('kirimEmail');
-      }      
-
-            $.ajax({
-                    email: $("email"),
+                $.ajax({
                     url: "{{ route('kirimEmail.proses') }}",
                     type: "post",
-                    data: $(".reset-password").serialize(),
+                    data: $(".forgot-password").serialize(),
                     success: function(response) {
-                        $('.btn-kirim-loading').addClass('d-none');
-                         $('.btn-kirim').removeClass('d-none');
+                        // $('.btn-kirim-loading').addClass('d-none');
+                        // $('.btn-kirim').removeClass('d-none');
                         if (response.status == "ada") {
                             alert('Link reset password telah berhasil dikirim, silahkan cek (spam) email anda');
                         } else if (response.status == "kosong") {
                          
-                            alert('NIK anda tidak terdaftar');
+                            alert('Email anda tidak terdaftar');
 
                         } else if (response.status == "gagal") {
                             alert('Email reset password gagal dikirim');
@@ -166,21 +134,14 @@
                         }
                     },
                     error: function(request, status, error) {
-                        $('.btn-kirim-loading').addClass('d-none');
-                         $('.btn-kirim').removeClass('d-none');
+                        // $('.btn-kirim-loading').addClass('d-none');
+                        // $('.btn-kirim').removeClass('d-none');
                         // alert('Terjadi Kesalahan');
-                        console.log(request.responseText);
+                        // console.log(request.responseText);
                     }
                 });
-                const reset = document.getElementById('reset');
-                reset.addEventListener('click', function(){
-                    clearTimeout(reset);
-                    console.log('selesai');
-                });
             }
-
         }
-  
 
 
 

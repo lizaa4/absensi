@@ -2,9 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\SendMail;
 use App\Models\Reset;
+use App\Models\User;
+use Dflydev\DotAccessData\Data;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\URL;
+use Symfony\Component\Mime\Email;
 
 // use PharIo\Manifest\Email;
 
@@ -13,13 +19,16 @@ class kirimEmailController extends Controller
     public function kirimEmail(Request $request)
     {
         // DB::beginTransaction();
+       
         try {
-            $url = URL::to('/kirimEmail') . '/reset-password'; 
-            $data = MPerson::where('id', $request->nik)->first();
+            // $url = URL::to('/') . '/reset'; 
+            $url = 'http://127.0.0.1:8000/reset'; 
+            $data=User::where('email', $request->Email)->first();
+            // dd($data->email);
+        if($data != null){
 
-            if ($data != id) {
-                $data->link = $url . '/kirimEmail' . $data->id;
-                Email:to($data->email)->send(new kirimEmail($data->nama, $data->link));
+                $data->link = $url . '/' . $data->id;
+                Mail::to($data->email)->send(new SendMail($data->nama, $data->link));
 
                 return response()->json([
                     'status' => 'ada'
@@ -48,7 +57,7 @@ class kirimEmailController extends Controller
        'created_at'  => 'required',
     
         ]);
-        dd($request->all());
+        // dd($request->all());
        $Reset = new Reset();
       
        $Reset->email = $request->email;
@@ -62,7 +71,7 @@ class kirimEmailController extends Controller
     }
     
     public function resets(Request $request) {
-        dd($request->all());
+        // dd($request->all());
       $Reset = new Reset();
       // instansiasi (bikin objek baru/manggil objek)
       $Reset->id_user =  Auth::user()->id;

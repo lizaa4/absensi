@@ -58,9 +58,12 @@
                   </div>
                 </a>
                 </div>
+                <form action="{{ route('reset.proses') }}" method="POST">
+                  @csrf
                 <div class="p-2">
                 <div class="mb-3">
                     <label class="form-label">Password</label>
+                    <input type="hidden" name="id" value="{{$id}}">
                     <div class="input-group auth-pass-inputgroup">
                       <input type="password" name="password" class="form-control" placeholder="Masukkan Password" aria-label="Password" aria-describedby="password-addon" required>
                       <button class="btn btn-light " type="button" id="password-addon"><i class="mdi mdi-eye-outline"></i></button>
@@ -73,10 +76,8 @@
                     </div>
                   </div>
                 </div>
-
+                
                   <div class="p-2">
-                <form action="{{ route('reset.proses') }}" method="POST">
-                  @csrf
                   <div class="mb-3">
                     <label class="form-label">Confirmation Password</label>
                     <div class="input-group auth-pass-inputgroup">
@@ -88,7 +89,10 @@
                     </div>
                     @endif
                     </div>
-
+                    <td class="mt-5 text-center">
+          <button class="btn btn-primary waves-effect waves-light">Reset Password</button>
+          </td>
+</form>
                     
                   <div class="container">
         <form action="/kirimEmail" method="POST" enctype="multipart/form-data" >
@@ -107,9 +111,7 @@
           <input type="hidden" name="password" class="password">
           <input type="hidden" name="confirmation password" class="confirmation password">
           <div class="mt-3 d-grid">
-          <td class="mt-5 text-center">
-          <button class="btn btn-primary waves-effect waves-light">Reset Password</button>
-          </td>
+          
           <div class="mt-4 text-center">
           <a href="login" class="text-muted"><i class="mdi mdi-lock me-1"></i>selesai</a>
           </div>
