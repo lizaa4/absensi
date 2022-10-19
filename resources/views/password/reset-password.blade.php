@@ -89,9 +89,11 @@
                     </div>
                     @endif
                     </div>
+                    <div class="mt-3 d-grid">
                     <td class="mt-5 text-center">
           <button class="btn btn-primary waves-effect waves-light">Reset Password</button>
           </td>
+                    </div>
 </form>
                     
                   <div class="container">
@@ -110,10 +112,8 @@
           @endif
           <input type="hidden" name="password" class="password">
           <input type="hidden" name="confirmation password" class="confirmation password">
-          <div class="mt-3 d-grid">
-          
-          <div class="mt-4 text-center">
-          <a href="login" class="text-muted"><i class="mdi mdi-lock me-1"></i>selesai</a>
+
+          </div>
           </div>
 
             </form>

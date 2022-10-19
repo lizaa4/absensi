@@ -32,14 +32,14 @@ Route::post('/reset', [LoginController::class, 'resetProses'])->name('reset.pros
 Route::get('/update', [ProfileController::class, 'update'])->name('update');
 Route::post('/update', [ProfileController::class, 'update'])->name('update.proses');
 Route::get('/ubah', [LoginController::class, 'ubah'])->name('ubah');
-Route::post('/ubah', [LoginController::class, 'ubah'])->name('ubah.proses');
+Route::post('/ubah', [LoginController::class, 'ubahProses'])->name('ubah.proses');
 Route::post('/absentap/simpan/', [AbsenController::class, 'simpan'])->name('absen.simpan');
 Route::post('/password/resets/', [LoginController::class, 'passwordResets'])->name('passwordreset');
 Route::get('/password/resets/', [LoginController::class, 'passwordResets'])->name('passwordreset');
-Route::get('/kotakmasuk', [LoginController::class, 'kotakmasuk'])->name('kotakmasuk');
-Route::post('/kotakmasuk', [LoginController::class, 'kotakmasuk'])->name('kotakmasuk.proses');
 
 
+
+Route::post('/kirimPassword', [KirimPasswordController::class, 'kirimPassword'])->name('kirimPassword.proses');
 
 Route::post('/kirimEmail', [KirimEmailController::class, 'kirimEmail'])->name('kirimEmail.proses');
 Route::post('/history', [AbsenController::class, 'history'])->name('history.proses');

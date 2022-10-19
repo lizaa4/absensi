@@ -7,7 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class SendMail extends Mailable
+class SendPassword extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -31,10 +31,10 @@ class SendMail extends Mailable
     {
         return $this->from('safitrisanisa10@gmail.com')
         ->view('password.email')
-        ->subject('ABSENSI - Link Reset Password Akun')
+        ->subject('ABSENSI - Link Ubah Password Akun')
         ->with([
             'name'   => $this->name,
             'link'  => $this->link
         ]);
-        }
+    }
 }

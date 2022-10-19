@@ -82,6 +82,7 @@
                                 {{ $errors->first('Email') }} 
                             </div> 
                         @endif 
+                        <div class="mt-3 d-grid">
                         <button type="button"  class="btn btn-primary btn-kirim" onclick="kirimEmail()">Send</button>
                   </div>
                   <div class="container">

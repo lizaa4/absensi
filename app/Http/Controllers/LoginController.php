@@ -118,4 +118,12 @@ class LoginController extends Controller
         $user->save();
         return redirect()->route('login');
     }
+    public function ubahProses (Request $request) 
+    {
+        $user = User::where('id', Auth::user()->id)->first();
+        $user->password   = bcrypt($request->password);
+        dd($user);
+        $user->save();
+        return redirect()->route('login');
+    }
 }

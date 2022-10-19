@@ -59,6 +59,7 @@
   <!-- Jumbotron -->
   <section class="jumbotron text-center">
   <img src="{{asset('/images/profile-')}}img.png" alt="rofile" width="200" />
+  <h2>History</h2>
   <h1 class="display-4">Welcome to History Absensi! </h1>
   <p class="lead"> anda sudah melakukan absensi!</p>
   

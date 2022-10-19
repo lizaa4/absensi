@@ -61,6 +61,7 @@
   <!-- Jumbotron -->
   <section class="jumbotron text-center">
   <img src="{{asset('/images/profile-')}}img.png" alt="rofile" width="200" />
+  <h2>Profile</h2>
   <h1 class="display-4">Welcome</h1>
   <h1>{{$user->name}}</h1>
   <p>{{$user->name}}</p>

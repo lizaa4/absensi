@@ -47,6 +47,9 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
+      <li class="nav-item">
+        <a href= "{{route('ubah')}}"  class="btn btn-primary">ubah password</a>  
+        </li>
         <li class="nav-item">
         <a href= "{{route('profile')}}"  class="btn btn-primary">profile</a>  
         </li>
