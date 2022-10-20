@@ -8,6 +8,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AbsenController;
 use App\Http\Controllers\KirimEmailController;
 use App\Http\Controller\LogoutController;
+use App\Http\Controllers\kirimPasswordController;
 
 Route::get('/', function () { 
     return view('welcome'); 
@@ -36,11 +37,7 @@ Route::post('/ubah', [LoginController::class, 'ubahProses'])->name('ubah.proses'
 Route::post('/absentap/simpan/', [AbsenController::class, 'simpan'])->name('absen.simpan');
 Route::post('/password/resets/', [LoginController::class, 'passwordResets'])->name('passwordreset');
 Route::get('/password/resets/', [LoginController::class, 'passwordResets'])->name('passwordreset');
-
-
-
 Route::post('/kirimPassword', [KirimPasswordController::class, 'kirimPassword'])->name('kirimPassword.proses');
-
 Route::post('/kirimEmail', [KirimEmailController::class, 'kirimEmail'])->name('kirimEmail.proses');
 Route::post('/history', [AbsenController::class, 'history'])->name('history.proses');
 Route::get('/history', [AbsenController::class, 'history'])->name('history');

@@ -6,32 +6,35 @@ use App\Mail\SendMail;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\URL;
 
-class kirimPasswordController extends Controller
-{
+
+
+class KirimPasswordController extends Controller
+{  public function ubahProses (Request $request) 
+    {
+        $user = User::where('id', Auth::user()->id)->first();
+        $user->password   = bcrypt($request->password);
+        // dd($user);
+        $user->save();
+        return redirect()->route('login');
+    }
     public function kirimPassword (Request $request) 
     {
+        // dd($request->all());
         try {
-            $url = 'http://127.0.0.1:8000/reset'; 
-            $data=User::where('password', $request->password)->first();
-            dd($data->password);
-            if($data != null){
-
-                $data->link = $url . '/' . $data->id;
-                Mail::to($data->email)->send(new SendMail($data->nama, $data->link));
-
-                return response()->json([
-                    'status' => 'ada'
-                ]);
-
-            } else {
-                return response()->json([
-                    'status' => 'kosong'
-                ]);
-            }
-        
+            $user = User::where('id', Auth::user()->id)->first();
+        $user->password   = bcrypt($request->password_baru);
+        $user->save();
+         DB::rollback();
+            return response()->json([
+                'status' => 'berhasil',
+                
+            ]);
         } catch (\Exception $e) {
-            // DB::rollback();
+            DB::rollback();
             return response()->json([
                 'status' => 'gagal',
                 'message' => $e->getMessage()

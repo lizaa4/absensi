@@ -70,7 +70,9 @@ class LoginController extends Controller
     //fungsi ubah
     public function ubah()
     {
-        return view('ubah-password');
+        $user = Auth::user()->id;
+        return view('ubah-password', compact('user'));
+        
     }
     public function password_Resets(Request $request) 
         {   
@@ -96,7 +98,7 @@ class LoginController extends Controller
         }
 
     public function resets(Request $request) {
-          dd($request->all());
+        //   dd($request->all());
         $Reset = new Reset();
         // instansiasi (bikin objek baru/manggil objek)
         $Reset->id_user =  Auth::user()->id;
@@ -120,9 +122,10 @@ class LoginController extends Controller
     }
     public function ubahProses (Request $request) 
     {
+        // dd($request->all());
         $user = User::where('id', Auth::user()->id)->first();
         $user->password   = bcrypt($request->password);
-        dd($user);
+        // dd($user);
         $user->save();
         return redirect()->route('login');
     }

@@ -21,49 +21,49 @@
 </head>
 <style>
   body {
-        background-image: url('https://i.pinimg.com/originals/fd/b9/f9/fdb9f947f4653d9608ca47cde736e7a7.jpg'); 
-        background-repeat: no-repeat; 
-        background-attachment: fixed;   
-        background-size: cover; 
-        padding-bottom: 20px; 
-        padding-left: 100px; 
-        padding-top: 100px; 
-        padding-right: 100px;
-        min-height: 2000px;
-    }
+    background-image: url('https://i.pinimg.com/originals/fd/b9/f9/fdb9f947f4653d9608ca47cde736e7a7.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    padding-bottom: 20px;
+    padding-left: 100px;
+    padding-top: 100px;
+    padding-right: 100px;
+    min-height: 2000px;
+  }
 
-    #projects {
-        background-color: #e2edff;
-    }
+  #projects {
+    background-color: #e2edff;
+  }
+</style>
 
-          </style> 
 <body>
-     <!-- Navbar -->
-     <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm fixed-top">
-  <div class="container">
-    <a class="navbar-brand" href="/absen">ABSENSI</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-      <!-- <li class="nav-item">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="/absen">ABSENSI</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <!-- <li class="nav-item">
         <a href= "{{route('ubah')}}"  class="btn btn-primary">ubah password</a>  
         </li> -->
-        <li class="nav-item">
-        <a href= "{{route('profile')}}"  class="btn btn-primary">profile</a>  
-        </li>
-        <li class="nav-item">            
-        <a href= "{{route('history')}}"  class="btn btn-primary">history</a>          
-        </li>   
-        <li class="nav-item">            
-        <a href= "{{route('login')}}"  class="btn btn-primary">Logout</a>          
-        </li>
-        
-      </ul>
+          <li class="nav-item">
+            <a href="{{route('profile')}}" class="btn btn-primary">profile</a>
+          </li>
+          <li class="nav-item">
+            <a href="{{route('history')}}" class="btn btn-primary">history</a>
+          </li>
+          <li class="nav-item">
+            <a href="{{route('login')}}" class="btn btn-primary">Logout</a>
+          </li>
+
+        </ul>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
   <!-- Akhir Navbar -->
   <div class="account-pages my-5 pt-sm-5">
     <div class="container">
@@ -91,8 +91,7 @@
                       <img src="{{asset('/images/logo-lig')}}ht.svg" alt="" class="rounded-circle" height="34">
                     </span>
                   </div>
-                </a>
-
+                
                 <a href="index.html" class="auth-logo-dark">
                   <div class="avatar-md profile-user-wid mb-4">
                     <span class="avatar-title rounded-circle bg-light">
@@ -101,125 +100,116 @@
                   </div>
                 </a>
               </div>
+
+            </div>
+
+            <form class="ubah-password" method="POST">
+
+            <div class="p-2">
+              <div class="mb-3">
+                <label for="email" class="form-label">Password Lama</label>
+                <input type="text" name="password-lama" class="form-control" id="password-lama" placeholder="Masukkan password lama" required>
+                <div class="text-danger">
+                </div>
+
+              </div>
+
               <div class="p-2">
-                <form class="ubah-password" method="POST">
-                @csrf
-                  <div class="mb-3">
-                  <label for="email" class="form-label">Username</label>
-                    <input type="text" name="username" class="form-control" id="Email" placeholder="Masukkan username" required>
-                    @if ($errors->has('Email')) 
-                            <div class="text-danger"> 
-                                {{ $errors->first('Email') }} 
-                            </div> 
-                        @endif 
-                  </div>
-                </form>
-
-                <div class="p-2">
-                <form class="ubah-password" method="POST">
-                @csrf
-                  <div class="mb-3">
-                  <label for="email" class="form-label">Password Lama</label>
-                    <input type="text" name="password lama" class="form-control" id="password lama" placeholder="Masukkan password lama" required>
-                    @if ($errors->has('password')) 
-                            <div class="text-danger"> 
-                                {{ $errors->first('password') }} 
-                            </div> 
-                        @endif 
-                  </div>
-                </form>
-
-                <div class="p-2">
-                <form class="ubah-password" method="POST">
-                @csrf
-                  <div class="mb-3">
+                <div class="mb-3">
                   <label for="email" class="form-label">Password baru</label>
-                    <input type="text" name="password baru" class="form-control" id="password baru" placeholder="Masukkan password baru" required>
-                    @if ($errors->has('password')) 
-                            <div class="text-danger"> 
-                                {{ $errors->first('password') }} 
-                            </div> 
-                        @endif 
+                  <input type="text" name="password_baru" class="form-control" id="password-baru" placeholder="Masukkan password baru" required>
+                  <div class="text-danger">
                   </div>
-                </form>
+                </div>
+
 
                 <div class="p-2">
-                <form class="ubah-password" method="POST">
-                @csrf
-                  <div class="mb-3">
-                  <label class="form-label">Verifikasi Password</label>
-                  <div class="input-group auth-pass-inputgroup">
-                    <input type="password" name="verifikasi-password" class="form-control" placeholder="Masukkan password baru" aria-label="Password" aria-describedby="password-addon" required>
-                    <button class="btn btn-light " type="button" id="password-addon"><i class="mdi mdi-eye-outline"></i></button>
-                  </div>
-                    @if ($errors->has('password')) 
-                            <div class="text-danger"> 
-                                {{ $errors->first('password') }} 
-                            </div> 
-                        @endif 
-                        <div class="mt-3 d-grid">
-                    <td class="mt-5 text-center">
-                      <button class="btn btn-primary waves-effect waves-light" type="button" onclick="kirimPassword()">simpan</button>
-                    </td>
+                    @csrf
+                    <div class="mb-3">
+                      <label class="form-label">Verifikasi Password</label>
+                      <div class="input-group auth-pass-inputgroup">
+                        <input type="password" name="verifikasi-password" class="form-control" id="verifikasi-password" placeholder="Masukkan password baru" aria-label="Password" aria-describedby="password-addon" required>
+                        <button class="btn btn-light " type="button" id="password-addon"><i class="mdi mdi-eye-outline"></i></button>
                       </div>
-                  </div>
-                </form>
-                  
-                     
+                      @if ($errors->has('password'))
 
-  <!-- JAVASCRIPT -->
-  <script src="{{ asset('libs/jquery/jquery.min.js') }}"></script>
-  <script src="{{ asset('libs/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-  <script src="{{ asset('libs/metismenu/metisMenu.min.js') }}"></script>
-  <script src="{{ asset('libs/simplebar/simplebar.min.js') }}"></script>
-  <script src="{{ asset('libs/node-waves/waves.min.js') }}"></script>
+                      <div class="text-danger">
+                        {{ $errors->first('password') }}
 
-  <!-- App js -->
-  <script src="{{ asset('js/app.js') }}"></script>
-  <script>
+                      </div>
+                      @endif
+                      <div class="mt-3 d-grid">
+                        <td class="mt-5 text-center">
+                          <button class="btn btn-primary waves-effect waves-light" type="button" onclick="kirimPassword()">simpan</button>
+                        </td>
+                      </div>
+                    </div>
 
-   
-    
-    function kirimPassword() {
-      // alert($("#Password baru").val())
-            if ($("#Password baru").val() == "" || $("#Password baru").val() == null) {
-               alert('Password Harus Diisi!');
-            } else {
-                $('.btn-kirim').addClass('d-none');
-                
-                let password = $("#password baru").val();
+                  </form>
 
-                $.ajax({
-                    url: "{{ route('kirimPassword.proses') }}",
-                    type: "post",
-                    data: $(".ubah-password").serialize(),
-                    success: function(response) {
-                        // $('.btn-kirim-loading').addClass('d-none');
-                        // $('.btn-kirim').removeClass('d-none');
-                        if (response.status == "ada") {
-                            alert('Link ubah password telah berhasil dikirim, silahkan cek (spam) email anda');
-                        } else if (response.status == "kosong") {
-                         
+
+
+
+                  <!-- JAVASCRIPT -->
+                  <script src="{{ asset('libs/jquery/jquery.min.js') }}"></script>
+                  <script src="{{ asset('libs/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+                  <script src="{{ asset('libs/metismenu/metisMenu.min.js') }}"></script>
+                  <script src="{{ asset('libs/simplebar/simplebar.min.js') }}"></script>
+                  <script src="{{ asset('libs/node-waves/waves.min.js') }}"></script>
+
+                  <!-- App js -->
+                  <script src="{{ asset('js/app.js') }}"></script>
+                  <script>
+                    function kirimPassword() {
+                      // alert($("#Password-baru").val())
+                      if ($("#password-lama").val() == "" || $("#password-lama").val() == null) {
+                        alert('Password lama Harus Diisi!');
+                      }
+                      else if ($("#password-baru").val() == "" || $("#password-baru").val() == null) {
+                        alert('Password baru Harus Diisi!');
+                      }
+                      else if ($("#verifikasi-password").val() == "" || $("#verifikasi-password").val() == null) {
+                        alert('Verifikasi password Harus Diisi!');
+                      }
+                      else if ($("#password-baru").val() !=  $("#verifikasi-password").val() ) {
+                        alert('password baru tidak sama!');
+  
+                    } else {
+
+                      $('.btn-kirim').addClass('d-none');
+
+                      let password = $("#password-baru").val();
+
+                      $.ajax({
+                        url: "{{ route('kirimPassword.proses') }}",
+                        type: "post",
+                        data: $(".ubah-password").serialize(),
+                        success: function(response) {
+                          
+                          // $('.btn-kirim-loading').addClass('d-none');
+                          // $('.btn-kirim').removeClass('d-none');
+                          if (response.status == "berhasil") {
+                            alert('password berhasil di ubah');
+                            window.location.href = "{{url('/login')}}";
+                          } else if (response.status == "kosong") {
+
                             alert('password anda tidak terdaftar');
 
-                        } else if (response.status == "gagal") {
+                          } else if (response.status == "gagal") {
                             alert('password ubah password gagal dikirim');
                             console.log(response.message);
+                          }
+                        },
+                        error: function(request, status, error) {
+                          // $('.btn-kirim-loading').addClass('d-none');
+                          // $('.btn-kirim').removeClass('d-none');
+                          // alert('Terjadi Kesalahan');
+                          // console.log(request.responseText);
                         }
-                    },
-                    error: function(request, status, error) {
-                        // $('.btn-kirim-loading').addClass('d-none');
-                        // $('.btn-kirim').removeClass('d-none');
-                        // alert('Terjadi Kesalahan');
-                        // console.log(request.responseText);
+                      });
                     }
-                });
-            }
-        }
-
-
-
-  </script>
+                    }
+                  </script>
 </body>
 
 </html>

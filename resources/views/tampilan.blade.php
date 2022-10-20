@@ -123,24 +123,10 @@ body {
                             Pukul :
                             <span id="clock"></span>
                         </body>
-                   <div class="container">
-        <form action="/tampilan" method="POST" enctype="multipart/form-data" >
-          @csrf
-          @if (session('pesan'))
-          <div class="alert alert-success alert-dismissible">
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-            <h4><i class="icon fa fa-check"></i>Success</h4>
-            {{ session('pesan') }}.
 
 
 
-
-          @endif
-          <input type="hidden" name="lat" class="latAbsen">
-          <input type="hidden" name="lon" class="lonAbsen">
-          <br><button  class="btn btn-primary">Submit</button></br>  
-                      </div>  
-        </form>
+                        
         <div class="mt-3 d-grid"></div>
         <div  class="m" id="map" style="width: 900px; height: 500px;"></div>
       <script>
