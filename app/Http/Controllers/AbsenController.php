@@ -61,6 +61,7 @@ class AbsenController extends Controller
             $absensi->lattitude = $request->lat;
             $absensi->longitude = $request->lon;
             $absensi->save();
+            return redirect()->route('tampilan');
         }
 
     }

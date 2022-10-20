@@ -98,7 +98,7 @@ body {
                         $absen_user = date("H:i:s");
                         $absen_masuk_awal = "07:30:00";
 
-                        $absen_masuk_akhir ="16:20:00";
+                        $absen_masuk_akhir ="16:50:00";
 
 
                         if($absen_user < $absen_masuk_awal)
