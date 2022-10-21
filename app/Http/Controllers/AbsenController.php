@@ -55,9 +55,7 @@ class AbsenController extends Controller
             $user=User::where('id', FacadesAuth::user()->id)->first();
             return view('tampilan', compact('user'));
         }
-        public function tampilan1() {
-            return view('tampilan1');
-        }
+        
         public function simpan(Request $request) {
             //dd($request->all());
             $absensi = new Absensi();

@@ -44,7 +44,7 @@ Route::get('/history', [AbsenController::class, 'history'])->name('history');
 Route::post('/absen/simpan', [AbsenController::class, 'simpanAbsen'])->name('simpanAbsen.proses');
 Route::get('/absen', [AbsenController::class, 'absen'])->name('absen');
 Route::get('/tampilan', [AbsenController::class, 'tampilan'])->name('tampilan');
-Route::post('/tampilan', [AbsenController::class, 'tampilan'])->name('tampilan1.proses');
+Route::post('/tampilan', [LoginController::class, 'tampilan'])->name('tampilan1.proses');
 Route::get('logout', [UserController::class, 'logout'])->name('logout');
 
 

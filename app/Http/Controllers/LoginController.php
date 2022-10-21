@@ -129,4 +129,7 @@ class LoginController extends Controller
         $user->save();
         return redirect()->route('login');
     }
+    public function tampilan1() {
+        return view('tampilan1');
+    }
 }
