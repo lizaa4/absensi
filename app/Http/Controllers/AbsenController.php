@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Absensi;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Auth as FacadesAuth;
+
 
 class AbsenController extends Controller
 {
@@ -47,8 +50,10 @@ class AbsenController extends Controller
 
          
         }
-        public function tampilan() {
-            return view('tampilan');
+        public function tampilan(Request $request) 
+        {
+            $user=User::where('id', FacadesAuth::user()->id)->first();
+            return view('tampilan', compact('user'));
         }
         public function tampilan1() {
             return view('tampilan1');
