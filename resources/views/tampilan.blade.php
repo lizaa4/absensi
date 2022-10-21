@@ -80,6 +80,11 @@ body {
   <body onload="tampilkanwaktu();setInterval('tampilkanwaktu()', 1000);">
                     Pukul :
                     <span id="clock"></span>
+                    @php 
+                    $date = new DateTime('now');
+                    echo $date->format('d-m-Y');
+
+                    @endphp
                   </body>
                   <p>pada lokasi anda saat ini: <span type="text" id="lokasi"></span></p>
   </p>
