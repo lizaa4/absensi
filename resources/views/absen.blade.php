@@ -64,8 +64,8 @@
 
   <!-- Jumbotron -->
   <section class="jumbotron text-center">
+  <h2>Absen</h2>
     <img src="{{asset('/images/profile-')}}img.png" alt="rofile" width="200" />
-    <h2>Absen</h2>
     <h1 class="display-4">Welcome to Absensi</h1>
     <div class="mt-3 d-grid">
       <p class="lead">Silahkan melakukan absensi</p>

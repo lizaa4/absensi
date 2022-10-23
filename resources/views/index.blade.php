@@ -60,11 +60,10 @@
 
   <!-- Jumbotron -->
   <section class="jumbotron text-center">
-  <img src="{{asset('/images/profile-')}}img.png" alt="rofile" width="200" />
   <h2>Profile</h2>
-  <h1 class="display-4">Welcome</h1>
-  <h1>{{$user->name}}</h1>
-  <p>{{$user->name}}</p>
+  <img src="{{asset('/images/profile-')}}img.png" alt="rofile" width="200" />
+  <h1 class="display-5">Welcome {{$user->name}}</h1>
+  <p>Hai {{$user->name}} silahkan update data diri anda jika anda ingin mengubah data diri anda</p>
   <div>
   <a href="update" class="btn btn-primary btn-lg">Update</a> 
   </div>

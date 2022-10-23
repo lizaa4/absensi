@@ -17,7 +17,8 @@ class AbsenController extends Controller
     }   
     public function history(Request $request) 
     {
-        return view('history');
+        $user=User::where('id', FacadesAuth::user()->id)->first();
+        return view('history', compact('user'));
     } 
     // public function destroy( $date)
     // {

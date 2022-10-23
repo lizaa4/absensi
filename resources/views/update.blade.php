@@ -64,8 +64,9 @@
     </div>
   </div>
 </nav>
+  </body>
   <!-- Akhir Navbar -->
-</style>
+
 <body>
   <div class="account-pages my-5 pt-sm-5">
     <div class="container">
@@ -142,7 +143,9 @@
                             <option value="Infomedia" @if($user->perusahaan=="Infomedia") selected @endif>Infomedia</option>
                             <option value="Lain-Lain" @if($user->perusahaan=="Lain-lain") selected @endif>Lain-lain</option>
                         </select> 
-                        <style>
+              
+               
+                  <style>
                     body { 
                       background-image: url('https://i.pinimg.com/originals/fd/b9/f9/fdb9f947f4653d9608ca47cde736e7a7.jpg'); 
                   background-repeat: no-repeat; 
@@ -159,8 +162,7 @@
                   </div>
 
 
-
-
+              </div>
   <!-- JAVASCRIPT -->
   <script src="{{ asset('libs/jquery/jquery.min.js') }}"></script>
   <script src="{{ asset('libs/bootstrap/js/bootstrap.bundle.min.js') }}"></script>

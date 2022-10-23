@@ -73,6 +73,7 @@ body {
  
   <!-- Jumbotron -->
   <section class="jumbotron text-center">
+  <h2>Sudah melakukan absen</h2>
   <img src="{{asset('/images/profile-')}}img.png" alt="rofile" width="200" />
   <h1 class="display-4">Welcome</h1>
   <h1>{{$user->name}}</h1>

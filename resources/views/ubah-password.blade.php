@@ -109,7 +109,7 @@
               <div class="mb-3">
                 <label for="email" class="form-label">Password Lama</label>
                 <input type="text" name="password-lama" class="form-control" id="password-lama" placeholder="Masukkan password lama" required>
-                <div class="text-danger">
+                
                 </div>
 
               </div>
@@ -118,7 +118,7 @@
                 <div class="mb-3">
                   <label for="email" class="form-label">Password baru</label>
                   <input type="text" name="password_baru" class="form-control" id="password-baru" placeholder="Masukkan password baru" required>
-                  <div class="text-danger">
+                 
                   </div>
                 </div>
 
