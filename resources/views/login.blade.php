@@ -33,13 +33,6 @@
                     <h5 class="text-primary">Welcome !</h5>
                     <p>Sign in to continue to Absensi.</p>
                   </div>
-                  <div class=mt-20 text-center>
-                  @if (session('error')) 
-                    <div class="alert alert-danger"> 
-                        {{ session('error') }} 
-                    </div> 
-                @endif 
-                  </div>
                 <div class="col-5 align-self-end">
                   <img src="{{asset('/images/profile-')}}img.png" alt="" class="img-fluid">
                 </div>
@@ -64,6 +57,12 @@
                 </a>
               </div>
               <div class="p-2">
+              @if ($message = Session::get('error'))
+              <div class="alert alert-danger alert-block">
+              
+                <strong>{{ $message }}</strong>
+              </div>
+              @endif
                 <form action="{{ route('login.proses') }}" method="POST">
                 @csrf
                   <div class="mb-3">

@@ -30,7 +30,7 @@ class LoginController extends Controller
         }
 
         // jika salah, kembali ke halaman login
-        return redirect()->back()->with('error', 'Email atau Password salah');
+        return redirect("/login")->with('error', 'Email atau Password salah');
     }
 
     // fungsi logout

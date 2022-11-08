@@ -16,7 +16,7 @@ class RegisterController extends Controller
 
     // proses login
     public function register(Request $request)
-    {   
+    {
         try {
             // dd($request->all());
             $request->validate([
@@ -25,20 +25,35 @@ class RegisterController extends Controller
                 'email' => 'required|email',
                 'password' => 'required'
             ]);
-            $user = new User();
-            $user->perusahaan = $request->access;
-            $user->name     = $request->username;
-            $user->email     = $request->email;
-            $user->password   = bcrypt($request->password);
-            // dd($user);
-            $user->save();
+            if ($request->password == $request->password_confirm) {
+                $user = new User();
+                $user->perusahaan = $request->access;
+                $user->name     = $request->username;
+                $user->email     = $request->email;
+                $user->password   = bcrypt($request->password);
+                // dd($user);
+                $user->save();
+            }
+            if ($request->password != $request->password_confirm) {
+                $user = new User();
+                $user->perusahaan = $request->access;
+                $user->name     = $request->username;
+                $user->email     = $request->email;
+                $user->password   = bcrypt($request->password);
+                // dd($user);
+                $user->save();
+            }
+            else{
+                // echo ("password tidak sama");
+                return redirect("/register")->with('error', 'Password tidak sama');
+            }
         } catch (\Throwable $th) {
             echo $th->getMessage();
         }
         // jika salah, kembali ke halaman login
-        return redirect()->back()->with('success', 'Registrasi berhasil');
+        return redirect("/register")->with('success', 'Registrasi berhasil');
     }
-    public function update ()
+    public function update()
     {
         return view('update');
     }

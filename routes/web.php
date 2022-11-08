@@ -45,6 +45,8 @@ Route::post('/absen/simpan', [AbsenController::class, 'simpanAbsen'])->name('sim
 Route::get('/absen', [AbsenController::class, 'absen'])->name('absen');
 Route::get('/tampilan', [AbsenController::class, 'tampilan'])->name('tampilan');
 Route::post('/tampilan', [LoginController::class, 'tampilan'])->name('tampilan1.proses');
+Route::get('/pesan', 'FlashMessageController@index');
+Route::get('/get-pesan', 'FlashMessageController@pesan');
 Route::get('logout', [UserController::class, 'logout'])->name('logout');
 
 
