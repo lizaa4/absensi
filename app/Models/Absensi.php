@@ -2,6 +2,9 @@
 
 namespace App\Models;
 
+// use Illuminate\Support\Carbon;
+
+use Illuminate\Support\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -16,5 +19,9 @@ class Absensi extends Model
      *
      * @var array
      */
-  
+    // public function getCreatedAttribute()
+    // {
+    //     return Carbon::parse($this->attributes['created_at'])
+    //         ->translatedFormat('l, d F Y');
+    // }
 }

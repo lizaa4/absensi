@@ -5,9 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Absensi;
 use App\Models\User;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Auth as FacadesAuth;
-
+use Illuminate\Support\Facades\Facade;
 
 class AbsenController extends Controller
 {
@@ -18,8 +19,18 @@ class AbsenController extends Controller
     public function history(Request $request) 
     {
         $user=User::where('id', FacadesAuth::user()->id)->first();
-        return view('history', compact('user'));
+        $absensi=Absensi::where('id_user', FacadesAuth::user()->id)->get();
+        // dd($absensi);
+        // dd($user);
+        return view('history', compact('user', 'absensi')); 
+        
     } 
+
+    public function getCreatedAttribute()
+    {
+        return Carbon::parse($this->attributes['created_at'])
+            ->translatedFormat('l, d F Y');
+    }
     // public function destroy( $date)
     // {
     //     $timezone = "Asia/Jakarta";

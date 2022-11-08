@@ -86,9 +86,22 @@
     <table>
       <tr>
             <th>Id</th>
-            <th>Geografi</th>
-            <th>Data</th>
+            <th>Longitude</th>
+            <th>Lattitude</th>
+            <th>Day</th>
+            <th>Date</th>
+            <th>Hour</th>
         </tr>
+        @foreach($absensi as $dt)
+        <tr>
+          <td>{{ $dt->id_absensi }}</td>
+          <td>{{ $dt->longitude }}</td>
+          <td>{{ $dt->lattitude }}</td>
+          <td>{{ $dt->created_at->translatedFormat('l')}}</td>
+          <td>{{ $dt->created_at->format('d/m/Y') }}</td>
+          <td>{{ $dt->created_at->format('h:i:s')}}</td>
+        </tr>
+          @endforeach
     </table>
     </div>
 </body>
