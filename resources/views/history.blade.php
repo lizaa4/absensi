@@ -81,7 +81,7 @@
   <h1 class="display-6">Welcome to History Absensi {{$user->name}}</h1>
   <p class="lead">Hai {{$user->name}} anda sudah melakukan absensi!</p>
 <body>
-    <h2>History Absensi</h2>
+    <h2>History Absensi {{$user->name}}</h2>
     <div class="center">
     <table>
       <tr>

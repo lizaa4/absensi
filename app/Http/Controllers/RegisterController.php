@@ -34,15 +34,6 @@ class RegisterController extends Controller
                 // dd($user);
                 $user->save();
             }
-            if ($request->password != $request->password_confirm) {
-                $user = new User();
-                $user->perusahaan = $request->access;
-                $user->name     = $request->username;
-                $user->email     = $request->email;
-                $user->password   = bcrypt($request->password);
-                // dd($user);
-                $user->save();
-            }
             else{
                 // echo ("password tidak sama");
                 return redirect("/register")->with('error', 'Password tidak sama');
