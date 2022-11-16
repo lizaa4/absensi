@@ -13,6 +13,10 @@ class Absensi extends Model
 {
     // use HasFactory;
     protected $table = 'tb_absensi';
+    public function getUser()
+    {
+        return $this->belongsTo('App\Models\User', 'id_user', 'id');
+    }
     // protected harus diisi
     /**
      * fillable

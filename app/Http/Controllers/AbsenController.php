@@ -20,15 +20,16 @@ class AbsenController extends Controller
     {
         $user = User::where('id', FacadesAuth::user()->id)->first();
         if ($user->perusahaan == 'Telkom') {
-            $absensi = Absensi::all();
-
+            $absensi = Absensi::with('getUser')->get();
         } 
         // elseif ($user->perusahaan == 'Ish') {
         //     dd('ini ish');
         // }
             else {
-            $absensi = Absensi::where('id_user', FacadesAuth::user()->id)->get();
+
+            $absensi = Absensi::where('id_user', FacadesAuth::user()->id)->with('getUser')->get();
         }
+
 
         // dd($absensi);
         // dd($user);

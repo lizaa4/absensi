@@ -86,6 +86,9 @@
     <table>
       <tr>
             <th>Id</th>
+            <th>nama</th>
+            <th>email</th>
+            <th>perusahaan</th>
             <th>Longitude</th>
             <th>Lattitude</th>
             <th>Day</th>
@@ -95,6 +98,9 @@
         @foreach($absensi as $dt)
         <tr>
           <td>{{ $dt->id_absensi }}</td>
+          <td>{{ $dt->getUser->name }}</td>
+          <td>{{ $dt->getUser->email }}</td>
+          <td>{{ $dt->getUser->perusahaan }}</td>
           <td>{{ $dt->longitude }}</td>
           <td>{{ $dt->lattitude }}</td>
           <td>{{ $dt->created_at->translatedFormat('l')}}</td>
